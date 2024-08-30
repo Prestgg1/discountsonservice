@@ -5,6 +5,12 @@
   },
   "AboutPage": {
     "title": "Our about page"
+  },
+  "Header": {
+    "sport": "Support",
+    "about": "About",
+    "subs": "Subscriptions",
+    "login": "Login in"
   }
 }
 

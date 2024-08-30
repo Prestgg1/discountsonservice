@@ -1,16 +1,17 @@
+"use client";
+import { IoIosArrowDown } from "react-icons/io";
 
-/* import { getLocale } from "next-intl/server" */
-'use client';
+import { Link, usePathname } from "@/i18n/routing";
+import { useLocale, useTranslations } from "next-intl";
+import Image from "next/image";
 
-import {Link, usePathname} from '@/i18n/routing';
-import { useLocale } from "next-intl";
-
-const Header = () => {
+const Header: React.FC = () => {
   const pathname = usePathname();
   const locale = useLocale();
+  const t = useTranslations('Header');
   return (
-    <header>
-      <div className="navbar bg-base-100">
+    <header className="w-full flex justify-center items-center">
+      <div className="navbar container bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -32,7 +33,7 @@ const Header = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
 
               <li>
-                <a>Subscriptions</a>
+                <a>{t('subs')}</a>
                 <ul className="p-2">
                   <li><a>Netflix</a></li>
                   <li><a>YouTube Premium</a></li>
@@ -40,27 +41,29 @@ const Header = () => {
                 </ul>
               </li>
               <li><a>FAQ</a></li>
-              <li><a>Support</a></li>
-              <li><a>About</a></li>
+              <li><a>{t('sport')}</a></li>
+              <li><a>{t('about')}</a></li>
               <li>
                 <details>
                   <summary>Language</summary>
                   <ul className="p-2">
-                    <li><a>English</a></li>
-                    <li><a>Azerbaijani</a></li>
+                  <li><Link href={pathname} locale="en">English</Link></li>
+                  <li><Link href={pathname} locale="az">Azerbaijani</Link></li>
                   </ul>
                 </details>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl"><img src="/images/logo.png" alt="logo" className="w-12 h-12"></img>DiscountsOnServices</a>
+          <Link href="/" className="flex items-center justify-center gap-2 text-xl">
+          <Image src="/images/logo.png" width="48" height="48" alt="logo" />DiscountsOnServices
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
 
             <li>
               <details>
-                <summary>Subscriptions</summary>
+                <summary>{t('subs')}</summary>
                 <ul className="p-2">
                   <li><a>Netflix</a></li>
                   <li><a>YouTube Premium</a></li>
@@ -71,31 +74,25 @@ const Header = () => {
 
 
             <li><a>FAQ</a></li>
-            <li><a>Support</a></li>
-            <li><a>About</a></li>
-            <li>
-              <details>
-                <summary>Language</summary>
-                <ul className="p-2">
-                  <li><a>English</a></li>
-                  <li><a>Azerbaijani</a></li>
-                </ul>
-              </details>
-            </li>
+            <li><Link href="/about">{t('sport')}</Link></li>
+            <li><Link href="/about">{t('about')}</Link></li>
+
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end flex gap-2">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn m-1 uppercase">{locale}</div>
-            <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-              <li><Link href={`${pathname}`} locale="en">English</Link></li> <li><Link href={`${pathname}`} locale="az">Azərbaycan Dili</Link></li>
+            <div tabIndex={0} role="button" className="m-1 btn bg-transparent flex uppercase justify-center items-center gap-2">{locale} <IoIosArrowDown /></div>
+            <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-10 mt-2 p-2 shadow">
+              <li><Link href={pathname} locale="en">English</Link></li>
+              <li><Link href={pathname} locale="az">Azerbaijani</Link></li>
             </ul>
           </div>
-          <a className="btn bg-blue-800 text-white px-8 py-4 rounded-lg">Login in</a>
+          <a className="btn bg-blue-800 text-white px-8 py-4 rounded-lg">{t('login')}</a>
         </div>
       </div>
     </header>
-  )
-}
 
-export default Header
+  );
+};
+
+export default Header;

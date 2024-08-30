@@ -5,6 +5,13 @@
   },
   "AboutPage": {
     "title": "Bizim Haqqımızda"
+  },
+  "Header": {
+    "sport": "Desdek",
+    "about": "Haqqinda",
+    "subs": "Abunələr",
+    "login": "Daxil ol"
   }
+
 }
 
