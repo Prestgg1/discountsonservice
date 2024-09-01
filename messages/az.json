@@ -8,19 +8,9 @@
   },
   "Header": {
     "sport": "Desdek",
-<<<<<<< HEAD
-<<<<<<< HEAD
     "about": "Haqqinda",
     "subs": "Abunələr",
     "login": "Daxil ol"
-=======
-    "about": "Haqqinda"
->>>>>>> 7b0b2f8 (header-footer)
-=======
-    "about": "Haqqinda",
-    "subs": "Abunələr",
-    "login": "Daxil ol"
->>>>>>> c6fe114 (Headeri Biraz deyiŞdirdim)
   }
 
 }
