@@ -69,15 +69,6 @@ const Header: React.FC = () => {
           <li><a>{t('about')}</a></li>
           <li>
 
-            {/* <details className="relative z-10">
-              <summary className="cursor-pointer">Subscriptions</summary>
-              <ul className="absolute top-full left-0 mt-2 bg-white border border-gray-300 shadow-lg p-2 w-48 z-20">
-                <li><a href="#" className="block p-2 hover:bg-gray-200">Netflix</a></li>
-                <li><a href="#" className="block p-2 hover:bg-gray-200">YouTube Premium</a></li>
-                <li><a href="#" className="block p-2 hover:bg-gray-200">Spotify</a></li>
-              </ul>
-            </details> */}
-
             <details>
               <summary>Language</summary>
               <ul className="p-2">
