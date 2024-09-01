@@ -5,6 +5,11 @@
   },
   "AboutPage": {
     "title": "Bizim Haqqımızda"
+  },
+  "Header": {
+    "sport": "Desdek",
+    "about": "Haqqinda"
   }
+
 }
 
