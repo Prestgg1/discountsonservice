@@ -9,12 +9,18 @@
   "Header": {
     "sport": "Support",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "about": "About",
     "subs": "Subscriptions",
     "login": "Login in"
 =======
     "about": "About"
 >>>>>>> 7b0b2f8 (header-footer)
+=======
+    "about": "About",
+    "subs": "Subscriptions",
+    "login": "Login in"
+>>>>>>> c6fe114 (Headeri Biraz deyiŞdirdim)
   }
 }
 
