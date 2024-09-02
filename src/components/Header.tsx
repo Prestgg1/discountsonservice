@@ -71,8 +71,6 @@ const Header: React.FC = () => {
                 </ul>
               </details>
             </li>
-
-
             <li><a>FAQ</a></li>
             <li><Link href="/about">{t('sport')}</Link></li>
             <li><Link href="/about">{t('about')}</Link></li>
