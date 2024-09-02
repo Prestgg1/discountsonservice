@@ -7,8 +7,10 @@
     "title": "Bizim Haqqımızda"
   },
   "Header": {
-    "sport": "Dəstək",
-    "about": "Haqqında"
+    "sport": "Desdek",
+    "about": "Haqqinda",
+    "subs": "Abunələr",
+    "login": "Daxil ol"
   }
 
 }

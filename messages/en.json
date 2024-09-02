@@ -8,7 +8,9 @@
   },
   "Header": {
     "sport": "Support",
-    "about": "About"
+    "about": "About",
+    "subs": "Subscriptions",
+    "login": "Login in"
   }
 }
 
