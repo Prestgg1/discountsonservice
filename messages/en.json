@@ -1,0 +1,16 @@
+{
+  "HomePage": {
+    "title": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "AboutPage": {
+    "title": "Our about page"
+  },
+  "Header": {
+    "sport": "Support",
+    "about": "About",
+    "subs": "Subscriptions",
+    "login": "Login in"
+  }
+}
+

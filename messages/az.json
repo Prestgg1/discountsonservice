@@ -1,0 +1,17 @@
+{
+  "HomePage": {
+    "title": "Salam Dünya!",
+    "about": "Haqqımızdaya Get"
+  },
+  "AboutPage": {
+    "title": "Bizim Haqqımızda"
+  },
+  "Header": {
+    "sport": "Desdek",
+    "about": "Haqqinda",
+    "subs": "Abunələr",
+    "login": "Daxil ol"
+  }
+
+}
+
