@@ -31,7 +31,7 @@ const Footer = () => {
         <nav className="col-span-1 flex flex-col items-end">
           <div className="flex gap-4">
             <a href="#">
-              <svg
+                <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
