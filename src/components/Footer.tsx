@@ -1,13 +1,20 @@
+import Image from "next/image";
+
 const Footer = () => {
   return (
     <footer className="bg-blue-800 text-white py-10 px-5">
       <div className="container mx-auto grid grid-cols-4 gap-8">
         <nav className="col-span-1">
           <div className="flex items-center gap-2 text-xl">
-            <img src="./images/logo1.png" alt="Logo" className="w-12 h-12" />
+            <Image
+              src="/images/logo1.png"
+              alt="Logo"
+              width={48}
+              height={48}
+            />
             <div className="font-bold text-lg">DiscountsOnServices</div>
           </div>
-          <p className="text-sm mt-2">It's simple, fast and economical</p>
+          <p className="text-sm mt-2">It&apos;s simple, fast and economical</p>
         </nav>
 
         <nav className="col-span-1">

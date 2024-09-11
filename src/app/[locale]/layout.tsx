@@ -20,7 +20,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   return (
     <html lang={locale}>
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-[#ECF3FB]`}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

@@ -24,7 +24,7 @@ const AboutUs: React.FC = () => {
               We have partnered with several companies to help you find the best prices for your media subscriptions and provide you with the best prices for the Premium subscriptions you want.
             </p>
             <p className="text-gray-500 text-xs font-semibold">
-              It's simple, fast, and economical.
+              It&apos;s simple, fast, and economical.
             </p>
           </div>
         </div>

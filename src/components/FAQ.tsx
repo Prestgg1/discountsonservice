@@ -8,19 +8,32 @@ const FAQ = () => {
     { question: "How soon will I receive the account information I ordered?", answer: "Yes, you can add a phone number for password recovery. Go to the security settings of your account and follow the steps to add a phone number for recovery purposes." },
     { question: "How to pay?", answer: "Payment options we currently have: PayPal, Bitcoin." },
   ];
-  
+
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-4 text-center">FAQ</h2>
       <div className="space-y-4">
-        {faqs.map((faq, index) => (
-          <details className="collapse bg-base-200" key={index}>
-            <summary className="collapse-title text-lg font-medium">{faq.question}</summary>
-            <div className="collapse-content">
-              <p>{faq.answer}</p>
-            </div>
-          </details>
-        ))}
+        <div className="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" />
+          <div className="collapse-title text-xl font-medium">Click to open this one and close others</div>
+          <div className="collapse-content">
+            <p>hello</p>
+          </div>
+        </div>
+        <div className="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" />
+          <div className="collapse-title text-xl font-medium">Click to open this one and close others</div>
+          <div className="collapse-content">
+            <p>hello</p>
+          </div>
+        </div>
+        <div className="collapse collapse-arrow bg-base-200">
+          <input type="radio" name="my-accordion-2" />
+          <div className="collapse-title text-xl font-medium">Click to open this one and close others</div>
+          <div className="collapse-content">
+            <p>hello</p>
+          </div>
+        </div>
       </div>
     </div>
   );
