@@ -22,10 +22,6 @@ export default function Home() {
       <FAQ/>
       <SupportButton/>
       <SubscriptionRequest/>
-
-   
-
-      
     </>
   );
 }

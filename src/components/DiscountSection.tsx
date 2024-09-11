@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const DiscountSection = () => {
   return (
-    <div className="flex flex-col-reverse gap-4 md:flex-row container mx-auto my-4 px-10 md:px-0">
+    <div className="flex flex-col-reverse gap-4 md:flex-row w-full mx-auto my-4 ">
       <div className="bg-blue-800 text-white p-6 rounded-2xl shadow-lg md:w-1/2 md:self-stretch">
         <div className="flex flex-col gap-4 justify-center h-full">
           <h2 className="text-2xl md:text-4xl font-bold mb-4">Start enjoying a benefit of up to 50%</h2>

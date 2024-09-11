@@ -9,7 +9,7 @@ interface SubscriptionCardProps {
 
 const SubscriptionCard: React.FC<SubscriptionCardProps> = ({ title, description, imageUrl, bgColor }) => {
   return (
-    <div className="flex justify-between items-center bg-white rounded-lg shadow-lg mb-6 overflow-hidden">
+    <div className="flex justify-between items-center bg-white rounded-2xl shadow-lg mb-6 overflow-hidden">
       <div className="p-6 w-1/2">
         <h3 className="text-xl font-semibold">{title}</h3>
         <p className="text-gray-600 mt-2">{description}</p>
@@ -17,8 +17,8 @@ const SubscriptionCard: React.FC<SubscriptionCardProps> = ({ title, description,
           Learn more
         </button>
       </div>
-      <div className={`w-1/2 h-full ${bgColor}`}>
-        <Image src={imageUrl} alt={title} layout="responsive" width={500} height={300} className="object-cover w-full h-full" />
+      <div className={`w-1/2 h-full  rounded-lg   ${bgColor}`}>
+        <Image src={imageUrl} alt={title} layout="responsive" width={500} height={300} className="object-contain w-full h-full  rounded-lg" />
       </div>
     </div>
   );

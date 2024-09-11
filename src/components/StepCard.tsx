@@ -9,7 +9,7 @@ interface StepCardProps {
 
 const StepCard: React.FC<StepCardProps> = ({ stepNumber, description, iconUrl }) => {
   return (
-    <div className="relative bg-white shadow-lg rounded-xl p-6 mb-4 max-w-lg">
+    <div className="relative flex-1 bg-white shadow-lg rounded-2xl p-6 mb-4 max-w-lg h-full">
       <Image 
         src={iconUrl}
         width={100}

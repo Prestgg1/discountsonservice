@@ -1,6 +1,6 @@
 const SubscriptionRequest = () => {
   return (
-    <div className="bg-blue-800 text-white py-6 px-8 rounded-lg shadow-lg max-w-4xl mx-auto my-8">
+    <div className="bg-blue-800 text-white py-6 px-8 rounded-lg shadow-lg my-8 w-full">
       <div className="flex flex-col justify-between gap-4 md:gap-0 md:flex-row md:items-center items-stretch ">
         <div>
           <h3 className="text-lg font-semibold">

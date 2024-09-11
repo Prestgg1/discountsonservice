@@ -10,24 +10,24 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
+    <div className=" p-6 rounded-lg w-full">
       <h2 className="text-2xl font-bold mb-4 text-center">FAQ</h2>
       <div className="space-y-4">
-        <div className="collapse collapse-arrow bg-base-200">
+        <div className="collapse collapse-arrow bg-white">
           <input type="radio" name="my-accordion-2" />
           <div className="collapse-title text-xl font-medium">Click to open this one and close others</div>
           <div className="collapse-content">
             <p>hello</p>
           </div>
         </div>
-        <div className="collapse collapse-arrow bg-base-200">
+        <div className="collapse collapse-arrow bg-white">
           <input type="radio" name="my-accordion-2" />
           <div className="collapse-title text-xl font-medium">Click to open this one and close others</div>
           <div className="collapse-content">
             <p>hello</p>
           </div>
         </div>
-        <div className="collapse collapse-arrow bg-base-200">
+        <div className="collapse collapse-arrow bg-white">
           <input type="radio" name="my-accordion-2" />
           <div className="collapse-title text-xl font-medium">Click to open this one and close others</div>
           <div className="collapse-content">
