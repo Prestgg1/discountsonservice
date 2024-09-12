@@ -28,7 +28,7 @@ const SubscriptionsPage = () => {
   return (
     <div className=" w-full">
       <h1 className="text-center text-2xl font-bold mb-8">Choose a subscription</h1>
-      <div className="w-full">
+      <div className="w-full flex flex-col gap-4">
         {subscriptions.map((subscription, index) => (
           <SubscriptionCard
             key={index}

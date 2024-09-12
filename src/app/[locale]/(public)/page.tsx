@@ -7,7 +7,6 @@ import AboutUs from '@/components/AboutUs';
 import DiscountSection from '@/components/DiscountSection';
 import StepList from '@/components/StepList';
 import SubscriptionsPage from '@/components/SubscriptionsPage';
-import SupportButton from '@/components/SupportButton';
 import InviteFriends from '@/components/InviteFriends';
 
 export default function Home() {
@@ -19,8 +18,7 @@ export default function Home() {
       <StepList/>
       <InviteFriends/>
       <AboutUs/>
-      <FAQ/>
-      <SupportButton/>
+      <FAQ title="FAQ"/>
       <SubscriptionRequest/>
     </>
   );

@@ -11,7 +11,7 @@ const SubscriptionRequest = () => {
           </p>
         </div>
         <div>
-          <button className="bg-white w-full md:auto text-blue-900 py-2 px-4 rounded-lg font-semibold">
+          <button className="bg-white w-full md:auto text-blue-900 py-2 px-4 rounded-lg font-semibold hover:bg-blue-900 hover:text-white duration-300">
             Request
           </button>
         </div>

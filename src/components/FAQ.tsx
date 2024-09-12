@@ -1,6 +1,6 @@
 
 
-const FAQ = () => {
+const FAQ = ({ title }: { title: string }) => {
   const faqs = [
     { question: "The set time has passed, but the invoice has not yet arrived, what should I do?", answer: "If the designated time has passed and you have not yet received your invoice, please contact us. Reach out to our customer support team, and we will work to resolve any issues with your invoice as quickly as possible." },
     { question: "Can I change my Netflix account email and password after purchase?", answer: "Yes, you can change the email address and password for your Netflix account after purchase. Simply log into your account, go to the Account  section, and follow the instructions to update your email address and password." },
@@ -10,31 +10,23 @@ const FAQ = () => {
   ];
 
   return (
-    <div className=" p-6 rounded-lg w-full">
-      <h2 className="text-2xl font-bold mb-4 text-center">FAQ</h2>
+    <div className="flex flex-col gap-8 rounded-lg w-full">
+      <h2 className="text-2xl font-bold mb-4 text-center">{title}</h2>
       <div className="space-y-4">
-        <div className="collapse collapse-arrow bg-white">
-          <input type="radio" name="my-accordion-2" />
-          <div className="collapse-title text-xl font-medium">Click to open this one and close others</div>
-          <div className="collapse-content">
-            <p>hello</p>
+
+        {faqs.map((faq, index) => (
+          <div key={index} className="collapse p-8 collapse-arrow bg-white">
+            <input type="radio" name="my-accordion-2" />
+            <div className="collapse-title text-xl font-medium">{faq.question}</div>
+            <div className="collapse-content">
+              <p>{faq.answer}</p>
+            </div>
           </div>
-        </div>
-        <div className="collapse collapse-arrow bg-white">
-          <input type="radio" name="my-accordion-2" />
-          <div className="collapse-title text-xl font-medium">Click to open this one and close others</div>
-          <div className="collapse-content">
-            <p>hello</p>
-          </div>
-        </div>
-        <div className="collapse collapse-arrow bg-white">
-          <input type="radio" name="my-accordion-2" />
-          <div className="collapse-title text-xl font-medium">Click to open this one and close others</div>
-          <div className="collapse-content">
-            <p>hello</p>
-          </div>
-        </div>
+        ))}
       </div>
+      <button className="bg-black md:w-auto md:self-center px-6 py-3 font-bold text-white w-full rounded-lg text-lg hover:bg-gray-800 transition duration-300">
+        Support
+      </button>
     </div>
   );
 };

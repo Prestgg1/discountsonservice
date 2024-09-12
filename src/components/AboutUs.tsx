@@ -3,42 +3,42 @@ import Image from 'next/image';
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="p-6 w-full">
-      <h2 className="text-3xl font-bold text-center mb-8">About Us</h2>
-      <div className="flex flex-col md:flex-row gap-4 px-4 justify-center">
-        <div className="bg-white shadow-lg rounded-xl p-4 flex-1 flex flex-col max-w-md mx-2">
-          <div className="flex mb-4">
-            <Image
-              src="/images/logo.png"
-              alt="Logo"
-              width={80} 
-              height={80} 
-              className="object-contain"
-            />
-          </div>
-          <div className="flex-1 flex flex-col">
-            <p className="text-gray-600 text-sm mb-2">
-              We offer you a subscription to various media services at the best price.
-            </p>
-            <p className="text-gray-600 text-sm mb-2">
-              We have partnered with several companies to help you find the best prices for your media subscriptions and provide you with the best prices for the Premium subscriptions you want.
-            </p>
-            <p className="text-gray-500 text-xs font-semibold">
-              It&apos;s simple, fast, and economical.
-            </p>
-          </div>
-        </div>
-        <div className="bg-white shadow-lg rounded-xl flex-1 max-w-md mx-2 overflow-hidden">
+    <div className='flex flex-col gap-4 my-4'>
+      <h1 className='text-2xl font-bold text-center'>About Us</h1>
+
+<div className="flex flex-col-reverse gap-4 md:flex-row w-full  mb-4">
+      <div className="bg-white text-black p-5 lg:p-10 lg:px-20 rounded-2xl shadow-lg basis-1/2 md:self-stretch">
+        <div className="flex flex-col gap-2  xl:gap-8 justify-center h-full">
           <Image
-            src="/images/about.png"
-            alt="About"
-            width={400} 
-            height={400} 
-            className="object-cover w-full h-full"
+            src="/images/logo.png"
+            alt="Logo"
+            width={80}
+            height={80}
+            className="object-contain w-1/4"
           />
+          <p className="text-gray-600 text-xl">
+            We offer you a subscription to various media services at the best price.
+          </p>
+
+          <p className="text-gray-600 text-xl mb-2">
+            We have partnered with several companies to help you find the best prices for your media subscriptions and provide you with the best prices for the Premium subscriptions you want.
+          </p>
+          <p className="text-black text-xl font-semibold">
+            It&apos;s simple, fast, and economical.
+          </p>
         </div>
       </div>
+      <div className="flex md:w-1/2 overflow-hidden rounded-2xl shadow-lg justify-center items-center  flex-auto md:max-h-[50vh] lg:max-h-max 2xl:max-h-[50vh] bg-white">
+        <Image
+          src="/images/about.png"
+          alt="About"
+          width={400}
+          height={400}
+          className="object-fill md:object-contain rounded-lg shadow-lg w-full h-full " />
+      </div>
     </div>
+    </div>
+ 
   );
 };
 

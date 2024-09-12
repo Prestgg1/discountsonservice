@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import { FaHome } from "react-icons/fa";
+import Auth from "./Auth";
 import { FaAngleDown } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 
@@ -17,18 +18,7 @@ export default function Header(): React.ReactNode {
   const locale = useLocale();
   const t = useTranslations('Header');
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
 
-  const openLoginModal = () => {
-    setIsLoginModalOpen(true);
-    setIsRegisterModalOpen(false);
-  };
-
-  const openRegisterModal = () => {
-    setIsLoginModalOpen(false);
-    setIsRegisterModalOpen(true);
-  };
 
   return (
     <header className="flex bg-white z-50  top-0 p-5 shadow-xl items-center w-full justify-between  text-xl sticky ">
@@ -36,9 +26,7 @@ export default function Header(): React.ReactNode {
         <Image src="/images/logo.png" width="48" height="48" alt="logo" /><span className="hidden md:flex">DiscountsOnServices</span>
       </Link>
       {/* Desktop Menu */}
-      <nav className="hidden lg:flex items-center gap-4 [&>*]:capitalize [&>*]:duration-300">
-        <Link className="hover:text-blue-500" href="/">{t('home')}</Link>
-
+      <nav className="hidden lg:flex items-center gap-4 2xl:gap-8 [&>*]:capitalize [&>*]:duration-300">
         <div className="dropdown dropdown-bottom">
           <div tabIndex={0} role="button" className="p-4 flex gap-2 justify-center items-center">{t('subs')}<FaAngleDown className="text-2xl" /></div>
           <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
@@ -58,57 +46,15 @@ export default function Header(): React.ReactNode {
             <li><Link href={pathname} locale="en">English</Link></li>
             <li><Link href={pathname} locale="az">Azerbaijani</Link></li>
           </ul>
-        </div>
+      </div>
         <label htmlFor="login_modal" className="btn bg-blue-800 text-white px-8 py-4 hover:bg-blue-500 duration-300">{t('login')}</label>
 
         {/* Login Modal */}
-        <input type="checkbox" id="login_modal" className="modal-toggle" checked={isLoginModalOpen} onChange={() => setIsLoginModalOpen(!isLoginModalOpen)} />
-        <div className="modal backdrop-blur-md" role="dialog">
-          <div className="modal-box relative">
-            <label htmlFor="login_modal" className="btn btn-sm btn-circle absolute right-2 top-2 text-2xl" >✕</label>
-            <h3 className="text-lg font-bold">Log in</h3>
-            <p className="py-4">New user? <span className="text-blue-500 border-dotted border-b-2 border-blue-500 cursor-pointer" onClick={openRegisterModal}>Create an account</span></p>
-            <form action="" className="flex flex-col gap-2">
-              <div className="flex flex-col gap-2">
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" placeholder="Email" className="input input-bordered w-full " />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="password">Password</label>
-                <input type="password" id="password" placeholder="Password" className="input input-bordered w-full" />
-              </div>
-              <button className="btn bg-blue-500 text-white w-full mt-4">Login</button>
-            </form>
-          </div>
-          <label className="modal-backdrop" htmlFor="login_modal">Close</label>
-        </div>
+    <Auth/>
+        
+      
 
-        {/* Register Modal */}
-        <input type="checkbox" id="register_modal" className="modal-toggle" checked={isRegisterModalOpen} onChange={() => setIsRegisterModalOpen(!isRegisterModalOpen)} />
-        <div className="modal backdrop-blur-md" role="dialog">
-          <div className="modal-box relative">
-            <label htmlFor="register_modal" className="btn btn-sm btn-circle absolute right-2 top-2 text-2xl">✕</label>
-            <h3 className="text-lg font-bold">Create an account</h3>
-            <p className="py-4">Already have an account? <span className="text-blue-500 border-dotted border-b-2 border-blue-500 cursor-pointer" onClick={openLoginModal}>Log in</span></p>
-            <form action="" className="flex flex-col gap-2">
-              <div className="flex flex-col gap-2">
-                <label htmlFor="register_email">Email</label>
-                <input type="email" id="register_email" placeholder="Email" className="input input-bordered w-full " />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="register_password">Password</label>
-                <input type="password" id="register_password" placeholder="Password" className="input input-bordered w-full" />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="confirm_password">Confirm Password</label>
-                <input type="password" id="confirm_password" placeholder="Confirm Password" className="input input-bordered w-full" />
-              </div>
-              <button className="btn bg-blue-500 text-white w-full mt-4">Register</button>
-            </form>
-          </div>
-          <label className="modal-backdrop" htmlFor="register_modal">Close</label>
         </div>
-      </div>
       {/* Desktop Menu End */}
 
 
