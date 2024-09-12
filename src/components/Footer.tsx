@@ -52,9 +52,9 @@ const Footer = () => {
     <FaTelegram size={24} />
     </div>
   
-    <div className="dropdown dropdown-left dropdown-top self-end">
+    <div className="dropdown dropdown-left  dropdown-top self-end">
           <div tabIndex={0} role="button" className="m-1 btn hover:bg-slate-500 border-0 bg-transparent flex text-white uppercase justify-center items-center gap-2">{locale} <IoIosArrowDown /></div>
-          <ul tabIndex={0} className="dropdown-content bg-slate-500 text-white bg-transparent menu  rounded-box z-10 mt-2 p-2 shadow">
+          <ul tabIndex={0} className="dropdown-content bg-slate-500 text-white menu  rounded-box z-10 mt-2 p-2 shadow">
             <li><Link href={pathname} locale="en">English</Link></li>
             <li><Link href={pathname} locale="az">Azerbaijani</Link></li>
           </ul>
