@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 const AboutUs: React.FC = () => {
   return (
-    <div className='flex flex-col gap-4 my-4'>
-      <h1 className='text-2xl font-bold text-center'>About Us</h1>
+    <div className='flex flex-col gap-4 my-16'>
+      <h1 className='text-2xl font-bold text-center md:text-4xl md:mb-4'>About Us</h1>
 
 <div className="flex flex-col-reverse gap-4 md:flex-row w-full  mb-4">
       <div className="bg-white text-black p-5 lg:p-10 lg:px-20 rounded-2xl shadow-lg basis-1/2 md:self-stretch">
@@ -28,7 +28,7 @@ const AboutUs: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="flex md:w-1/2 overflow-hidden rounded-2xl shadow-lg justify-center items-center  flex-auto md:max-h-[50vh] lg:max-h-max 2xl:max-h-[50vh] bg-white">
+      <div className="flex md:w-1/2 overflow-hidden rounded-2xl shadow-lg justify-center items-center  flex-auto md:max-h-[50vh] lg:max-h-max 2xl:max-h-[60vh] bg-white">
         <Image
           src="/images/about.png"
           alt="About"
