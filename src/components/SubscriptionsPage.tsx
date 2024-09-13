@@ -26,9 +26,9 @@ const subscriptions = [
 
 const SubscriptionsPage = () => {
   return (
-    <div className="bg-blue-50 min-h-screen py-10">
+    <div className=" w-full">
       <h1 className="text-center text-2xl font-bold mb-8">Choose a subscription</h1>
-      <div className="max-w-4xl mx-auto">
+      <div className="w-full flex flex-col gap-4">
         {subscriptions.map((subscription, index) => (
           <SubscriptionCard
             key={index}
