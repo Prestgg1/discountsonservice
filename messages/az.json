@@ -11,7 +11,32 @@
     "sport": "Dəstək",
     "about": "Haqqinda",
     "subs": "Abunələr",
-    "login": "Daxil ol"
+    "login": "Daxil ol",
+    "register": "Qeydiyyat",
+    "logout": "Çıxış"
+  },
+  "Footer": {
+    "subs": "Abunələr",
+    "site_navigations": "Sayt Naviqasiyaları",
+    "about": "Haqqında",
+    "faq": "Əla",
+    "support": "Dəstək",
+    "en": "İngilis",
+    "az": "Azərbaycan",
+    "developed": "Tərtib edildi",
+    "copyright": "Copyright 2024 © Bütün hüquqlar qorunur.",
+    "privacy_policy": "Məxfilik siyasəsi"
+  },
+  "InviteFriends": {
+    "title": "Dostlarını Dəvət Et",
+    "description": "Bu gündən etibarən NETFLIX, YOUTUBE, SPOTIFY abunəlikləri üçün PAYPAL vasitəsilə təhlükəsiz ödəniş ilə 50%-ə qədər endirim",
+    "link": "Linkə Basın",
+    "discounts": "Xidmətlərə Endirim"
+  },
+  "DiscountSection": {
+    "title": "Başlayın, 50%-ə qədər endirimə qəbul edin",
+    "description": "Sizin üçün xüsusilə qızıl qəbul edilmiş məhsul almaq istəyirsiniz, səkkizmədən - və bu, sizinə aiddir.",
+    "button": "Başlayın"
   }
 
 }

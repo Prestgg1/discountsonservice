@@ -11,7 +11,32 @@
     "sport": "Support",
     "about": "About",
     "subs": "Subscriptions",
-    "login": "Login in"
+    "login": "Login in",
+    "register": "Register",
+    "logout": "Logout"
+  },
+  "Footer": {
+    "subs": "Subscriptions",
+    "site_navigations": "Site navigations",
+    "about": "About",
+    "faq": "FAQ",
+    "support": "Support",
+    "en": "English",
+    "az": "Azerbaijani",
+    "developed": "Developed by",
+    "copyright": "Copyright 2024 © All Rights Reserved.",
+    "privacy_policy": "Privacy Policy"
+  },
+  "InviteFriends": {
+    "title": "Invite friends",
+    "description": "Starting today up to 50% for NETFLIX, YOUTUBE, SPOTIFY subscriptions with a secure payment from PAYPAL",
+    "link": "Click on the link",
+    "discounts": "Discounts on services"
+  },
+  "DiscountSection": {
+    "title": "Start enjoying a benefit of up to 50%",
+    "description": "You have always wanted to get the same product at a special price for you, without haggling - and it is yours.",
+    "button": "Start using"
   }
 }
 
