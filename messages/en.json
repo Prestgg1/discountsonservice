@@ -37,6 +37,49 @@
     "title": "Start enjoying a benefit of up to 50%",
     "description": "You have always wanted to get the same product at a special price for you, without haggling - and it is yours.",
     "button": "Start using"
-  }
-}
+  },
+  "AboutUs": {
+    "title": "About Us",
+    "description": "We offer you a subscription to various media services at the best price.",
+    "description1": "We have partnered with several companies to help you find the best prices for your media subscriptions and provide you with the best prices for the Premium subscriptions you want.",
+    "font-semibold": "It&apos;s simple, fast, and economical."
+  },
+  "FAQ": {
+    "question": "The set time has passed, but the invoice has not yet arrived, what should I do?",
+    "question1": "Can I change my Netflix account email and password after purchase?",
+    "question2": "Can I add a phone number for password recovery?",
+    "question3": "How soon will I receive the account information I ordered?",
+    "question4": "How to pay?",
+    "answer1": "If the designated time has passed and you have not yet received your invoice, please contact us. Reach out to our customer support team, and we will work to resolve any issues with your invoice as quickly as possible.",
+    "answer2": "Yes, you can change the email address and password for your Netflix account after purchase. Simply log into your account, go to the Account  section, and follow the instructions to update your email address and password.",
+    "answer3": "Yes, you can add a phone number for password recovery. Go to the security settings of your account and follow the steps to add a phone number for recovery purposes.",
+    "answer4": "Yes, you can add a phone number for password recovery. Go to the security settings of your account and follow the steps to add a phone number for recovery purposes.",
+    "answer5": "Payment options we currently have: PayPal, Bitcoin.",
+    "button": "Support"
+  },
+  "SubscriptionRequest": {
+    "title": "Request for an additional subscription that was not found here",
+    "description": "Disney, Amazon Prime, Microsoft Office, Microsoft Windows",
+    "request": "Request"
+  },
+  "StepCard": {
+    "step": "Step"
+  },
+ "StepList": {
+  "title": "How it works",
+  "description1": "Enter your account information",
+  "description2": "Select the desired subscription and plan",
+  "description3": "Pay your bill with PayPal"
 
+ },
+ "SubscriptionCard": {
+    "button": "Learn more"
+  },
+  "SubscriptionPage": {
+  "title1": "Netflix subscription rates",
+  "title2": "Spotify Premium",
+  "title3": "YouTube Premium",
+  "description": "The constant contributes to the task of the same and thus the intended features and the set relation to the check and set also."
+  }
+  
+}

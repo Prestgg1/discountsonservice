@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import { useTranslations } from 'next-intl';
 
 interface StepCardProps {
   stepNumber: number;
@@ -8,6 +8,7 @@ interface StepCardProps {
 }
 
 const StepCard: React.FC<StepCardProps> = ({ stepNumber, description, iconUrl }) => {
+  const t = useTranslations("StepCard")
   return (
     <div className="relative flex-1 bg-white shadow-lg rounded-2xl p-6 mb-4 max-w-lg h-full">
       <Image 
@@ -19,7 +20,7 @@ const StepCard: React.FC<StepCardProps> = ({ stepNumber, description, iconUrl })
       />
 
       <div className="mt-8"> 
-        <h3 className="text-xl font-bold mb-2">Step {stepNumber}</h3>
+        <h3 className="text-xl font-bold mb-2">{t("step")} {stepNumber}</h3>
         <p className="text-gray-600 mt-2">{description}</p>
       </div>
     </div>

@@ -1,12 +1,13 @@
-
+import { useTranslations } from "next-intl"; 
 
 const FAQ = ({ title }: { title: string }) => {
+  const t = useTranslations("FAQ")
   const faqs = [
-    { question: "The set time has passed, but the invoice has not yet arrived, what should I do?", answer: "If the designated time has passed and you have not yet received your invoice, please contact us. Reach out to our customer support team, and we will work to resolve any issues with your invoice as quickly as possible." },
-    { question: "Can I change my Netflix account email and password after purchase?", answer: "Yes, you can change the email address and password for your Netflix account after purchase. Simply log into your account, go to the Account  section, and follow the instructions to update your email address and password." },
-    { question: "Can I add a phone number for password recovery?", answer: "Yes, you can add a phone number for password recovery. Go to the security settings of your account and follow the steps to add a phone number for recovery purposes." },
-    { question: "How soon will I receive the account information I ordered?", answer: "Yes, you can add a phone number for password recovery. Go to the security settings of your account and follow the steps to add a phone number for recovery purposes." },
-    { question: "How to pay?", answer: "Payment options we currently have: PayPal, Bitcoin." },
+    { question: t("question"), answer: t("answer1") },
+    { question: t("question1"), answer: t("answer2") },
+    { question: t("question2"), answer: t("answer3") },
+    { question: t("question3"), answer: t("answer4") },
+    { question: t("question4"), answer: t("answer5") },
   ];
 
   return (
@@ -25,7 +26,7 @@ const FAQ = ({ title }: { title: string }) => {
         ))}
       </div>
       <button className="bg-black md:w-auto md:self-center px-6 py-3 font-bold text-white w-full rounded-lg text-lg hover:bg-gray-800 transition duration-300">
-        Support
+      {t("button")}
       </button>
     </div>
   );
