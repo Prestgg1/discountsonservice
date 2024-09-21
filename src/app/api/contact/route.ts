@@ -36,12 +36,3 @@ catch(error){
 }
     return NextResponse.json({ message: "Request received successfully" }, { status: 201 });
   }
-  export const config = {
-    api: {
-      bodyParser: {
-        sizeLimit: '2mb',
-      },
-    },
-    // Specifies the maximum allowed duration for this function to execute (in seconds)
-    maxDuration: 5,
-  }
