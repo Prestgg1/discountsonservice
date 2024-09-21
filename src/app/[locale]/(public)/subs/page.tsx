@@ -1,9 +1,14 @@
+"use client"
+import Button from '@/components/Button';
 import FAQ from '@/components/FAQ';
 import InviteFriends from '@/components/InviteFriends';
+import { useState } from 'react';
 import { FaCheckCircle } from "react-icons/fa";
 import { PiCurrencyDollarBold } from "react-icons/pi";
 
 const SubsPage = () => {
+  const [producttype, setProducttype] = useState(null);
+  
   const subs = [
     {
       id: 1,
@@ -67,8 +72,11 @@ const SubsPage = () => {
                       <div className=''><h1 className='text-2xl font-black'><PiCurrencyDollarBold /></h1> </div>
                       <div ><h1 className='text-4xl font-bold'>{key.price}</h1></div>
                     </div>
-              <div className="card-actions">
-                <button className={`btn duration-300 px-24 ${key.id === 2 ? 'bg-blue-500 text-white hover:bg-blue-600 ' : 'hover:bg-blue-500 hover:text-white'}`}>Get started</button>
+              <div className="card-actions w-full px-10">
+                <Button className='w-full  hover:bg-blue-500 hover:text-white'>
+                Get started
+                </Button>
+                
               </div>
             </div>
           </div>

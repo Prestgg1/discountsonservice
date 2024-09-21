@@ -8,34 +8,30 @@ const SubscriptionsPage = () => {
     {
       title: t("title1"),
       description: t("description"),
-      imageUrl: '/images/netflix-logo.jpg', 
-      bgColor: 'bg-black',
+      imageUrl: '/images/netflix-logo.jpg'
     },
     {
       title: t("title2"),
       description: t("description"),
-      imageUrl: '/images/spotify-logo.jpg', 
-      bgColor: 'bg-green-500',
+      imageUrl: '/images/spotify-logo.jpg'
     },
     {
       title: t("title3"),
       description: t("description"),
-      imageUrl: '/images/youtube.jpg', 
-      bgColor: 'bg-gray-200',
+      imageUrl: '/images/youtube.jpg'
     },
   ];
 
   return (
-    <div className="w-full">
-      <h1 className="text-center text-2xl font-bold mb-8">{t("title")}</h1>
-      <div className="w-full flex flex-col gap-4">
+    <div className="w-full" id='subs'>
+      <h1 className="text-center text-2xl font-bold mb-8" >{t("title")}</h1>
+      <div className="w-full flex flex-col gap-4" >
         {subscriptions.map((subscription, index) => (
           <SubscriptionCard
             key={index}
             title={subscription.title}
             description={subscription.description}
             imageUrl={subscription.imageUrl}
-            bgColor={subscription.bgColor}
           />
         ))}
       </div>

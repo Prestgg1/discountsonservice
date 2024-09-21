@@ -8,10 +8,10 @@
   },
   "Header": {
     "home": "Home",
-    "sport": "Support",
+    "contact": "Contact",
     "about": "About",
     "subs": "Subscriptions",
-    "login": "Login in",
+    "login": "Log in",
     "register": "Register",
     "logout": "Logout"
   },
@@ -31,6 +31,7 @@
     "title": "Invite friends",
     "description": "Starting today up to 50% for NETFLIX, YOUTUBE, SPOTIFY subscriptions with a secure payment from PAYPAL",
     "link": "Click on the link",
+    "copied": "Copied",
     "discounts": "Discounts on services"
   },
   "DiscountSection": {

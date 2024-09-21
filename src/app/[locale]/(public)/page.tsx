@@ -8,17 +8,33 @@ import DiscountSection from '@/components/DiscountSection';
 import StepList from '@/components/StepList';
 import SubscriptionsPage from '@/components/SubscriptionsPage';
 import InviteFriends from '@/components/InviteFriends';
+import FadeIn from '@/app/animations/Fadein';
+import Scale from '@/app/animations/Scale';
 
 export default function Home() {
   const t = useTranslations('HomePage');
   return (
     <>
-      <DiscountSection />
+    <Scale>
+    <DiscountSection />
+    </Scale>
+
+      <FadeIn>
       <SubscriptionsPage/>
-      <StepList/>
+      </FadeIn>
+<FadeIn>
+<StepList/>
+</FadeIn>
+
+      <FadeIn>
       <InviteFriends/>
+      </FadeIn>
+      <FadeIn>
       <AboutUs/>
+      </FadeIn>
+     
       <FAQ title="FAQ"/>
+      
       <SubscriptionRequest/>
     </>
   );

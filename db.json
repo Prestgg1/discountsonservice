@@ -1,0 +1,19 @@
+{
+    "products": [
+        {
+            "id":1,
+            "name":"netflix",
+            "prices":["half-year"],
+            "producttypes":[
+                {"id":1,
+                "name":"Basic",
+                "features":[
+                    "Ad-free music listening",
+                    "Play anywhere - even offline",
+                    "On-demand playback"
+                ]
+            }
+            ]
+        }
+    ]
+}

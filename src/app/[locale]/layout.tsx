@@ -3,7 +3,7 @@ import {getMessages} from 'next-intl/server';
 import type { Metadata } from "next";
 import "@/app/globals.css";
 import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"],fallback:['Arial'] });
 
 export const metadata: Metadata = {
   title: "Discount App",

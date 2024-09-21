@@ -13,10 +13,13 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import Image from "next/image";
 import { FaTelegram } from "react-icons/fa";
 import Logout from "./Logout";
+import MobileAuth from "./MobileAuth";
+import Button from "./Button";
 
 export default function Header(): React.ReactNode {
   const pathname = usePathname();
   const locale = useLocale();
+  
   const t = useTranslations('Header');
   const [isOpen, setIsOpen] = useState(false);
   const { data: session, status } = useSession()
@@ -32,13 +35,13 @@ export default function Header(): React.ReactNode {
           <div tabIndex={0} role="button" className="p-4 flex gap-2 justify-center items-center">{t('subs')}<FaAngleDown className="text-2xl" /></div>
           <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
             <li><a>netflix</a></li>
-            <li><a>youtube</a></li>
+            <li><a>youtube premium</a></li>
             <li><a>spotify</a></li>
           </ul>
         </div>
         <Link className="hover:text-blue-500" href="/about">{t('about')}</Link>
         <Link className="hover:text-blue-500" href="/faq">faq</Link>
-        <Link className="hover:text-blue-500" href="/support">{t('sport')}</Link>
+        <Link className="hover:text-blue-500" href="/contact">{t('contact')}</Link>
       </nav>
       <div className="hidden justify-center items-center lg:flex gap-2 [&>*]:duration-300">
         <IoLogoWhatsapp className="text-4xl hover:text-blue-500" />
@@ -49,18 +52,27 @@ export default function Header(): React.ReactNode {
             <li><Link href={pathname} className={locale === 'en' ? 'text-blue-500' : ''} locale="en">English</Link></li>
             <li><Link href={pathname} className={locale === 'az' ? 'text-blue-500' : ''} locale="az">Azerbaijani</Link></li>
           </ul>
-      </div>
-      {status === 'authenticated' ? 
-        <a href="#logout" className="btn bg-blue-800 text-white px-8 py-4 hover:bg-blue-500 duration-300">Logout</a> : 
-        <a href="#login" className="btn bg-blue-800 text-white px-8 py-4 hover:bg-blue-500 duration-300">{t('login')}</a>
-      }
+        </div>
+        {status === 'authenticated' ?
+          <a href="#logout">
+            <Button className="hover:bg-blue-500 bg-blue-800 text-white">
+              {t('logout')}
+            </Button>
+          </a>
+          :
+          <a href="#login">
+          <Button className="hover:bg-blue-500 bg-blue-800 text-white">
+            {t("login")}
+          </Button>
+        </a>
+        }
 
         {/* Login Modal */}
-<Logout />
-<Auth />
-    
+        <Logout />
+        <Auth />
 
-        </div>
+
+      </div>
       {/* Desktop Menu End */}
 
 
@@ -69,38 +81,46 @@ export default function Header(): React.ReactNode {
       {/* Mobile Menu */}
       {!isOpen ? <RxHamburgerMenu className="cursor-pointer text-4xl lg:hidden" onClick={() => setIsOpen(!isOpen)} /> : <HiOutlineXMark className="cursor-pointer bg-blue-500 text-white p-0.5 rounded-full text-4xl lg:hidden" onClick={() => setIsOpen(!isOpen)} />}
 
-      <div className={`absolute lg:hidden [&>ul]:shadow-lg z-10 gap-4 bg-[#ECF3FB] flex flex-col p-10 justify-between items-center left-0 w-full duration-200  ${isOpen ? 'opacity-100 top-full h-[92vh] visible ' : 'invisible h-auto opacity-0 -top-full'}`}>
-        <ul className="bg-white p-5 w-full flex justify-center items-center flex-col rounded-lg [&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li]:p-2 [&>li]:rounded-lg [&>li]:cursor-pointer [&>li]:w-full [&>li]:duration-300">
-          <li className="hover:bg-gray-100"><FaHome /> Home</li>
-          <li className="hover:bg-gray-100">About</li>
-          <li className="hover:bg-gray-100">FAQ</li>
-          <li className="hover:bg-gray-100">SUPPORT</li>
-        </ul>
-        <ul className="bg-white p-5 w-full flex justify-center items-center flex-col rounded-lg [&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li]:p-2 [&>li]:rounded-lg [&>li]:cursor-pointer [&>li]:w-full [&>li]:duration-300">
-          <li className="hover:bg-gray-100"><FaHome /> Home</li>
-          <li className="hover:bg-gray-100">About</li>
-          <li className="hover:bg-gray-100">FAQ</li>
-        </ul>
-        <Link href="/login" className="border-blue-500 btn font-bold bg-transparent border-2 text-blue-500 p-2 hover:bg-blue-500 hover:text-white duration-300 rounded-2xl w-full">{t('login')}</Link>
-        
-        <Link href="/register" className="hover:border-blue-500 bg-blue-500 text-white font-bold border-transparent border-2 hover:text-blue-500 p-2 hover:bg-transparent  duration-300 rounded-2xl w-full">{t('register')}</Link>
-        <div className="flex w-full justify-between items-center">
-          <div className="flex gap-2">
-            <IoLogoWhatsapp className="text-4xl" />
-            <FaTelegram className="text-4xl" />
+      <div className={`absolute lg:hidden [&>ul]:shadow-lg z-10 gap-4 bg-[#ECF3FB] flex flex-col  left-0 w-full duration-200  ${isOpen ? 'opacity-100 top-full h-[92vh] visible ' : 'invisible h-auto opacity-0 -top-full'}`}>
+        <MobileAuth />
+        <div className="flex h-full flex-col gap-4 p-10 justify-between items-center">
+          <ul className="bg-white p-5 w-full flex justify-center items-center flex-col rounded-lg [&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li]:p-2 [&>li]:rounded-lg [&>li]:cursor-pointer  [&>li]:w-full [&>li]:duration-300">
+            <li className="hover:bg-gray-100"><FaHome /> Home</li>
+            <li className="hover:bg-gray-100">About</li>
+            <li className="hover:bg-gray-100">FAQ</li>
+            <li className="hover:bg-gray-100">SUPPORT</li>
+          </ul>
+          <ul className="bg-white p-5 w-full flex justify-center items-center flex-col rounded-lg [&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li]:p-2 [&>li]:rounded-lg [&>li]:cursor-pointer [&>li]:w-full [&>li]:duration-300">
+            <li className="hover:bg-gray-100"><FaHome /> Home</li>
+            <li className="hover:bg-gray-100">About</li>
+            <li className="hover:bg-gray-100">FAQ</li>
+          </ul>
+          <div className="flex flex-col gap-4 w-full">
+            <label htmlFor="loginin" className="border-blue-500 btn font-bold bg-transparent border-2 text-blue-500 p-2 hover:bg-blue-500 hover:text-white duration-300 rounded-2xl w-full">{t('login')}</label>
+
+            <label htmlFor="registerin" className="border-transparent btn font-bold bg-blue-500 border-2 text-white p-2 hover:bg-transparent hover:text-blue-500 hover:border-blue-500 duration-300 rounded-2xl w-full">{t('register')}</label>
           </div>
-          <div className="dropdown dropdown-top dropdown-end">
-            <div tabIndex={0} role="button" className="m-1 btn bg-transparent flex uppercase justify-center items-center gap-2">{locale} <IoIosArrowDown /></div>
-            <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-10 mt-2 p-2 shadow">
-              <li><Link href={pathname} locale="en">English</Link></li>
-              <li><Link href={pathname} locale="az">Azerbaijani</Link></li>
-            </ul>
+
+
+          <div className="flex w-full justify-between items-center">
+            <div className="flex gap-2">
+              <IoLogoWhatsapp className="text-4xl" />
+              <FaTelegram className="text-4xl" />
+            </div>
+            <div className="dropdown dropdown-top dropdown-end">
+              <div tabIndex={0} role="button" className="m-1 btn bg-transparent flex uppercase justify-center items-center gap-2">{locale} <IoIosArrowDown /></div>
+              <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-10 mt-2 p-2 shadow">
+                <li><Link href={pathname} locale="en">English</Link></li>
+                <li><Link href={pathname} locale="az">Azerbaijani</Link></li>
+              </ul>
+            </div>
           </div>
         </div>
-       
+
+
       </div>
       {/* Mobile Menu End */}
-      
+
     </header>
   );
 }

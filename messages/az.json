@@ -8,7 +8,7 @@
   },
   "Header": {
     "home": "Əsas Səhifə",
-    "sport": "Dəstək",
+    "contact": "Əlaqə",
     "about": "Haqqinda",
     "subs": "Abunələr",
     "login": "Daxil ol",
@@ -31,6 +31,7 @@
     "title": "Dostlarını Dəvət Et",
     "description": "Bu gündən etibarən NETFLIX, YOUTUBE, SPOTIFY abunəlikləri üçün PAYPAL vasitəsilə təhlükəsiz ödəniş ilə 50%-ə qədər endirim",
     "link": "Linkə Basın",
+    "copied":"Kopyalandı",
     "discounts": "Xidmətlərə Endirim"
   },
   "DiscountSection": {
