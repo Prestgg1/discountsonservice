@@ -10,7 +10,7 @@ const AboutUs: React.FC = () => {
 <div className="flex flex-col-reverse gap-4 md:flex-row w-full  mb-4">
       <div className="bg-white text-black p-5 lg:p-10 lg:px-20 rounded-2xl shadow-lg basis-1/2 md:self-stretch">
         <div className="flex flex-col gap-2  xl:gap-8 justify-center h-full">
-          <Image
+          <Image 
             src="/images/logo.png"
             alt="Logo"
             width={80}
