@@ -22,13 +22,13 @@
     "fs": "^0.0.1-security",
     "next": "14.2.7",
     "next-auth": "^4.24.7",
-    "next-intl": "^3.19.1",
+    "next-intl": "^3.19.4",
     "nodemailer": "^6.9.15",
     "notyf": "^3.10.0",
     "prisma": "^5.19.1",
-    "react": "^18",
+    "react": "^18.3.1",
     "react-copy-to-clipboard": "^5.1.0",
-    "react-dom": "^18",
+    "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.3.0",
@@ -37,14 +37,14 @@
     "yup": "^1.4.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/node": "^20.16.5",
+    "@types/react": "^18.3.8",
     "@types/react-copy-to-clipboard": "^5.0.7",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.1",
     "eslint-config-next": "14.2.7",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.12",
+    "typescript": "^5.6.2"
   }
 }
