@@ -32,8 +32,9 @@ export default function Home() {
       <FadeIn>
       <AboutUs/>
       </FadeIn>
+  
+     <FAQ title="FAQ"/>   
      
-      <FAQ title="FAQ"/>
       
       <SubscriptionRequest/>
     </>

@@ -12,7 +12,7 @@ export default function Logout() {
         await signOut({redirect:false});
         toast.success("Uğurla Çıxış Ediyordi.");
         setLoading(false)
-        route.push('/login');
+        route.refresh();
     }
     return (
         <div className={`modal  z-50`} role="dialog" id="logout">
