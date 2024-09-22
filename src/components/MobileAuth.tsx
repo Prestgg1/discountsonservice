@@ -2,11 +2,16 @@ import { useEffect, useState } from "react";
 import Login from "./Auth/Login";
 import Register from "./Auth/Register";
 import ForgetPassword from "./Auth/ForgetPassword";
+import { signIn } from "next-auth/react";
+import SocialAuth from "./Auth/SocialAuth";
 export default function MobileAuth() {
     const [isLogin, setIsLogin] = useState(false);
     const [isRegister, setIsRegister] = useState(false);
     const [isForget,setIsForget] = useState(false)
+    function GoogleGiris(){
+        signIn("google",{redirect:false})
 
+    }
     return (
         <>
             <input type="checkbox" id="loginin" checked={isLogin} onChange={() => setIsLogin(!isLogin)} className="modal-toggle" />
@@ -17,13 +22,7 @@ export default function MobileAuth() {
                 </div>
                <Login/>
                <span onClick={() => setIsForget(true)} className="text-gray-500 block my-2 text-center self-center w-full">Forgot password?</span>
-                <div className="flex w-full text-center justify-center items-center gap-4"><hr className="flex-1" /> Or sign in with <hr className="flex-1" />  </div>
-                <div className="flex w-full justify-center items-center gap-4">
-                    <button className="btn btn-primary font-extrabold">Google</button>
-                    <button className="btn btn-primary  font-extrabold">Facebook</button>
-                    <button className="btn btn-primary font-extrabold">Apple</button>
-
-                </div>
+                  <SocialAuth/>
                 <p className="text-gray-500 text-center text-sm w-full">Protected by reCAPTCHA and subject to the Google <span className="text-primary">Privacy Policy</span> and <span className="text-primary">Terms of Service</span></p>
             </div>
             <input type="checkbox" id="registerin" checked={isRegister} onChange={() => setIsRegister(!isRegister)} className="modal-toggle" />
@@ -41,15 +40,15 @@ export default function MobileAuth() {
                 </div>
                 <p className="text-gray-500 text-center text-sm w-full">Protected by reCAPTCHA and subject to the Google <span className="text-primary">Privacy Policy</span> and <span className="text-primary">Terms of Service</span></p>
             </div>
-
-          {/*   <input type="checkbox" id="forgetpassword" checked={isForget} onChange={() => setIsForget(!isForget)} className="modal-toggle" />
-            <div className="mymodal z-40 absolute w-full bg-white h-full p-10 flex flex-col justify-start items-start">
+            {}
+            <input type="checkbox" id="forgetpassword" checked={isForget} onChange={() => setIsForget(!isForget)} className="modal-toggle" />
+            <div className={`${isForget ? "mymodalforgetpassword" : "hidden"}  z-40 absolute w-full bg-white h-full p-10 flex flex-col justify-start items-start`}>
                 <div className="flex flex-col gap-4 w-full">
                 <h1 className="text-2xl font-bold">Forget Password</h1>
                 <p className="py-4">We will send reset code in this email.</p>
                 </div>
                <ForgetPassword/>
-            </div> */}
+            </div>
         </>
     );
 }

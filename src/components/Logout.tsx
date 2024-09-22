@@ -4,15 +4,18 @@ import "react-toastify/dist/ReactToastify.css";
 import Button from "./Button";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { usePathname } from 'next/navigation'
+
 export default function Logout() {
+  const path = usePathname()
     const route = useRouter()
     const [loading, setLoading] = useState(false);
     async function logout(){
         setLoading(true)
         await signOut({redirect:false});
-        toast.success("Uğurla Çıxış Ediyordi.");
+        toast.success("Uğurla Çıxış Edildi.");
         setLoading(false)
-        route.refresh();
+        window.location.href = path
     }
     return (
         <div className={`modal  z-50`} role="dialog" id="logout">

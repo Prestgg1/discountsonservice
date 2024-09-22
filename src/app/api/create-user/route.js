@@ -7,8 +7,14 @@ const prisma = new PrismaClient();
 export async function POST(request) {
   try {
     const { email, name, password } = await request.json();
-
-    // Şifreyi hash'le
+    /* User Varsa  */
+    const existUser = await prisma.user.findUnique({
+      where: { email: email }
+    })
+    if(existUser) {
+      return NextResponse.json({ message: "Istidadəcinin Hesabı Onsuzda Var" }, { status: 400 });
+    }
+    /* Yeni Hesap Yaratmaq Üçün  */
     const hashedPassword = await hash(password, 10);
     const user = await prisma.user.create({
       data: {
@@ -17,9 +23,8 @@ export async function POST(request) {
         password: hashedPassword,
       },
     });
-
-    return NextResponse.json({ message: "Kullanıcı oluşturuldu", user }, { status: 201 });
+    return NextResponse.json({ message: "İstifadeçi yaradıldı", user }, { status: 201 });
   } catch (error) {
-    return NextResponse.json({ message: "Bir hata oluştu", error: error.message }, { status: 400 });
+    return NextResponse.json({ message: "Serverde Bir Problem Yarandi", error: error.message }, { status: 400 });
   }
 }

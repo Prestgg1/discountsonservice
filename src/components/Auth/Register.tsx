@@ -4,12 +4,13 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { authSchema } from "@/app/schema/auth";
 import { signIn } from "next-auth/react";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-hot-toast";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { usePathname } from 'next/navigation'
 
 export default function Register() {
+  const path = usePathname()
   const [loading,setLoading] = useState(false)
   const route = useRouter()
   const {
@@ -34,9 +35,9 @@ export default function Register() {
         const errorData = await res.json();
         toast.error(errorData.message || "Səhv Bilgilər Daxil Etdiniz");
         setLoading(false)
+        console.log(errorData);
         return;
       }
-      /* const result = await res.json(); */
       toast.success("Hesab Yaradıldı");
       toast.success("Avtomatik Olaraq Hesaba Daxil Olunur");
       await signIn("credentials", {
@@ -45,7 +46,7 @@ export default function Register() {
             password: data.password,
         });
       setTimeout(() => {
-        route.refresh()
+        window.location.href = path
       },3000)
     } catch (error) {
       console.error("Kayıt hatası:", error);

@@ -3,13 +3,14 @@ import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { loginSchema } from "@/app/schema/login"
 import { signIn } from "next-auth/react"
-
-import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
 import { useState } from "react"
 import Button from "../Button"
 import toast from "react-hot-toast"
+import { usePathname } from 'next/navigation'
+
 export default function Login() {
+    const path = usePathname()
     const [ loading,setLoading ] = useState(false);
     const router = useRouter()
     const {
@@ -32,8 +33,8 @@ export default function Login() {
         if (result?.error) {
             toast.error('Incorrect email or password')
         } else {
-            router.push("/dashboard")
             toast.success('You have been logged in')
+            window.location.href = path
         }
     } catch (error) {
         toast.error('An error occurred')
