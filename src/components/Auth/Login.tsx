@@ -55,7 +55,7 @@ export default function Login() {
         </div>
         <Button loading={loading} type="submit" className="btn-primary w-full font-extrabold">Log in</Button>
         
-            <p className="text-gray-500 text-center">Forgot password?</p>
+           
         </form>
     )
 }

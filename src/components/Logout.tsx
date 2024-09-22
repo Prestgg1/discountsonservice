@@ -22,10 +22,10 @@ export default function Logout() {
                     <h3 className="">Are you sure you want to logout?</h3>
                     <a href="#" className="btn btn-sm btn-circle text-2xl hidden lg:block">✕</a>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex flex-col md:flex-row gap-4">
                     <a href="#" className="btn text-blue-800 border-blue-800 border-2 bg-transparent px-8 py-4 hover:bg-blue-500 duration-300 flex-1">Cancel</a>
                     <Button loading={loading}  className="bg-blue-800 text-white px-8 flex-1" onClick={logout}>
-                        Logout
+                        Yes, Logout
                     </Button>
                 </div>
             </div>

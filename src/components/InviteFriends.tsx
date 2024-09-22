@@ -3,9 +3,21 @@
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { PiCopy } from "react-icons/pi";
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import toast from "react-hot-toast";
-
+import Button from "./Button";
+import {
+  EmailShareButton,
+  EmailIcon,
+  FacebookShareButton,
+  FacebookIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  LinkedinShareButton,
+  LinkedinIcon
+} from "react-share";
 
 
 const InviteFriends = () => {
@@ -16,7 +28,7 @@ const InviteFriends = () => {
       <div>
         <h3 className="text-lg font-semibold mb-2">
           {t("title")}
-          </h3>
+        </h3>
         <p className="text-md">
           {t("description")}
         </p>
@@ -24,19 +36,46 @@ const InviteFriends = () => {
       <div
         className="bg-white text-blue-800 flex flex-col text-center p-6 rounded-2xl hover:bg-gray-100 transition duration-300"
       >
-        
+
 
         <span className="text-black">{t("link")}</span>
         <span className="flex items-center justify-center">
-          
-          <Link href="/subs">
-          <span className="ml-2 flex font-bold items-center justify-center border-b-2 border-blue-800 text-nowrap ">{t("discounts")}</span> 
-          </Link>
-          <CopyToClipboard text={"Salam"}
-          onCopy={() => toast.success("Copied")}
-          >
-                      <PiCopy  className="ml-2 text-black text-2xl" />
-        </CopyToClipboard>
+
+
+          {/* The button to open modal */}
+          <label htmlFor="my_modal_7" className="flex"><span className="ml-2 flex font-bold items-center justify-center border-b-2 border-blue-800 text-nowrap ">{t("discounts")}</span> <PiCopy className="ml-2 text-black text-2xl" />  </label>
+
+          {/* Put this part before </body> tag */}
+          <input type="checkbox" id="my_modal_7" className="modal-toggle" />
+          <div className="modal" role="dialog">
+            <div className="modal-box relative flex flex-col gap-4">
+              <label htmlFor="my_modal_7" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+              <h1 className="text-2xl font-extrabold mb-5">Bu Saytı Doslarınla Paylaş</h1>
+              <div className="flex flex-wrap gap-4">
+              <CopyToClipboard  text={process.env.CURRENT_URL || "http://localhost:3000/"} onCopy={() => toast.success("Copied")}>
+              <Button className="w-max"><PiCopy className="ml-2 text-black text-2xl" />  Bağlantıyı Kopyala</Button>
+              </CopyToClipboard>
+              {/* <EmailShareButton url={process.env.CURRENT_URL || "http://localhost:3000/"}>
+             <Button>  <EmailIcon className="h-6 w-6" /> Email Ile Paylaş</Button> 
+              </EmailShareButton> */}
+              <FacebookShareButton className="btn btn-primary" url={process.env.CURRENT_URL || "http://localhost:3000/"}>
+                <FacebookIcon className="h-6 w-6" /> FaceBook ilə Paylaş
+              </FacebookShareButton>
+              <WhatsappShareButton className="btn" url={process.env.CURRENT_URL || "http://localhost:3000/"}>
+                <WhatsappIcon className="h-6 w-6" /> Whatsapp ile Paylaş 
+              </WhatsappShareButton>
+              <LinkedinShareButton className="btn" url={process.env.CURRENT_URL || "http://localhost:3000/"} >
+              <LinkedinIcon className="h-6 w-6" /> Linkedin ile Paylaş 
+              </LinkedinShareButton>
+              <TwitterShareButton className=" btn btn-primary flex justify-center items-center rounded-xl  hover:bg-blue-600" url={process.env.CURRENT_URL || "http://localhost:3000/"}>
+              <TwitterIcon className="h-6 w-6" /> Twitter ile Paylaş 
+              </TwitterShareButton>
+              </div>
+            
+              
+            </div>
+            <label className="modal-backdrop" htmlFor="my_modal_7">Close</label>
+          </div>
         </span>
       </div>
     </div>

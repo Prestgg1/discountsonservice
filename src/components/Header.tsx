@@ -1,5 +1,9 @@
 "use client"
 import { useSession } from "next-auth/react"
+import { FaQuestionCircle } from "react-icons/fa";
+import { GrContact } from "react-icons/gr";
+import { BsFillInfoSquareFill } from "react-icons/bs";
+
 import { IoIosArrowDown } from "react-icons/io";
 import { HiOutlineXMark } from "react-icons/hi2";
 import { Link, usePathname } from "@/i18n/routing";
@@ -85,15 +89,15 @@ export default function Header(): React.ReactNode {
         <MobileAuth />
         <div className="flex h-full flex-col gap-4 p-10 justify-between items-center">
           <ul className="bg-white p-5 w-full flex justify-center items-center flex-col rounded-lg [&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li]:p-2 [&>li]:rounded-lg [&>li]:cursor-pointer  [&>li]:w-full [&>li]:duration-300">
-            <li className="hover:bg-gray-100"><FaHome /> Home</li>
-            <li className="hover:bg-gray-100">About</li>
-            <li className="hover:bg-gray-100">FAQ</li>
-            <li className="hover:bg-gray-100">SUPPORT</li>
+            <li className="hover:bg-gray-100"><Link className="flex gap-2 justify-center items-center" href="/"> <FaHome className={`${pathname === '/' ? 'text-blue-500' : ''}`}/> Home</Link></li>
+            <li className="hover:bg-gray-100"><Link className="flex gap-2 justify-center items-center" href="/about"><BsFillInfoSquareFill className={`${pathname === '/about' ? 'text-blue-500' : ''}`}/> About</Link></li>
+            <li className="hover:bg-gray-100"><Link className="flex gap-2 justify-center items-center" href="/faq"><FaQuestionCircle className={`${pathname === '/faq' ? 'text-blue-500' : ''}`}/> FAQ</Link></li>
+            <li className="hover:bg-gray-100"><Link className="flex gap-2 justify-center items-center" href="/contact"><GrContact className={`${pathname === '/contact' ? 'text-blue-500' : ''}`}/> Contact</Link></li>
           </ul>
           <ul className="bg-white p-5 w-full flex justify-center items-center flex-col rounded-lg [&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li]:p-2 [&>li]:rounded-lg [&>li]:cursor-pointer [&>li]:w-full [&>li]:duration-300">
-            <li className="hover:bg-gray-100"><FaHome /> Home</li>
-            <li className="hover:bg-gray-100">About</li>
-            <li className="hover:bg-gray-100">FAQ</li>
+            <li className="hover:bg-gray-100">Netflix</li>
+            <li className="hover:bg-gray-100">Youtube</li>
+            <li className="hover:bg-gray-100">Spotify</li>
           </ul>
           <div className="flex flex-col gap-4 w-full">
             <label htmlFor="loginin" className="border-blue-500 btn font-bold bg-transparent border-2 text-blue-500 p-2 hover:bg-blue-500 hover:text-white duration-300 rounded-2xl w-full">{t('login')}</label>

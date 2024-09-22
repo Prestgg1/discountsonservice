@@ -15,4 +15,14 @@ model User {
   password String
   role     String  @default("user")
   createdAt DateTime @default(now())
+  passwordResetTokens PasswordResetToken[]
 }
+model PasswordResetToken {
+  id        Int      @id @default(autoincrement())
+  token     String   @unique
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+}
+
