@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
 import { NextRequest } from 'next/server';
-export default async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest, res: NextResponse) {
  /*  const { email, token } = req.body; */
 
 /*   const transporter = nodemailer.createTransport({
