@@ -35,12 +35,12 @@ export default function ForgetPassword(){
         setLoading(false)
         return
       }
+      toast.success(res.message)
     }catch(error){
-      toast.error("Bilinməyən xəta baş verdi")
+      toast.error("Səbuhi Serverdə Problem Var")
       setLoading(false)
       return
     }
-    toast.success("Password reset link sent to your email")
     setLoading(false)
     setEmail(data.email)
     return

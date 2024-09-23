@@ -42,10 +42,10 @@ const InviteFriends = () => {
         <span className="flex items-center justify-center">
 
 
-          {/* The button to open modal */}
+
           <label htmlFor="my_modal_7" className="flex"><span className="ml-2 flex font-bold items-center justify-center border-b-2 border-blue-800 text-nowrap ">{t("discounts")}</span> <PiCopy className="ml-2 text-black text-2xl" />  </label>
 
-          {/* Put this part before </body> tag */}
+          
           <input type="checkbox" id="my_modal_7" className="modal-toggle" />
           <div className="modal" role="dialog">
             <div className="modal-box relative flex flex-col gap-4">

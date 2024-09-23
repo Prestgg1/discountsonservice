@@ -15,45 +15,39 @@ interface ResetPasswordRequest {
 
 export async function POST(req: NextRequest) {
   try {
-    // Gelen JSON verisini tipleyin
     const { email, verificationCode, newPassword, confirmPassword }: ResetPasswordRequest = await req.json();
 
-    // Şifre validasyonu yap
     await passwordValidationSchema.validate({ newPassword, confirmPassword });
 
-    // Kullanıcıyı kontrol et
     const user = await prisma.user.findUnique({
       where: { email: email },
     });
 
     if (!user) {
-      return NextResponse.json({ message: 'Kullanıcı bulunamadı' }, { status: 404 });
+      return NextResponse.json({ message: 'İstifadəçi Tapılmadı' }, { status: 404 });
     }
 
-    // Doğrulama kodunu ve süresini kontrol et
     if (user.verificationCode !== verificationCode || !user.verificationCodeExpiry || user.verificationCodeExpiry < new Date()) {
-      return NextResponse.json({ message: 'Geçersiz veya süresi dolmuş doğrulama kodu' }, { status: 400 });
+      return NextResponse.json({ message: 'Ya Səhv Kod Yazırsan Yada Surokun Keçib' }, { status: 400 });
     }
 
-    // Yeni şifreyi hashle
     const hashedPassword = await bcrypt.hash(newPassword, 10);
 
-    // Şifreyi güncelle
     await prisma.user.update({
       where: { email: email },
       data: {
         password: hashedPassword,
-        verificationCode: null, // Kullanılan doğrulama kodunu temizle
-        verificationCodeExpiry: null, // Bitiş tarihini sıfırla
+        verificationCode: null,
+        verificationCodeExpiry: null
       },
     });
 
-    return NextResponse.json({ message: 'Şifre başarıyla güncellendi' }, { status: 200 });
+    return NextResponse.json({ message: 'Şifrə Dəyişdirildi' }, { status: 200 });
   } catch (error: unknown) {
     // Hata kontrolü
     if (error instanceof Error) {
       return NextResponse.json({ message: error.message || 'Bir hata oluştu' }, { status: 500 });
     }
-    return NextResponse.json({ message: 'Bilinmeyen bir hata oluştu' }, { status: 500 });
+    return NextResponse.json({ message: 'Səbuhi serverdə problem var' }, { status: 500 });
   }
 }

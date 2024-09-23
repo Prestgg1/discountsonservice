@@ -3,7 +3,6 @@ import Button from "../Button";
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { codeValidationSchema } from "@/app/schema/codevalidation"
-import { useRouter } from "next/navigation";
 import { useState } from "react"
 import toast from "react-hot-toast"
 import ResetPassword from "./ResetPassword";
@@ -29,18 +28,18 @@ export default function SendForgetPassword({email}:any) {
         },
         body: JSON.stringify({email,verificationCode:data.code})
       })
-      console.log(result)
+      const res = await result.json();
       if(!result.ok){
-        toast.error("Bilinməyən xəta baş verdi")
         setLoading(false)
-        return
+        toast.error(res.message || "Bilinməyən xəta baş verdi")
+      return 
       }
     }catch(error){
-      toast.error("Bilinməyən xəta baş verdi")
+      toast.error("Serverdə Problem Var")
       setLoading(false)
       return
     }
-    toast.success("Password reset link sent to your email")
+    toast.success("Kodunu Göndərdim Yoldadı")
     setLoading(false)
     setCode(data.code)
     

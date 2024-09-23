@@ -25,6 +25,6 @@ export async function POST(request) {
     });
     return NextResponse.json({ message: "İstifadeçi yaradıldı", user }, { status: 201 });
   } catch (error) {
-    return NextResponse.json({ message: "Serverde Bir Problem Yarandi", error: error.message }, { status: 400 });
+    return NextResponse.json({ message: "Səbuhi Serverdə Problem Var", error: error.message }, { status: 400 });
   }
 }

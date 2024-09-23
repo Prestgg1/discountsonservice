@@ -1,0 +1,91 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Next Swagger API Example",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/contact": {
+      "post": {
+        "summary": "Contact Form Üçün Api",
+        "description": "Əlaqə formasında (name, email, message) göstərilən təfərrüatlar ilə e-poçt göndərir..",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "John Doe"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "john.doe@example.com"
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Hello, I would like to inquire about your services."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Mesaj ugurla gonderildi",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Request received successfully"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bütün məlumatları daxil edin (name, email, or message)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Please fill out all required fields"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Maildə Nəsə Problem Oldu",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Error occurred while sending the email"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {},
+  "tags": []
+}

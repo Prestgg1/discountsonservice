@@ -39,18 +39,17 @@ export default function Register() {
         return;
       }
       toast.success("Hesab Yaradıldı");
-      toast.success("Avtomatik Olaraq Hesaba Daxil Olunur");
+      setTimeout(() => {
+        toast.success("Avtomatik Olaraq Hesaba Daxil Olunur");
+      })
       await signIn("credentials", {
             redirect: false,
             email: data.email,
             password: data.password,
         });
-      setTimeout(() => {
-        window.location.href = path
-      },3000)
-    } catch (error) {
-      console.error("Kayıt hatası:", error);
-      toast.error("Bir hata oluştu");
+      window.location.href = path
+    } catch (error:any) {
+      toast.error(error.message || "Adını Bilmədiyim Bir Xəta Oldu");
       setLoading(false)
     }
   };

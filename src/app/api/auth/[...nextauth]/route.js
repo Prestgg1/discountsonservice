@@ -55,18 +55,17 @@ const authHandler = NextAuth({
       return session;
     },
     async redirect({ url, baseUrl }) {
-      return baseUrl; // Anasayfaya yönlendirme
+      return baseUrl; 
     },
     async signIn({ user, profile }) {
-      // Google ile giriş işlemi
       if (profile) {
         const existingUser = await prisma.user.findUnique({
           where: { email: profile.email },
         });
 
-        // Kullanıcı yoksa oluştur
+        // Yoxdusa Hesap Yarat
         if (!existingUser) {
-          const hashedPassword = await hash('random-string', 10); // Otomatik bir şifre kullanabilirsiniz
+          const hashedPassword = await hash('random-string', 10); 
           await prisma.user.create({
             data: {
               email: profile.email,
@@ -76,11 +75,11 @@ const authHandler = NextAuth({
           });
         }
       }
-      return true; // Girişi onayla
+      return true; 
     },
   },
   pages: {
-    signIn: null, // Özel giriş sayfası yok
+    signIn: null, 
   },
   secret: process.env.NEXTAUTH_SECRET,
 });

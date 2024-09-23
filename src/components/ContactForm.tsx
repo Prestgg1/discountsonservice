@@ -4,8 +4,7 @@ import { useForm } from "react-hook-form"
 import Button from "./Button"
 import { yupResolver } from '@hookform/resolvers/yup'
 import { contactSchema } from "@/app/schema/contact";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-hot-toast";
 import axios from "axios"
 import { useState } from "react";
 export default function ContactForm(){
@@ -29,7 +28,6 @@ export default function ContactForm(){
     }
     return(
         <form  className="flex flex-col gap-4 md:gap-8 items-center justify-center w-full " onSubmit={handleSubmit(onSubmit)}  >
-            <ToastContainer />
             <div className="flex flex-col gap-2 w-full">
                 <label htmlFor="contact_name">Name</label>
                 <input placeholder="Write your name" id="contact_name" className="w-full input input-bordered" type="text" {...register("name")} />

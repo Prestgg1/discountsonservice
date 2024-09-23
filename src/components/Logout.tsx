@@ -1,14 +1,11 @@
 import { signOut } from "next-auth/react"
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-hot-toast"
 import Button from "./Button";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { usePathname } from 'next/navigation'
 
 export default function Logout() {
   const path = usePathname()
-    const route = useRouter()
     const [loading, setLoading] = useState(false);
     async function logout(){
         setLoading(true)
@@ -19,7 +16,6 @@ export default function Logout() {
     }
     return (
         <div className={`modal  z-50`} role="dialog" id="logout">
-            <ToastContainer />
             <div className="modal-box  lg:relative flex flex-col gap-4">
                 <div className="flex w-full mb-5 justify-between items-center">
                     <h3 className="">Are you sure you want to logout?</h3>
