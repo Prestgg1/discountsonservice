@@ -35,19 +35,19 @@ model Subscription {
 
 model SubscriptionType {
   id             Int                    @id @default(autoincrement())
-  name           String // Ör: Basic, Standard, Premium
+  name           String 
   subscriptionId Int
-  features       Json // Bu paketin özellikleri (Ör: Reklamsız müzik, offline mod)
+  features       Json 
   createdAt      DateTime               @default(now())
   updatedAt      DateTime               @default(now())
-  durations      SubscriptionDuration[] // Süreler (6 ay, 12 ay vb.)
+  durations      SubscriptionDuration[] 
   subscription   Subscription           @relation(fields: [subscriptionId], references: [id])
 }
 
 model SubscriptionDuration {
   id                 Int                @id @default(autoincrement())
-  duration           Int // Süre (örneğin 6 ay, 12 ay)
-  price              Float // Fiyat (Ör: 45$)
+  duration           Int 
+  price              Float 
   subscriptionTypeId Int
   createdAt          DateTime           @default(now())
   updatedAt          DateTime           @default(now())

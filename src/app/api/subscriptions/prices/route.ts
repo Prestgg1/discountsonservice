@@ -9,7 +9,7 @@ export async function GET(request: Request) {
   const duration = parseInt(searchParams.get('duration')||'12');
   if (!slug || typeof slug !== 'string' || isNaN(duration)) {
     return NextResponse.json(
-      { message: 'Slug ve duration parametreleri gereklidir.' },
+      { message: 'Slug Və Duration Lazımdı.' },
       { status: 400 }
     );
   }
@@ -33,7 +33,7 @@ export async function GET(request: Request) {
 
     if (!subscription) {
       return NextResponse.json(
-        { message: 'Abonelik bulunamadı.' },
+        { message: 'Abunəlik Tapılmadı.' },
         { status: 404 }
       );
     }
@@ -51,7 +51,7 @@ export async function GET(request: Request) {
   } catch (error) {
     console.error(error);
     return NextResponse.json(
-      { message: 'Sunucu hatası' },
+      { message: 'Serverdə Problem Var' },
       { status: 500 }
     );
   } finally {

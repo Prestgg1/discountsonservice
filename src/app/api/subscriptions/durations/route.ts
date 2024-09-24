@@ -10,20 +10,20 @@ export async function GET(request:Request) {
 
   if (!slug || !type) {
     return NextResponse.json(
-      { message: 'Slug ve type parametreleri gereklidir.' },
+      { message: 'Slug Və Type Lazımdı' },
       { status: 400 }
     );
   }
 
   try {
-    // Aboneliği slug ile bul
+    // Abunəliyi Slug ilə Tapır
     const subscription = await prisma.subscription.findUnique({
       where: { slug },
       include: {
         types: {
           where: { name: type },
           include: {
-            durations: true, // Süreleri dahil et
+            durations: true,
           },
         },
       },
@@ -31,12 +31,11 @@ export async function GET(request:Request) {
 
     if (!subscription) {
       return NextResponse.json(
-        { message: 'Abonelik bulunamadı.' },
+        { message: 'Abunəlik Tapılmadı.' },
         { status: 404 }
       );
     }
 
-    // Süreleri döndür
     const durations = subscription.types[0]?.durations || [];
     return NextResponse.json(durations, { status: 200 });
   } catch (error) {

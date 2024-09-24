@@ -29,7 +29,7 @@ export async function GET(req: NextRequest) {
 
   } catch (error) {
     console.error('Hata:', error);
-    return NextResponse.json({ error: 'Server tarafında bir hata oluştu.' }, { status: 500 });
+    return NextResponse.json({ error: 'Serverdə Problem Oldu.' }, { status: 500 });
   } finally {
     await prisma.$disconnect();
   }
