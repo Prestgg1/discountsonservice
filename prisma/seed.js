@@ -1,77 +1,157 @@
-// prisma/seed.js
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
 async function main() {
-  // İstifadəcı yaratmaq üçün
-  const user1 = await prisma.user.create({
-    data: {
-      name: 'John Doe',
-      email: 'john@example.com',
-      password: 'securepassword',
-    },
-  });
-
-  // Abunəlik Yaratmaq Üçün
-  const subscription = await prisma.subscription.create({
+  await prisma.subscription.create({
     data: {
       name: 'Netflix',
-      image: "null"
-    },
-  });
-
-  // Abonelik tipleri oluştur
-  const basicType = await prisma.subscriptionType.create({
-    data: {
-      name: 'Basic',
-      subscriptionId: subscription.id,
-    },
-  });
-
-  const standardType = await prisma.subscriptionType.create({
-    data: {
-      name: 'Standard',
-      subscriptionId: subscription.id,
-    },
-  });
-
-  // Vaxt Bildirmək Üçün
-  const durations = [
-    { duration: 30, price: 10.00, subscriptionTypeId: basicType.id },
-    { duration: 180, price: 50.00, subscriptionTypeId: basicType.id },
-    { duration: 365, price: 90.00, subscriptionTypeId: basicType.id },
-    { duration: 30, price: 15.00, subscriptionTypeId: standardType.id },
-    { duration: 180, price: 70.00, subscriptionTypeId: standardType.id },
-    { duration: 365, price: 120.00, subscriptionTypeId: standardType.id },
-  ];
-
-  // Vaxtları Databaseye Elavə etmək Üçün
-  for (const { duration, price, subscriptionTypeId } of durations) {
-    await prisma.subscriptionDuration.create({
-      data: {
-        duration,
-        subscriptionTypeId,
-        prices: {
-          create: [
-            {
-              price,
+      slug: 'netflix',
+      image: "/images/netflix-logo.jpg",
+      description: { en: 'Netflix subscription plan', az: 'Netflix abonelik planı' },
+      types: {
+        create: [
+          {
+            name: 'Basic',
+            features: { en: ['Ad-free music', 'Offline'], az: ['Reklamsız müzik', 'Çevrimdışı'] },
+            durations: {
+              create: [
+                {
+                  duration: 6,
+                  price: 45,
+                },
+                {
+                  duration: 12,
+                  price: 80,
+                },
+              ],
             },
-          ],
-        },
+          },
+          {
+            name: 'Standard',
+            features: { en: ['HD available', 'Offline'], az: ['HD mevcut', 'Çevrimdışı'] },
+            durations: {
+              create: [
+                {
+                  duration: 6,
+                  price: 60,
+                },
+                {
+                  duration: 12,
+                  price: 110,
+                },
+              ],
+            },
+          },
+          {
+            name: 'Premium',
+            features: { en: ['Ultra HD', 'Offline'], az: ['Ultra HD', 'Çevrimdışı'] },
+            durations: {
+              create: [
+                {
+                  duration: 6,
+                  price: 80,
+                },
+                {
+                  duration: 12,
+                  price: 150,
+                },
+              ],
+            },
+          },
+        ],
       },
-    });
-  }
-
-  // İstifadəçiyi Subscribə etmək üçün
-  await prisma.subscriptionUser.create({
-    data: {
-      userId: user1.id,
-      subscriptionId: subscription.id,
     },
   });
 
-  console.log('Seed Qurtardı.');
+  await prisma.subscription.create({
+    data: {
+      name: 'Youtube',
+      slug: 'youtube-premium',
+      image:"/images/youtube-logo.png",
+      description: { en: 'Spotify subscription plan', az: 'Spotify abonelik planı' },
+      types: {
+        create: [
+          {
+            name: 'Basic',
+            features: { en: ['Ad-free music', 'Offline'], az: ['Reklamsız müzik', 'Çevrimdışı'] },
+            durations: {
+              create: [
+                {
+                  duration: 6,
+                  price: 30,
+                },
+                {
+                  duration: 12,
+                  price: 55,
+                },
+              ],
+            },
+          },
+          {
+            name: 'Premium',
+            features: { en: ['Ultra HD audio', 'Offline'], az: ['Ultra HD ses', 'Çevrimdışı'] },
+            durations: {
+              create: [
+                {
+                  duration: 6,
+                  price: 70,
+                },
+                {
+                  duration: 12,
+                  price: 130,
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  });
+  await prisma.subscription.create({
+    data: {
+      name: 'Spotify',
+      slug: 'spotify',
+      image:"/images/spotify-logo.jpg",
+      description: { en: 'Spotify subscription plan', az: 'Spotify abonelik planı' },
+      types: {
+        create: [
+          {
+            name: 'Basic',
+            features: { en: ['Ad-free music', 'Offline'], az: ['Reklamsız müzik', 'Çevrimdışı'] },
+            durations: {
+              create: [
+                {
+                  duration: 6,
+                  price: 30,
+                },
+                {
+                  duration: 12,
+                  price: 55,
+                },
+              ],
+            },
+          },
+          {
+            name: 'Premium',
+            features: { en: ['Ultra HD audio', 'Offline'], az: ['Ultra HD ses', 'Çevrimdışı'] },
+            durations: {
+              create: [
+                {
+                  duration: 6,
+                  price: 70,
+                },
+                {
+                  duration: 12,
+                  price: 130,
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  });
 }
 
 main()

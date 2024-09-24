@@ -9,62 +9,59 @@ generator client {
 }
 
 model User {
-  id                     Int                @id @default(autoincrement())
+  id                     Int                 @id @default(autoincrement())
   name                   String
-  email                  String             @unique
+  email                  String              @unique
   password               String
-  role                   String             @default("user")
-  createdAt              DateTime           @default(now())
-  updatedAt              DateTime           @default(now())
+  role                   String              @default("user")
+  createdAt              DateTime            @default(now())
+  updatedAt              DateTime            @default(now())
   verificationCode       String?
   verificationCodeExpiry DateTime?
   subscriptions          SubscriptionUser[]
 }
 
 model Subscription {
-  id        Int                @id @default(autoincrement())
-  name      String
-  image     String
-  createdAt DateTime           @default(now())
-  updatedAt DateTime           @default(now())
-  types     SubscriptionType[]
-  users     SubscriptionUser[]
+  id                Int                @id @default(autoincrement())
+  name              String
+  image             String
+  slug              String             @unique
+  description       Json
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @default(now())
+  types             SubscriptionType[]
+  subscriptionUsers SubscriptionUser[]
 }
 
 model SubscriptionType {
   id             Int                    @id @default(autoincrement())
-  name           String
+  name           String // Ör: Basic, Standard, Premium
   subscriptionId Int
+  features       Json // Bu paketin özellikleri (Ör: Reklamsız müzik, offline mod)
   createdAt      DateTime               @default(now())
   updatedAt      DateTime               @default(now())
-  durations      SubscriptionDuration[] 
+  durations      SubscriptionDuration[] // Süreler (6 ay, 12 ay vb.)
   subscription   Subscription           @relation(fields: [subscriptionId], references: [id])
 }
 
 model SubscriptionDuration {
-  id                 Int                 @id @default(autoincrement())
-  duration           Int 
+  id                 Int                @id @default(autoincrement())
+  duration           Int // Süre (örneğin 6 ay, 12 ay)
+  price              Float // Fiyat (Ör: 45$)
   subscriptionTypeId Int
-  createdAt          DateTime            @default(now())
-  updatedAt          DateTime            @default(now())
-  prices             SubscriptionPrice[]
-  subscriptionType   SubscriptionType    @relation(fields: [subscriptionTypeId], references: [id])
-}
-
-model SubscriptionPrice {
-  id                     Int                  @id @default(autoincrement())
-  price                  Float
-  subscriptionDurationId Int
-  createdAt              DateTime             @default(now())
-  updatedAt              DateTime             @default(now())
-  subscriptionDuration   SubscriptionDuration @relation(fields: [subscriptionDurationId], references: [id])
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @default(now())
+  subscriptionType   SubscriptionType   @relation(fields: [subscriptionTypeId], references: [id])
+  subscriptionUsers  SubscriptionUser[]
 }
 
 model SubscriptionUser {
-  id             Int          @id @default(autoincrement())
+  id             Int                  @id @default(autoincrement())
   userId         Int
   subscriptionId Int
-  createdAt      DateTime     @default(now())
-  user           User         @relation(fields: [userId], references: [id])
-  subscription   Subscription @relation(fields: [subscriptionId], references: [id])
+  durationId     Int
+  createdAt      DateTime             @default(now())
+  user           User                 @relation(fields: [userId], references: [id])
+  subscription   Subscription         @relation(fields: [subscriptionId], references: [id])
+  duration       SubscriptionDuration @relation(fields: [durationId], references: [id])
 }

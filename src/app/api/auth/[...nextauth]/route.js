@@ -8,6 +8,17 @@ const prisma = new PrismaClient();
 
 const authHandler = NextAuth({
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      async profile(profile) {
+        return {
+          id: profile.sub,
+          name: profile.name,
+          email: profile.email,
+        };
+      },
+    }),
     CredentialsProvider({
       name: "Credentials",
       credentials: {
@@ -25,17 +36,6 @@ const authHandler = NextAuth({
 
         return { id: user.id, name: user.name, email: user.email };
       }
-    }),
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      async profile(profile) {
-        return {
-          id: profile.sub,
-          name: profile.name,
-          email: profile.email,
-        };
-      },
     }),
   ],
   session: {

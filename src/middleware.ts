@@ -8,7 +8,7 @@ export default createMiddleware(routing,{
  
 export const config = {
   matcher: ['/', '/(az|en)/:path*',
-    '/((?!api|_next|_vercel|api-doc.*\\..*).*)',
+    '/((?!api|_next|_vercel|images.*\\..*).*)',
     // However, match all pathnames within `/users`, optionally with a locale prefix
     '/([\\w-]+)?/users/(.+)'
   ]

@@ -1,12 +1,11 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { PrismaClient } from '@prisma/client';
-
 const prisma = new PrismaClient();
 
 export async function GET(req: NextRequest) {
   try {
     const subscriptions = await prisma.subscription.findMany({
-    /*   include: {
+   /*     include: {
         types: {
           include: {
             durations: {
@@ -16,9 +15,8 @@ export async function GET(req: NextRequest) {
             },
           },
         },
-      }, */
+      },  */
     });
-
     return NextResponse.json(subscriptions);
   } catch (error) {
     console.error(error);

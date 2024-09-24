@@ -9,7 +9,7 @@ import { HiOutlineXMark } from "react-icons/hi2";
 import { Link, usePathname } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaHome } from "react-icons/fa";
 import Auth from "./Auth";
 import { FaAngleDown } from "react-icons/fa";
@@ -19,11 +19,19 @@ import { FaTelegram } from "react-icons/fa";
 import Logout from "./Logout";
 import MobileAuth from "./MobileAuth";
 import Button from "./Button";
+import { getSubsName } from "@/app/libs/getSubs";
 
 export default function Header(): React.ReactNode {
   const pathname = usePathname();
   const locale = useLocale();
-  
+  const [subs, setSubs] = useState([]);
+  const getSubs = async () => {
+    const res = await getSubsName();
+    setSubs(res);
+  }
+  useEffect(() => {
+    getSubs()
+  })
   const t = useTranslations('Header');
   const [isOpen, setIsOpen] = useState(false);
   const { data: session, status } = useSession()
@@ -32,15 +40,17 @@ export default function Header(): React.ReactNode {
     <header className="flex bg-white z-50  top-0 p-5 shadow-xl items-center w-full justify-between  text-xl sticky ">
       <Link href="/" className="flex items-center justify-center gap-2 text-xl cursor-pointer">
         <Image src="/images/logo.png" width="48" height="48" alt="logo" /><span className="hidden md:flex">DiscountsOnServices</span>
+        
       </Link>
       {/* Desktop Menu */}
       <nav className="hidden lg:flex items-center gap-4 2xl:gap-8 [&>*]:capitalize [&>*]:duration-300">
         <div className="dropdown dropdown-bottom">
           <div tabIndex={0} role="button" className="p-4 flex gap-2 justify-center items-center">{t('subs')}<FaAngleDown className="text-2xl" /></div>
           <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-            <li><a>netflix</a></li>
-            <li><a>youtube premium</a></li>
-            <li><a>spotify</a></li>
+            {subs.map((sub: any) => (
+              <li key={sub.id}><Link href={`/subscriptions/${sub.slug}`}>{sub.name}</Link></li>
+            ))}
+
           </ul>
         </div>
         <Link className="hover:text-blue-500" href="/about">{t('about')}</Link>
@@ -89,10 +99,10 @@ export default function Header(): React.ReactNode {
         <MobileAuth />
         <div className="flex h-full flex-col gap-4 p-10 justify-between items-center">
           <ul className="bg-white p-5 w-full flex justify-center items-center flex-col rounded-lg [&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li]:p-2 [&>li]:rounded-lg [&>li]:cursor-pointer  [&>li]:w-full [&>li]:duration-300">
-            <li className="hover:bg-gray-100"><Link className="flex gap-2 justify-center items-center" href="/"> <FaHome className={`${pathname === '/' ? 'text-blue-500' : ''}`}/> Home</Link></li>
-            <li className="hover:bg-gray-100"><Link className="flex gap-2 justify-center items-center" href="/about"><BsFillInfoSquareFill className={`${pathname === '/about' ? 'text-blue-500' : ''}`}/> About</Link></li>
-            <li className="hover:bg-gray-100"><Link className="flex gap-2 justify-center items-center" href="/faq"><FaQuestionCircle className={`${pathname === '/faq' ? 'text-blue-500' : ''}`}/> FAQ</Link></li>
-            <li className="hover:bg-gray-100"><Link className="flex gap-2 justify-center items-center" href="/contact"><GrContact className={`${pathname === '/contact' ? 'text-blue-500' : ''}`}/> Contact</Link></li>
+            <li className="hover:bg-gray-100"><Link onClick={() => setIsOpen(!isOpen)} className="flex gap-2 justify-center items-center" href="/"> <FaHome className={`${pathname === '/' ? 'text-blue-500' : ''}`}/> Home</Link></li>
+            <li className="hover:bg-gray-100"><Link onClick={() => setIsOpen(!isOpen)} className="flex gap-2 justify-center items-center" href="/about"><BsFillInfoSquareFill className={`${pathname === '/about' ? 'text-blue-500' : ''}`}/> About</Link></li>
+            <li className="hover:bg-gray-100"><Link onClick={() => setIsOpen(!isOpen)} className="flex gap-2 justify-center items-center" href="/faq"><FaQuestionCircle className={`${pathname === '/faq' ? 'text-blue-500' : ''}`}/> FAQ</Link></li>
+            <li className="hover:bg-gray-100"><Link onClick={() => setIsOpen(!isOpen)} className="flex gap-2 justify-center items-center" href="/contact"><GrContact className={`${pathname === '/contact' ? 'text-blue-500' : ''}`}/> Contact</Link></li>
           </ul>
           <ul className="bg-white p-5 w-full flex justify-center items-center flex-col rounded-lg [&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li]:p-2 [&>li]:rounded-lg [&>li]:cursor-pointer [&>li]:w-full [&>li]:duration-300">
             <li className="hover:bg-gray-100">Netflix</li>
