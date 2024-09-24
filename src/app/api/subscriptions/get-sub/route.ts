@@ -4,12 +4,13 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export async function GET(req: NextRequest) {
-  try {
-    const slug = req.nextUrl.searchParams.get('slug');
-    if (!slug) {
-      return NextResponse.json({ error: 'Slug parametresi eksik.' }, { status: 400 });
-    }
+  const slug = req.nextUrl.searchParams.get('slug');
 
+  if (!slug) {
+    return NextResponse.json({ error: 'Slug Yoxdu.' }, { status: 400 });
+  }
+
+  try {
     const subscription = await prisma.subscription.findFirst({
       where: { slug },
       include: {
