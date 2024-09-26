@@ -12,7 +12,7 @@ export default function SubscriptionType({data}:any) {
       <hr className='bg-black w-full ' />
       <div className='py-10 px-5 w-full'>
         <ul className='flex [&_li]:text-xl w-full flex-col justify-start items-start  [&_li]:gap-2'>
-         {data.features[locale].map((feature:string,i) => (
+         {data.features[locale].map((feature:string,i:any) => (
             <li key={i} className='p-2 flex justify-start items-start text-left '><FaCheckCircle className="flex-shrink-0" />  {feature}</li>
           ))}
         </ul>
