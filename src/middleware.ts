@@ -1,24 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
+import { getToken } from 'next-auth/jwt'; 
 import { routing } from './i18n/routing';
-import { getToken } from 'next-auth/jwt';
-
 
 const intlMiddleware = createMiddleware(routing);
 
 export const middleware = async (request: NextRequest) => {
+  // First, check locale routing
+  const intlResponse = intlMiddleware(request);
   
-  const token = await getToken({ req: request });
+  const protectedRoutes = ['/account-info', '/mysubscriptions', '/en/account-info', '/en/mysubscriptions'];
 
-  if ((request.nextUrl.pathname.startsWith('/account-info') || request.nextUrl.pathname.startsWith('/en/account-info')) && !token) {
-    return NextResponse.redirect(new URL('/', request.url));
+  if (protectedRoutes.some(route => request.nextUrl.pathname.startsWith(route))) {
+    const token = await getToken({ req: request });
+    if (!token) {
+      return NextResponse.redirect(new URL('/', request.url)); 
+    }
   }
-  if ((request.nextUrl.pathname.startsWith('/mysubscriptions') || request.nextUrl.pathname.startsWith('/en/mysubscriptions')) && !token) {
-    return NextResponse.redirect(new URL('/', request.url));
-  }
-  
-
-  return intlMiddleware(request);
+  return intlResponse;
 };
 export const config = {
   matcher: [
@@ -26,7 +25,7 @@ export const config = {
     '/(az|en)/:path*',
     '/((?!api|_next|_vercel|images.*\\..*).*)',
     '/([\\w-]+)?/users/(.+)',
-    '/account-info(.*)',
-    '/mysubscriptions(.*)',
+    '/account-info(.*)', 
+    '/mysubscriptions(.*)', 
   ]
 };
