@@ -12,7 +12,7 @@ export default  function  SubscriptionTypes({ slug, selectedduration }: any) {
   }
   useEffect(() => {
     fetchdata()
-  }, [selectedduration])
+  }, [selectedduration,slug])
   if(data.length === 0) return <div className="skeleton h-64 w-32"></div>
   return (
       <>
@@ -20,9 +20,7 @@ export default  function  SubscriptionTypes({ slug, selectedduration }: any) {
       {data.map((data: any, index: number) => (
           <SubscriptionType key={data.id} data={data} />
         ))}
-   {/*     {sub.types.map((data: any) => (
-          <SubscriptionType key={data.id} data={data} selectedduration={selectedduration} />
-        ))} */}
+
       </>
   );
 }

@@ -24,7 +24,7 @@ export default function MySubscriptions() {
   return (
     <div className=" flex flex-col h-full justify-center items-center gap-4 lg:my-10 my-5">
       {list.map((item) => (
-        <div className="rounded-3xl [&>*]:px-4 [&>*]:py-8 overflow-hidden bg-white border-2 flex flex-col">
+        <div key={item.id} className="rounded-3xl [&>*]:px-4 [&>*]:py-8 overflow-hidden bg-white border-2 flex flex-col">
           <h1 className="text-white text-2xl font-bold md:text-4xl" style={{backgroundColor:item.bgColor}}>
             {item.name}
           </h1>
