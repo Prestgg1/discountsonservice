@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 const AboutUs: React.FC = () => {
   const t = useTranslations("AboutUs")
   return (
-    <div className='flex flex-col gap-4 my-16'>
+    <div className='flex flex-col gap-4 my-16 xl:my-8 2xl:my-10'>
       <h1 className='text-2xl font-bold text-center md:text-4xl md:mb-4'>{t("title")}</h1>
 
 <div className="flex flex-col-reverse gap-4 md:flex-row w-full  mb-4">
@@ -29,7 +29,7 @@ const AboutUs: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="flex md:w-1/2 overflow-hidden rounded-2xl shadow-lg justify-center items-center  flex-auto md:max-h-[50vh] lg:max-h-max 2xl:max-h-[60vh] bg-white">
+      <div className="flex md:w-1/2 overflow-hidden rounded-2xl shadow-lg justify-center items-center    lg:max-h-max 2xl:max-h-[60vh] bg-white">
         <Image
           src="/images/about.png"
           alt="About"

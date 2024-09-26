@@ -11,9 +11,9 @@ export default function SubscriptionType({data}:any) {
       <h1 className="card-title font-bold text-3xl">{data.type}</h1>
       <hr className='bg-black w-full ' />
       <div className='py-10 px-5 w-full'>
-        <ul className='flex [&_li]:text-xl w-full flex-col justify-start items-start [&_li]:flex [&_li]:justify-center [&_li]:items-center [&_li]:gap-2'>
-         {data.features[locale].map((feature:string, index:number) => (
-            <li key={index} className='p-2'><FaCheckCircle /> {feature}</li>
+        <ul className='flex [&_li]:text-xl w-full flex-col justify-start items-start  [&_li]:gap-2'>
+         {data.features[locale].map((feature:string,i) => (
+            <li key={i} className='p-2 flex justify-start items-start text-left '><FaCheckCircle className="flex-shrink-0" />  {feature}</li>
           ))}
         </ul>
       </div>

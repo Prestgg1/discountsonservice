@@ -1,6 +1,6 @@
 "use client"
 import { useSession } from "next-auth/react"
-import { FaQuestionCircle } from "react-icons/fa";
+import { FaQuestionCircle, FaUser } from "react-icons/fa";
 import { GrContact } from "react-icons/gr";
 import { BsFillInfoSquareFill } from "react-icons/bs";
 
@@ -20,18 +20,31 @@ import Logout from "./Logout";
 import MobileAuth from "./MobileAuth";
 import Button from "./Button";
 import { getSubsName } from "@/app/libs/getSubs";
+import Dropdown from "./Dropdown";
 
 export default function Header(): React.ReactNode {
   const pathname = usePathname();
   const locale = useLocale();
   const [subs, setSubs] = useState([]);
+  const [isDropdown, setIsDropdown] = useState(false);
+
+  const handleClick = () => {
+    const elem:any = document.activeElement;
+    if (elem) {
+      elem.blur();
+    }
+  };
+  
+
+
+
   const getSubs = async () => {
     const res = await getSubsName();
     setSubs(res);
   }
   useEffect(() => {
     getSubs()
-  })
+  },[])
   const t = useTranslations('Header');
   const [isOpen, setIsOpen] = useState(false);
   const { data: session, status } = useSession()
@@ -43,19 +56,18 @@ export default function Header(): React.ReactNode {
         
       </Link>
       {/* Desktop Menu */}
-      <nav className="hidden lg:flex items-center gap-4 2xl:gap-8 [&>*]:capitalize [&>*]:duration-300">
-        <div className="dropdown dropdown-bottom">
-          <div tabIndex={0} role="button" className="p-4 flex gap-2 justify-center items-center">{t('subs')}<FaAngleDown className="text-2xl" /></div>
-          <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-            {subs.map((sub: any) => (
-              <li key={sub.id}><Link href={`/subscriptions/${sub.slug}`}>{sub.name}</Link></li>
+      <nav className="hidden lg:flex items-center gap-4 2xl:gap-8 [&>*]:capitalize [&>*]:duration-300 ">
+        <div className={`dropdown dropdown-bottom `}  >
+          <Dropdown classNameList="w-52 flex flex-col" title={<><span className={`flex gap-2 ${pathname.startsWith('/subscriptions') ? 'text-blue-500' : ''}`}>{t('subs')}</span>  <FaAngleDown /></>}>
+          {subs.map((sub: any) => (
+              <Link key={sub.id} href={`/subscriptions/${sub.slug}`} className={`hover:text-blue-500 px-4 py-2 hover:bg-gray-200 duration-200 ${pathname === `/subscriptions/${sub.slug}` ? 'bg-gray-200 text-blue-500' : ''}`}>{sub.name}</Link>
             ))}
-
-          </ul>
+          </Dropdown>
+     
         </div>
-        <Link className="hover:text-blue-500" href="/about">{t('about')}</Link>
-        <Link className="hover:text-blue-500" href="/faq">faq</Link>
-        <Link className="hover:text-blue-500" href="/contact">{t('contact')}</Link>
+        <Link className={`hover:text-blue-500 ${pathname === '/about'||pathname === '/haqqimizda' ? 'text-blue-500' : ''}`} href="/about">{t('about')}</Link>
+        <Link className={`hover:text-blue-500 ${pathname === '/faq' ? 'text-blue-500' : ''}`} href="/faq">faq</Link>
+        <Link className={`hover:text-blue-500 ${pathname === '/contact' ? 'text-blue-500' : ''}`} href="/contact">{t('contact')}</Link>
       </nav>
       <div className="hidden justify-center items-center lg:flex gap-2 [&>*]:duration-300">
         <IoLogoWhatsapp className="text-4xl hover:text-blue-500" />
@@ -67,12 +79,19 @@ export default function Header(): React.ReactNode {
             <li><Link href={pathname} className={locale === 'az' ? 'text-blue-500' : ''} locale="az">Azerbaijani</Link></li>
           </ul>
         </div>
+
         {status === 'authenticated' ?
-          <a href="#logout">
-            <Button className="hover:bg-blue-500 bg-blue-800 text-white">
-              {t('logout')}
-            </Button>
-          </a>
+        <>
+               <Dropdown className="dropdown-left dropdown-bottom" classNameList="flex  mt-5 flex-col [&>a]:p-4" title={<span className=" text-xl hover:text-blue-500 duration-300"><FaUser/></span>}>
+            <Link href="/account-info"  className={`hover:text-blue-500 hover:bg-gray-200 duration-300 ${pathname === '/account-info' ? 'bg-gray-200 text-blue-500' : ''}`}>Account Info</Link>
+            <Link href="/mysubscriptions" className={`hover:text-blue-500 hover:bg-gray-200 duration-300 ${pathname === '/mysubscriptions' ? 'bg-gray-200 text-blue-500' : ''}`}>My Subscriptions</Link>
+            <a className="hover:text-blue-500 hover:bg-gray-200 duration-300" href="#logout">
+    {t("logout")}
+    </a>
+        </Dropdown>
+        
+        </>
+         
           :
           <a href="#login">
           <Button className="hover:bg-blue-500 bg-blue-800 text-white">
@@ -80,6 +99,10 @@ export default function Header(): React.ReactNode {
           </Button>
         </a>
         }
+
+
+        
+
 
         {/* Login Modal */}
         <Logout />
@@ -105,9 +128,10 @@ export default function Header(): React.ReactNode {
             <li className="hover:bg-gray-100"><Link onClick={() => setIsOpen(!isOpen)} className="flex gap-2 justify-center items-center" href="/contact"><GrContact className={`${pathname === '/contact' ? 'text-blue-500' : ''}`}/> Contact</Link></li>
           </ul>
           <ul className="bg-white p-5 w-full flex justify-center items-center flex-col rounded-lg [&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li]:p-2 [&>li]:rounded-lg [&>li]:cursor-pointer [&>li]:w-full [&>li]:duration-300">
-            <li className="hover:bg-gray-100">Netflix</li>
-            <li className="hover:bg-gray-100">Youtube</li>
-            <li className="hover:bg-gray-100">Spotify</li>
+          {subs.length > 0 ? subs.map((sub: any) => (
+              <li onClick={() => setIsOpen(!isOpen)} key={sub.id}><Link href={`/subscriptions/${sub.slug}`}>{sub.name}</Link></li>
+          )): <li className="w-full h-16 skeleton"></li>}
+
           </ul>
           <div className="flex flex-col gap-4 w-full">
             <label htmlFor="loginin" className="border-blue-500 btn font-bold bg-transparent border-2 text-blue-500 p-2 hover:bg-blue-500 hover:text-white duration-300 rounded-2xl w-full">{t('login')}</label>

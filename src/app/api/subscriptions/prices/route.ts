@@ -19,6 +19,9 @@ export async function GET(request: Request) {
       where: { slug },
       include: {
         types: {
+          orderBy: {
+            id: 'asc'
+          },
           include: {
             durations: {
               where: { duration },

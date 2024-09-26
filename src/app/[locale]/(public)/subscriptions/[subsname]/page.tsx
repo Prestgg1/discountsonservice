@@ -20,7 +20,7 @@ const SubsPage = async ({ params }: { params: { subsname: string } }) => {
 
   return (
     <div className='w-full flex flex-col 2xl:gap-20 gap-10 2xl:my-20 my-10'>
-        <Singlesubs sub={sub} durations={durations} />
+      <Singlesubs sub={sub} durations={durations} />
       <InviteFriends />
       <FAQ title="FAQ" />
     </div>

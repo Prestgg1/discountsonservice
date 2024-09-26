@@ -7,6 +7,9 @@ html{
 #loginin:checked + .mymodal {
     display: flex;
 }
+.btn:is(input[type=radio]:checked){
+  @apply bg-primary text-white
+}
 
 #loginin + .mymodal {
     display: none;

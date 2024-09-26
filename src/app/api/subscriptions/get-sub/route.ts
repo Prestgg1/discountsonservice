@@ -11,18 +11,21 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const subscription = await prisma.subscription.findFirst({
+    const subscription:any = await prisma.subscription.findFirst({
       where: { slug },
       include: {
         types: {
+          orderBy: {
+            id: 'asc',
+          },
           include: {
             durations: true,
           },
         },
-      }
+      },
     });
 
-    if (!subscription) {
+    if (subscription.length === 0) {
       return NextResponse.json({ error: 'Məlumat Tapılmadı.' }, { status: 404 });
     }
 

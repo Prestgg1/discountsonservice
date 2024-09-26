@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <SessionProvider session={session}>
-    <div className="flex justify-center items-center flex-col w-full">
+    <div className="flex justify-center items-center flex-col w-full overflow-x-hidden">
       <Toaster position="top-right"/>
       <Header />
       <main className="container px-10 2xl:px-0 flex flex-col justify-start items-center min-h-screen gap-4">

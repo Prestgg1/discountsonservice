@@ -17,7 +17,7 @@ export default  function  SubscriptionTypes({ slug, selectedduration }: any) {
   return (
       <>
       
-      {data.map((data: any) => (
+      {data.map((data: any, index: number) => (
           <SubscriptionType key={data.id} data={data} />
         ))}
    {/*     {sub.types.map((data: any) => (

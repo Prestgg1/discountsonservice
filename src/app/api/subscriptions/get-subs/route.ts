@@ -1,11 +1,11 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { PrismaClient } from '@prisma/client';
+
 const prisma = new PrismaClient();
 
 export async function GET(req: NextRequest) {
   try {
-    const subscriptions = await prisma.subscription.findMany({
-    });
+    const subscriptions = await prisma.subscription.findMany();
     return NextResponse.json(subscriptions);
   } catch (error) {
     console.error(error);

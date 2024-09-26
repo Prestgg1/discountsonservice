@@ -12,19 +12,19 @@ export async function getSubsName() {
 export async function getSub(slug: string) {
   try {
     const res = await axios.get(`${process.env.NEXT_PUBLIC_CURRENT_URL}/api/subscriptions/get-sub?slug=${slug}`);
-    return res.data; // Başarılı sonuç
+    return res.data;
   } catch (error: any) {
     if (error.response && error.response.status === 404) {
-      return null; // Veri bulunamadıysa null döndür
+      return null; 
     }
-    throw error; // Diğer hataları fırlat
+    throw error; 
   }
 }
 
-export async function getSubs() {
+/* export async function getSubs() {
   const res = await axios.get(`${process.env.NEXT_PUBLIC_CURRENT_URL}/api/subscriptions/get-subs`);
   return res.data;
-}
+} */
 export const fetchDurations = async (subscription: number, type: string) => {
   const response = await fetch(`/api/subscriptions/durations?slug=${subscription}&type=${type}`);
 

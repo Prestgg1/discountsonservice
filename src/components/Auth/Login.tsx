@@ -33,7 +33,7 @@ export default function Login() {
         if (result?.error) {
             toast.error('Incorrect email or password')
         } else {
-            toast.success('You have been logged in')
+            toast.success('Giriş Olundu')
             window.location.href = path
         }
     } catch (error) {
