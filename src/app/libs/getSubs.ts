@@ -21,10 +21,10 @@ export async function getSub(slug: string) {
   }
 }
 
-/* export async function getSubs() {
+ export async function getSubs() {
   const res = await axios.get(`${process.env.NEXT_PUBLIC_CURRENT_URL}/api/subscriptions/get-subs`);
   return res.data;
-} */
+} 
 export const fetchDurations = async (subscription: number, type: string) => {
   const response = await fetch(`/api/subscriptions/durations?slug=${subscription}&type=${type}`);
 

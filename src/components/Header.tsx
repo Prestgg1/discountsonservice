@@ -42,10 +42,6 @@ export default function Header(): React.ReactNode {
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9ee86d9 (asmdkasm)
   const getSubs = async () => {
     const res = await getSubsName();
     setSubs(res);
