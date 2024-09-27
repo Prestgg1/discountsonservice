@@ -26,18 +26,6 @@ export default function Header(): React.ReactNode {
   const pathname = usePathname();
   const locale = useLocale();
   const [subs, setSubs] = useState([]);
-  const [isDropdown, setIsDropdown] = useState(false);
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> 9ee86d9 (asmdkasm)
-  const handleClick = () => {
-    const elem:any = document.activeElement;
-    if (elem) {
-      elem.blur();
-    }
-  };
   
 
 
