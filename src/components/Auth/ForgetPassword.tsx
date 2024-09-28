@@ -1,10 +1,9 @@
 "use client"
 import Button from "../Button";
-import { set, useForm } from "react-hook-form"
+import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { forgetPasswordSchema } from "@/app/schema/forgetpassword"
 import SendForgetPassword from "./SendForgetPassword"
-import { useRouter } from "next/navigation";
 import { useState } from "react"
 import toast from "react-hot-toast"
 export default function ForgetPassword(){
@@ -19,7 +18,7 @@ export default function ForgetPassword(){
     }
   })
 
-   const onSubmit = async (data:any) => {
+   const onSubmit = async (data:{email:string}) => {
     setLoading(true)
     try{
       const result = await fetch("/api/forget-password",{
@@ -31,13 +30,13 @@ export default function ForgetPassword(){
       })
       const res = await result.json();
       if(!result.ok){
-        toast.error(res.message || "Bilinməyən xəta baş verdi")
+        toast.error(res.message || "Serverdə Problem Var")
         setLoading(false)
         return
       }
       toast.success(res.message)
     }catch(error){
-      toast.error("Səbuhi Serverdə Problem Var")
+      toast.error("Serverdə Problem Var")
       setLoading(false)
       return
     }

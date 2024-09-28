@@ -24,7 +24,7 @@ const SubsPage = () => {
       </div>
 
       <InviteFriends />
-      <FAQ title="FAQ" />
+      <FAQ  />
     </div>
   )
 }

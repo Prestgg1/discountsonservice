@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 import SubscriptionTypes from "./SubscriptionTypes";
-export default function Singlesubs({ sub, durations }: { sub: any, durations: any }) {
+export default function Singlesubs({ sub, durations }: { sub: { name: string, slug: string }, durations: { duration: number }[] }) {
   const [selectedduration, setSelectedduration] = useState(durations[0].duration);
   return (
     <>
@@ -10,7 +10,7 @@ export default function Singlesubs({ sub, durations }: { sub: any, durations: an
         <p className='mt-3 md:text-xl'>Listen without limits at a bargain price</p>
 
           <div className="join">
-          {durations.map((duration: any,index:number) => (
+          {durations.map((duration: { duration: number },index:number) => (
              <input key={index} className="join-item      btn" onClick={() => setSelectedduration(duration.duration)} checked={selectedduration === duration.duration} type="radio" name="options" aria-label={`${duration.duration} mounths`} />
           ))}
           </div>

@@ -9,7 +9,7 @@ export default function FadeIn({children}:{children:React.ReactNode}){
         whileInView={{opacity:1,y:0}}
         viewport={{ once:true }}
         transition={{ duration: 1 }}
-        className="w-full"
+        className="w-full flex flex-col justify-center items-center"
         >
             {children}
         </motion.div>

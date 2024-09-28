@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl"; 
 import FadeIn from "@/app/animations/Fadein";
-const FAQ = ({ title }: { title: string }) => {
+const FAQ = () => {
   const t = useTranslations("FAQ")
   const faqs = [
     { question: t("question"), answer: t("answer1") },
@@ -12,7 +12,7 @@ const FAQ = ({ title }: { title: string }) => {
 
   return (
     <div className="flex flex-col gap-8 rounded-lg w-full">
-      <h2 className="text-2xl font-bold mb-4 text-center">{title}</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center">{t("title")}</h2>
       <div className="space-y-4">
 
         {faqs.map((faq, index) => (

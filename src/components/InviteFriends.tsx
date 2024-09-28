@@ -50,25 +50,23 @@ const InviteFriends = () => {
           <div className="modal" role="dialog">
             <div className="modal-box relative flex flex-col gap-4">
               <label htmlFor="my_modal_7" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-              <h1 className="text-2xl font-extrabold mb-5">Bu Saytı Doslarınla Paylaş</h1>
+              <h1 className="text-2xl font-extrabold my-5">{t('share')}</h1>
               <div className="flex flex-wrap gap-4">
               <CopyToClipboard  text={process.env.CURRENT_URL || "http://localhost:3000/"} onCopy={() => toast.success("Copied")}>
-              <Button className="w-max"><PiCopy className="ml-2 text-black text-2xl" />  Bağlantıyı Kopyala</Button>
+              <Button className="w-max"><PiCopy className="ml-2 text-black text-2xl" />  {t("copy")}</Button>
               </CopyToClipboard>
-              {/* <EmailShareButton url={process.env.CURRENT_URL || "http://localhost:3000/"}>
-             <Button>  <EmailIcon className="h-6 w-6" /> Email Ile Paylaş</Button> 
-              </EmailShareButton> */}
-              <FacebookShareButton className="btn btn-primary" url={process.env.CURRENT_URL || "http://localhost:3000/"}>
-                <FacebookIcon className="h-6 w-6" /> FaceBook ilə Paylaş
+   
+              <FacebookShareButton className="btn bg-red-700 " url={process.env.CURRENT_URL || "http://localhost:3000/"}>
+                <FacebookIcon className="h-6 w-6" /> {t("facebook")}
               </FacebookShareButton>
               <WhatsappShareButton className="btn" url={process.env.CURRENT_URL || "http://localhost:3000/"}>
-                <WhatsappIcon className="h-6 w-6" /> Whatsapp ile Paylaş 
+                <WhatsappIcon className="h-6 w-6" /> {t("whatsapp")} 
               </WhatsappShareButton>
               <LinkedinShareButton className="btn" url={process.env.CURRENT_URL || "http://localhost:3000/"} >
-              <LinkedinIcon className="h-6 w-6" /> Linkedin ile Paylaş 
+              <LinkedinIcon className="h-6 w-6" /> {t("linkedin")} 
               </LinkedinShareButton>
               <TwitterShareButton className=" btn btn-primary flex justify-center items-center rounded-xl  hover:bg-blue-600" url={process.env.CURRENT_URL || "http://localhost:3000/"}>
-              <TwitterIcon className="h-6 w-6" /> Twitter ile Paylaş 
+              <TwitterIcon className="h-6 w-6" /> {t("twitter")} 
               </TwitterShareButton>
               </div>
             

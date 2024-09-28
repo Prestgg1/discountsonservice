@@ -1,15 +1,9 @@
 {
-  "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
-  },
-  "AboutPage": {
-    "title": "Our about page"
-  },
   "Header": {
     "home": "Home",
     "contact": "Contact",
     "about": "About",
+    "faq": "FAQ",
     "subs": "Subscriptions",
     "login": "Log in",
     "register": "Register",
@@ -17,9 +11,11 @@
   },
   "Footer": {
     "subs": "Subscriptions",
+    "description": "It&apos;s simple, fast and economical",
     "site_navigations": "Site navigations",
     "about": "About",
     "faq": "FAQ",
+    "contact": "Contact",
     "support": "Support",
     "en": "English",
     "az": "Azerbaijani",
@@ -32,7 +28,13 @@
     "description": "Starting today up to 50% for NETFLIX, YOUTUBE, SPOTIFY subscriptions with a secure payment from PAYPAL",
     "link": "Click on the link",
     "copied": "Copied",
-    "discounts": "Discounts on services"
+    "discounts": "Discounts on services",
+    "copy": "Copy",
+    "share":"This Website Share with your friends",
+    "facebook": "Share on Facebook",
+    "twitter": "Share on Twitter",
+    "linkedin": "Share on Linkedin",
+    "whatsapp": "Share on Whatsapp"
   },
   "DiscountSection": {
     "title": "Start enjoying a benefit of up to 50%",
@@ -46,6 +48,7 @@
     "font-semibold": "It&apos;s simple, fast, and economical."
   },
   "FAQ": {
+  "title": "FAQ",
     "question": "The set time has passed, but the invoice has not yet arrived, what should I do?",
     "question1": "Can I change my Netflix account email and password after purchase?",
     "question2": "Can I add a phone number for password recovery?",
@@ -82,6 +85,64 @@
   "title2": "Spotify Premium",
   "title3": "YouTube Premium",
   "description": "The constant contributes to the task of the same and thus the intended features and the set relation to the check and set also."
+  },
+  "Auth":{
+    "login": "Log in",
+    "email": "Email",
+    "name": "Name",
+    "confirmPassword": "Confirm password",
+    "password": "Password",
+    "newuser": "New user?",
+    "create":"Create an account",
+    "forgetpassword": "Forgot password",
+    "register":"Register",
+    "willsendforget":"We will send reset code in this email.",
+    "wrongLogin":"Wrong username or password.",
+    "successLogin":"Successfully logged in.",
+    "successRegister":"Successfully registered.",
+    "errorRegister":"You are already registered.",
+    "redirectRegister":"Automatically logged in...",
+    "successForget":"Successfully sent reset code to your email.",
+    "wrongForget":"Wrong reset code.",
+    "emailvertification":"Email vertification code",
+    "restorepassword":"Restore password",
+    "sendcode":"Resend code",
+    "changepassword":"Change password",
+    "newPassword":"New password",
+    "confirmNewPassword":"Confirm Password",
+    "successChange":"Successfully changed password.",
+    "emailplaceholder":"Enter your email",
+    "passwordplaceholder":"Enter your password",
+    "nameplaceholder":"Enter your name",
+    "confirmPasswordplaceholder":"Enter your confirm password",
+    "emailvertificationplaceholder":"Enter your email vertification code"
+  },
+  "AuthMessages":{
+    "requiredEmailMessage":"Email is not type email",
+    "requiredEmail":"Email is required",
+    "requiredPasswordMessage":"Password is required",
+    "requiredNameMessage":"Name is required",
+    "requiredConfirmPasswordMessage":"Confirm password is required",
+    "passwordMatchMessage":"Passwords must match",
+    "passwordNumberMessage":"Password must contain at least one number",
+    "passwordLetterMessage":"Password must contain at least one letter",
+    "passwordMinMessage":"Password must be at least 8 characters"
+  },
+  "ContactPage":{
+    "title":"Contact Us"
+  },
+  "ContactForm":{
+    "nameLabel": "Name",
+    "namePlaceholder": "Write your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Enter your message",
+    "submitButton": "Submit",
+    "requiredName": "Name is required",
+    "requiredEmail": "Email is required",
+    "invalidEmail": "Email is not valid",
+    "requiredMessage": "Message is required"
   }
-  
 }
+

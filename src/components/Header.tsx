@@ -21,22 +21,20 @@ import MobileAuth from "./MobileAuth";
 import Button from "./Button";
 import { getSubsName } from "@/app/libs/getSubs";
 import Dropdown from "./Dropdown";
-
+import { routes } from "@/app/libs/Routes";
 export default function Header(): React.ReactNode {
   const pathname = usePathname();
   const locale = useLocale();
   const [subs, setSubs] = useState([]);
   
 
-
-
   const getSubs = async () => {
     const res = await getSubsName();
     setSubs(res);
   }
   useEffect(() => {
-    getSubs()
-  },[])
+     getSubs() 
+  },[pathname])
   const t = useTranslations('Header');
   const [isOpen, setIsOpen] = useState(false);
   const { data: session, status } = useSession()
@@ -57,9 +55,10 @@ export default function Header(): React.ReactNode {
           </Dropdown>
      
         </div>
-        <Link className={`hover:text-blue-500 ${pathname === '/about'||pathname === '/haqqimizda' ? 'text-blue-500' : ''}`} href="/about">{t('about')}</Link>
-        <Link className={`hover:text-blue-500 ${pathname === '/faq' ? 'text-blue-500' : ''}`} href="/faq">faq</Link>
-        <Link className={`hover:text-blue-500 ${pathname === '/contact' ? 'text-blue-500' : ''}`} href="/contact">{t('contact')}</Link>
+        {routes.map((route: { name: string; path: string;id:number}) => (
+           <Link key={route.id} className={`hover:text-blue-500 ${pathname === route.path} ? 'text-blue-500' : ''}`} href={route.path}>{t(route.name)}</Link>
+        ))}
+       
       </nav>
       <div className="hidden justify-center items-center lg:flex gap-2 [&>*]:duration-300">
         <IoLogoWhatsapp className="text-4xl hover:text-blue-500" />

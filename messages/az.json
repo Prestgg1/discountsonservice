@@ -1,14 +1,8 @@
 {
-  "HomePage": {
-    "title": "Salam Dünya!",
-    "about": "Haqqımızdaya Get"
-  },
-  "AboutPage": {
-    "title": "Bizim Haqqımızda"
-  },
   "Header": {
     "home": "Əsas Səhifə",
     "contact": "Əlaqə",
+    "faq": "Tez tez verilən suallar",
     "about": "Haqqımızda",
     "subs": "Abunələr",
     "login": "Daxil ol",
@@ -17,10 +11,12 @@
   },
   "Footer": {
     "subs": "Abunələr",
+    "description": "Sadə, sürətli və qənaətcildir",
     "site_navigations": "Sayt Naviqasiyaları",
-    "about": "Haqqında",
-    "faq": "Əla",
-    "support": "Dəstək",
+    "home": "Əsas Səhifə",
+    "contact": "Əlaqə",
+    "faq": "Tez tez verilən suallar",
+    "about": "Haqqımızda",
     "en": "İngilis",
     "az": "Azərbaycan",
     "developed": "Tərtib edildi",
@@ -32,7 +28,13 @@
     "description": "Bu gündən etibarən NETFLIX, YOUTUBE, SPOTIFY abunəlikləri üçün PAYPAL vasitəsilə təhlükəsiz ödəniş ilə 50%-ə qədər endirim",
     "link": "Linkə Basın",
     "copied":"Kopyalandı",
-    "discounts": "Xidmətlərə Endirim"
+    "copy":"Bağlantıyı Kopyala",
+    "share": "Bu Saytı Doslarınla Paylaş",
+    "discounts": "Xidmətlərə Endirim",
+    "facebook": "Share on Facebook",
+    "twitter": "Share on Twitter",
+    "linkedin": "Share on Linkedin",
+    "whatsapp": "Share on Whatsapp"
   },
   "DiscountSection": {
     "title": "Başlayın, 50%-ə qədər endirimə qəbul edin",
@@ -46,6 +48,7 @@
     "font-semibold": "Sadə, sürətli və qənaətcildir."
   },
   "FAQ": {
+    "title": "Tez tez verilən suallar", 
     "question": "Qeyd olunan vaxt keçdi, amma faktura hələ gəlməyib, nə etməliyəm?",
     "question1": "Satın alındıqdan sonra Netflix hesabı e-poçtunu və şifrəmi dəyişə bilərəmmi?",
     "question2": "Parolun bərpası üçün telefon nömrəsi əlavə edə bilərəmmi?",
@@ -81,5 +84,65 @@
     "title2": "Spotify Premium",
     "title3": "YouTube Premium",
     "description": "Sabit eyni vəzifəyə kömək edir və beləliklə, nəzərdə tutulan xüsusiyyətlər və çek və dəst ilə müəyyən edilmiş əlaqə."
-  }
-}
+  },
+
+    "Auth": {
+      "login": "Daxil ol",
+      "email": "Email",
+      "name": "Ad",
+      "confirmPassword": "Şifrəni təsdiq et",
+      "password": "Şifrə",
+      "newuser": "Yeni istifadəçi?",
+      "create": "Hesab yarat",
+      "forgetpassword": "Şifrəni unutdunuz?",
+      "register": "Qeydiyyat",
+      "willsendforget": "Bu emailə bərpa kodunu göndərəcəyik.",
+      "wrongLogin": "Yanlış istifadəçi adı və ya şifrə.",
+      "successLogin": "Uğurla daxil oldunuz.",
+      "successRegister": "Uğurla qeydiyyatdan keçdiniz.",
+      "errorRegister": "Artıq qeydiyyatdan keçmisiniz.",
+      "redirectRegister": "Avtomatik daxil olunur...",
+      "successForget": "Şifrə bərpa kodu emailinizə uğurla göndərildi.",
+      "wrongForget": "Yanlış bərpa kodu.",
+      "emailvertification": "Email təsdiq kodu",
+      "restorepassword": "Şifrəni bərpa et",
+      "sendcode": "Kodu yenidən göndər",
+      "changepassword": "Şifrəni dəyiş",
+      "newPassword": "Yeni şifrə",
+      "confirmNewPassword": "Şifrəni təsdiqlə",
+      "successChange": "Şifrə uğurla dəyişdirildi.",
+      "emailplaceholder": "Emailinizi daxil edin",
+      "passwordplaceholder": "Şifrənizi daxil edin",
+      "nameplaceholder": "Adınızı daxil edin",
+      "confirmPasswordplaceholder": "Təsdiq şifrəsini daxil edin",
+      "emailvertificationplaceholder": "Email təsdiq kodunu daxil edin"
+    },
+    "AuthMessages": {
+      "requiredEmailMessage": "Email düzgün deyil",
+      "requiredEmail": "Email zəruridir",
+      "requiredPasswordMessage": "Şifrə zəruridir",
+      "requiredNameMessage": "Ad zəruridir",
+      "requiredConfirmPasswordMessage": "Təsdiq şifrəsi zəruridir",
+      "passwordMatchMessage": "Şifrələr uyğun olmalıdır",
+      "passwordNumberMessage": "Şifrə ən azı bir rəqəm ehtiva etməlidir",
+      "passwordLetterMessage": "Şifrə ən azı bir hərf ehtiva etməlidir",
+      "passwordMinMessage": "Şifrə ən azı 8 simvol olmalıdır"
+    },
+      "ContactPage": {
+        "title": "Bizimlə Əlaqə"
+      },
+      "ContactForm": {
+        "nameLabel": "Ad",
+        "namePlaceholder": "Adınızı yazın",
+        "emailLabel": "E-poçt",
+        "emailPlaceholder": "E-poçt ünvanınızı daxil edin",
+        "messageLabel": "Mesaj",
+        "messagePlaceholder": "Mesajınızı daxil edin",
+        "submitButton": "Göndər",
+        "requiredName": "Ad vacibdir",
+        "requiredEmail": "E-poçt vacibdir",
+        "invalidEmail": "E-poçt düzgün deyil",
+        "requiredMessage": "Mesaj vacibdir"
+      }
+    }
+  

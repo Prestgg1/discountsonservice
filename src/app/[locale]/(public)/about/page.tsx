@@ -11,7 +11,7 @@ export default function About(){
           </LeftScale>
            
             <InviteFriends/>
-            <FAQ title="FAQ"/>
+            <FAQ />
         </div>
     )
 }

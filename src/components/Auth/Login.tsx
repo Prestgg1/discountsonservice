@@ -1,18 +1,19 @@
 "use client"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
-import { loginSchema } from "@/app/schema/login"
 import { signIn } from "next-auth/react"
-import { useRouter } from "next/navigation";
 import { useState } from "react"
 import Button from "../Button"
 import toast from "react-hot-toast"
 import { usePathname } from 'next/navigation'
+import { useTranslations } from "next-intl"
+import { useAuthSchemas } from "@/app/schema/auth"
 
 export default function Login() {
+  const {loginSchema} = useAuthSchemas()
     const path = usePathname()
+    const t = useTranslations("Auth")
     const [ loading,setLoading ] = useState(false);
-    const router = useRouter()
     const {
         register: loginRegister,
         formState: { errors: loginErrors },
@@ -31,13 +32,14 @@ export default function Login() {
         })
         setLoading(false);
         if (result?.error) {
-            toast.error('Incorrect email or password')
+            toast.error(t('wrongLogin'))
         } else {
-            toast.success('Giriş Olundu')
+            toast.success(t('successLogin'))
             window.location.href = path
         }
     } catch (error) {
-        toast.error('An error occurred')
+        toast.error('Serverdə Problem Var')
+        setLoading(false)
     }
     
        
@@ -45,16 +47,16 @@ export default function Login() {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 justify-center w-full">
         <div className="flex flex-col gap-2">
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" {...loginRegister("email")} className="input input-bordered w-full" placeholder="Enter your email adress" />
+            <label htmlFor="email">{t('email')}</label>
+            <input type="email" id="email" {...loginRegister("email")} className="input input-bordered w-full" placeholder={t('emailplaceholder')} />
             {loginErrors.email && <p className="text-red-500">{loginErrors.email.message}</p>}
         </div>
         <div className="flex flex-col gap-2">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">{t('password')}</label>
             <input type="password" id="password" {...loginRegister("password")} className="input input-bordered w-full" placeholder="********" />
             {loginErrors.password && <p className="text-red-500">{loginErrors.password.message}</p>}
         </div>
-        <Button loading={loading} type="submit" className="btn-primary w-full font-extrabold">Log in</Button>
+        <Button loading={loading} type="submit" className="btn-primary w-full font-extrabold">{t('login')}</Button>
         
            
         </form>
