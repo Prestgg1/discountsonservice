@@ -1,10 +1,11 @@
 import { PiCurrencyDollarBold } from "react-icons/pi";
 import Button from "../Button";
 import { FaCheckCircle } from "react-icons/fa";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function SubscriptionType({data}:any) {
   const locale = useLocale()
+  const t = useTranslations('subscription')
   return (
     <div  className="card bg-base-100 shadow-xl rounded-3xl">
     <div className="card-body px-0 items-center text-center">
@@ -24,7 +25,7 @@ export default function SubscriptionType({data}:any) {
       <div className="card-actions w-full px-10">
 
         <Button className='w-full hover:bg-blue-500 hover:text-white'>
-          Get started
+          {t('button')}
         </Button>
       </div>
     </div>

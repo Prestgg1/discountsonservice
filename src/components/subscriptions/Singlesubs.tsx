@@ -1,17 +1,20 @@
 "use client"
 import { useState } from "react";
 import SubscriptionTypes from "./SubscriptionTypes";
-export default function Singlesubs({ sub, durations }: { sub: { name: string, slug: string }, durations: { duration: number }[] }) {
+import { useLocale, useTranslations } from "next-intl";
+export default function Singlesubs({ sub, durations }: { sub: { name: string,description: { [key: string]: string }, slug: string }, durations: { duration: number }[] }) {
+  const locale = useLocale()
+  const t = useTranslations('subscription')
   const [selectedduration, setSelectedduration] = useState(durations[0].duration);
   return (
     <>
       <div className='flex flex-col gap-2 2xl:gap-5 w-full justify-center items-center '>
-        <h1 className='md:text-5xl text-3xl font-bold tracking-wide'>Choose a {sub.name} Plan</h1>
-        <p className='mt-3 md:text-xl'>Listen without limits at a bargain price</p>
+        <h1 className='md:text-5xl text-3xl font-bold tracking-wide'> {t('description', { subname: sub.name })} </h1>
+        <p className='mt-3 md:text-xl'>{sub.description[locale]} </p>
 
           <div className="join">
           {durations.map((duration: { duration: number },index:number) => (
-             <input key={index} className="join-item      btn" onClick={() => setSelectedduration(duration.duration)} checked={selectedduration === duration.duration} type="radio" name="options" aria-label={`${duration.duration} mounths`} />
+             <input key={index} className="join-item      btn" onClick={() => setSelectedduration(duration.duration)} checked={selectedduration === duration.duration} type="radio" name="options" aria-label={`${duration.duration} ${t('mounth')}`} />
           ))}
           </div>
       </div>

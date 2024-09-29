@@ -29,7 +29,9 @@ const authHandler = NextAuth({
         const user = await prisma.user.findUnique({
           where: { email: credentials?.email }
         });
-
+        if(!credentials.captchaToken){
+          throw new Error("Captcha Doğrulanmadı");
+        }
         if (!user || !(await compare(credentials.password, user.password))) {
           throw new Error("Invalid credentials");
         }
@@ -39,6 +41,7 @@ const authHandler = NextAuth({
     }),
   ],
   session: {
+       
     strategy: "jwt",
   },
   callbacks: {

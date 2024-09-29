@@ -88,13 +88,15 @@
 
     "Auth": {
       "login": "Daxil ol",
+      "orsignin":"Və ya bunlarla daxil ol",
       "email": "Email",
       "name": "Ad",
       "confirmPassword": "Şifrəni təsdiq et",
       "password": "Şifrə",
       "newuser": "Yeni istifadəçi?",
+      "alreadyAccount":"Hesabın var?",
       "create": "Hesab yarat",
-      "forgetpassword": "Şifrəni unutdunuz?",
+      "forgetpassword": "Şifrəni unutdunuz",
       "register": "Qeydiyyat",
       "willsendforget": "Bu emailə bərpa kodunu göndərəcəyik.",
       "wrongLogin": "Yanlış istifadəçi adı və ya şifrə.",
@@ -126,7 +128,8 @@
       "passwordMatchMessage": "Şifrələr uyğun olmalıdır",
       "passwordNumberMessage": "Şifrə ən azı bir rəqəm ehtiva etməlidir",
       "passwordLetterMessage": "Şifrə ən azı bir hərf ehtiva etməlidir",
-      "passwordMinMessage": "Şifrə ən azı 8 simvol olmalıdır"
+      "passwordMinMessage": "Şifrə ən azı 8 simvol olmalıdır",
+      "checkboxMessage":"Zəhmət Olmasa Capchayı Tamamlayın."
     },
       "ContactPage": {
         "title": "Bizimlə Əlaqə"
@@ -143,6 +146,16 @@
         "requiredEmail": "E-poçt vacibdir",
         "invalidEmail": "E-poçt düzgün deyil",
         "requiredMessage": "Mesaj vacibdir"
+      },
+      "subscription":{
+        "button":"Başla",
+        "description": "Bir {subname} Paketi Seçin",
+        "mounth":"aylıq"
+      },
+      "account":{
+        "unauthed":"Icazesiz Giriş Zəhmət Olmasa giriş edin",
+        "sidebarPersonal":"Şəxsi məlumatların idarə edilməsi",
+        "exit":"Ofisdən çıxın"
       }
     }
   

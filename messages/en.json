@@ -30,7 +30,7 @@
     "copied": "Copied",
     "discounts": "Discounts on services",
     "copy": "Copy",
-    "share":"This Website Share with your friends",
+    "share": "This Website Share with your friends",
     "facebook": "Share on Facebook",
     "twitter": "Share on Twitter",
     "linkedin": "Share on Linkedin",
@@ -48,7 +48,7 @@
     "font-semibold": "It&apos;s simple, fast, and economical."
   },
   "FAQ": {
-  "title": "FAQ",
+    "title": "FAQ",
     "question": "The set time has passed, but the invoice has not yet arrived, what should I do?",
     "question1": "Can I change my Netflix account email and password after purchase?",
     "question2": "Can I add a phone number for password recovery?",
@@ -69,69 +69,71 @@
   "StepCard": {
     "step": "Step"
   },
- "StepList": {
-  "title": "How it works",
-  "description1": "Enter your account information",
-  "description2": "Select the desired subscription and plan",
-  "description3": "Pay your bill with PayPal"
-
- },
- "SubscriptionCard": {
+  "StepList": {
+    "title": "How it works",
+    "description1": "Enter your account information",
+    "description2": "Select the desired subscription and plan",
+    "description3": "Pay your bill with PayPal"
+  },
+  "SubscriptionCard": {
     "button": "Learn more"
   },
   "SubscriptionPage": {
-  "title": "Choose a subscription",
-  "title1": "Netflix subscription rates",
-  "title2": "Spotify Premium",
-  "title3": "YouTube Premium",
-  "description": "The constant contributes to the task of the same and thus the intended features and the set relation to the check and set also."
+    "title": "Choose a subscription",
+    "title1": "Netflix subscription rates",
+    "title2": "Spotify Premium",
+    "title3": "YouTube Premium",
+    "description": "The constant contributes to the task of the same and thus the intended features and the set relation to the check and set also."
   },
-  "Auth":{
+  "Auth": {
     "login": "Log in",
+    "orsignin": "Or sign in with",
     "email": "Email",
     "name": "Name",
     "confirmPassword": "Confirm password",
     "password": "Password",
     "newuser": "New user?",
-    "create":"Create an account",
+    "alreadyAccount":"You have a account?",
+    "create": "Create an account",
     "forgetpassword": "Forgot password",
-    "register":"Register",
-    "willsendforget":"We will send reset code in this email.",
-    "wrongLogin":"Wrong username or password.",
-    "successLogin":"Successfully logged in.",
-    "successRegister":"Successfully registered.",
-    "errorRegister":"You are already registered.",
-    "redirectRegister":"Automatically logged in...",
-    "successForget":"Successfully sent reset code to your email.",
-    "wrongForget":"Wrong reset code.",
-    "emailvertification":"Email vertification code",
-    "restorepassword":"Restore password",
-    "sendcode":"Resend code",
-    "changepassword":"Change password",
-    "newPassword":"New password",
-    "confirmNewPassword":"Confirm Password",
-    "successChange":"Successfully changed password.",
-    "emailplaceholder":"Enter your email",
-    "passwordplaceholder":"Enter your password",
-    "nameplaceholder":"Enter your name",
-    "confirmPasswordplaceholder":"Enter your confirm password",
-    "emailvertificationplaceholder":"Enter your email vertification code"
+    "register": "Register",
+    "willsendforget": "We will send reset code in this email.",
+    "wrongLogin": "Wrong username or password.",
+    "successLogin": "Successfully logged in.",
+    "successRegister": "Successfully registered.",
+    "errorRegister": "You are already registered.",
+    "redirectRegister": "Automatically logged in...",
+    "successForget": "Successfully sent reset code to your email.",
+    "wrongForget": "Wrong reset code.",
+    "emailvertification": "Email vertification code",
+    "restorepassword": "Restore password",
+    "sendcode": "Resend code",
+    "changepassword": "Change password",
+    "newPassword": "New password",
+    "confirmNewPassword": "Confirm Password",
+    "successChange": "Successfully changed password.",
+    "emailplaceholder": "Enter your email",
+    "passwordplaceholder": "Enter your password",
+    "nameplaceholder": "Enter your name",
+    "confirmPasswordplaceholder": "Enter your confirm password",
+    "emailvertificationplaceholder": "Enter your email vertification code"
   },
-  "AuthMessages":{
-    "requiredEmailMessage":"Email is not type email",
-    "requiredEmail":"Email is required",
-    "requiredPasswordMessage":"Password is required",
-    "requiredNameMessage":"Name is required",
-    "requiredConfirmPasswordMessage":"Confirm password is required",
-    "passwordMatchMessage":"Passwords must match",
-    "passwordNumberMessage":"Password must contain at least one number",
-    "passwordLetterMessage":"Password must contain at least one letter",
-    "passwordMinMessage":"Password must be at least 8 characters"
+  "AuthMessages": {
+    "requiredEmailMessage": "Email is not type email",
+    "requiredEmail": "Email is required",
+    "requiredPasswordMessage": "Password is required",
+    "requiredNameMessage": "Name is required",
+    "requiredConfirmPasswordMessage": "Confirm password is required",
+    "passwordMatchMessage": "Passwords must match",
+    "passwordNumberMessage": "Password must contain at least one number",
+    "passwordLetterMessage": "Password must contain at least one letter",
+    "passwordMinMessage": "Password must be at least 8 characters",
+    "checkboxMessage":"please checkbox complete"
   },
-  "ContactPage":{
-    "title":"Contact Us"
+  "ContactPage": {
+    "title": "Contact Us"
   },
-  "ContactForm":{
+  "ContactForm": {
     "nameLabel": "Name",
     "namePlaceholder": "Write your name",
     "emailLabel": "Email",
@@ -143,6 +145,15 @@
     "requiredEmail": "Email is required",
     "invalidEmail": "Email is not valid",
     "requiredMessage": "Message is required"
+  },
+  "subscription": {
+    "button": "Get started",
+    "description": "Choose a {subname} Plan",
+    "mounth": "mounths"
+  },
+  "account": {
+    "unauthed": "Unauthorized Login Please login",
+    "sidebarPersonal": "Personal Data Management",
+    "exit": "Exit the office"
   }
 }
-

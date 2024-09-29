@@ -32,8 +32,12 @@ export default function Auth() {
       {/* Register Modal */}
       <div className={`modal backdrop-blur-md z-50`} role="dialog" id="register">
         <div className="modal-box relative">
-          <h3 className="text-2xl font-bold">{t('register')}</h3>
+          <h3 className="text-2xl font-bold my-5">{t('register')}</h3>
+          <p className="py-4">{t('alreadyAccount')} <a href="#login" className="text-blue-500 border-dotted border-b-2 border-blue-500 cursor-pointer">{t('login')}</a></p>
           <Register />
+          <div className="my-5 flex flex-col gap-5">
+          <SocialAuth />
+          </div>
           <div className="modal-action">
             <a href="#" className="btn btn-sm btn-circle absolute right-2 top-2 text-2xl">✕</a>
           </div>
