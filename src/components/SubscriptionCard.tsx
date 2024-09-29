@@ -37,10 +37,10 @@ const SubscriptionCard: React.FC<SubscriptionCardProps> = ({ title, description,
     <FadeIn>
       <div
         className="subscription-card flex w-full flex-grow-0 justify-between flex-col-reverse md:flex-row items-center bg-white rounded-2xl shadow-lg overflow-hidden">
-        <div className="p-6 md:w-1/2 flex flex-col gap-4">
+        <div className="p-3 md:p-6 md:w-1/2 flex flex-col gap-2 md:gap-4">
           <h3 className="text-xl font-semibold">{title || ''}</h3>
           <p className="text-gray-600 mt-2">{description[locale] }</p>
-          <Link href={`/subscriptions/${slug}`}> <Button className='mt-4 bg-blue-600 duration-300 hover:bg-blue-700 font-bold text-white  rounded-xl text-xl self-start'>  {t("button")}</Button></Link>
+          <Link href={`/subscriptions/${slug}`}> <Button className='mt-4 bg-blue-600 duration-300 hover:bg-blue-700 font-bold text-white  rounded-xl  md:text-xl self-start'>  {t("button")}</Button></Link>
 
         </div>
         <div className={`md:w-1/2 w-full h-full rounded-2xl flex-grow-0`}>

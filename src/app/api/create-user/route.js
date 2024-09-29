@@ -6,11 +6,14 @@ const prisma = new PrismaClient();
 
 export async function POST(request) {
   try {
-    const { email, name, password } = await request.json();
+    const { email, name, password,captchaToken } = await request.json();
     /* User Varsa  */
     const existUser = await prisma.user.findUnique({
       where: { email: email }
     })
+    if(!captchaToken){
+      return NextResponse.json({ message: "Captcha Tələb Olunur" }, { status: 400 });
+    }
     if(existUser) {
       return NextResponse.json({ message: "Istidadəcinin Hesabı Onsuzda Var" }, { status: 400 });
     }

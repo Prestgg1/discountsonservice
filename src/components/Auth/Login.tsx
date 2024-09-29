@@ -18,8 +18,10 @@ export default function Login() {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null)
 
   const {
-    register: loginRegister,
-    formState: { errors: loginErrors },
+    register,
+    formState: { errors },
+    clearErrors,
+    setValue,
     handleSubmit
   } = useForm({
     resolver: yupResolver(loginSchema),
@@ -28,15 +30,12 @@ export default function Login() {
 
   const handleCaptchaVerify = (token: string) => {
     setCaptchaToken(token)
+    setValue('captcha',token)
+    clearErrors('captcha')
   }
 
   async function onSubmit(data: any) {
 
-    if (!captchaToken) {
-      setCaptchaToken('falses')
-      toast.error(t('checkboxMessage'))
-      return
-    }
 
     console.log(data)
     setLoading(true)
@@ -70,11 +69,11 @@ export default function Login() {
         <input
           type="email"
           id="email"
-          {...loginRegister("email")}
+          {...register("email")}
           className="input input-bordered w-full"
           placeholder={t('emailplaceholder')}
         />
-        {loginErrors.email && <p className="text-red-500">{loginErrors.email.message}</p>}
+        {errors.email && <p className="text-red-500">{errors.email.message}</p>}
       </div>
 
       <div className="flex flex-col gap-2">
@@ -82,21 +81,21 @@ export default function Login() {
         <input
           type="password"
           id="password"
-          {...loginRegister("password")}
+          {...register("password")}
           className="input input-bordered w-full"
           placeholder="********"
         />
-        {loginErrors.password && <p className="text-red-500">{loginErrors.password.message}</p>}
+        {errors.password && <p className="text-red-500">{errors.password.message}</p>}
       </div>
-      <input type="text" value={captchaToken || ''} hidden id=""  {...loginRegister('captcha')} />
+      <input type="text" value={captchaToken || ''}   hidden id=""  {...register('captcha')} />
 
-      {loginErrors.captcha && <>
+      {errors.captcha && <>
         <HCaptcha
-
+          
           sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || 'error'}
           onVerify={handleCaptchaVerify}
         />
-        <p className="text-red-500">{loginErrors.captcha.message}</p>
+        <p className="text-red-500">{errors.captcha.message}</p>
       </>}
 
       <Button loading={loading} type="submit" className="btn-primary w-full font-extrabold">
