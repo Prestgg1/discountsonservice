@@ -80,13 +80,7 @@
   "SubscriptionCard": {
     "button": "Learn more"
   },
-  "SubscriptionPage": {
-    "title": "Choose a subscription",
-    "title1": "Netflix subscription rates",
-    "title2": "Spotify Premium",
-    "title3": "YouTube Premium",
-    "description": "The constant contributes to the task of the same and thus the intended features and the set relation to the check and set also."
-  },
+
   "Auth": {
     "login": "Log in",
     "orsignin": "Or sign in with",
@@ -151,7 +145,8 @@
   "subscription": {
     "button": "Get started",
     "description": "Choose a {subname} Plan",
-    "mounth": "mounths"
+    "mounth": "mounths",
+    "select": "Select the subscription type for a period   {duration} "
   },
   "account": {
     "unauthed": "Unauthorized Login Please login",
