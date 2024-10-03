@@ -2,10 +2,21 @@ import { PiCurrencyDollarBold } from "react-icons/pi";
 import Button from "../Button";
 import { FaCheckCircle } from "react-icons/fa";
 import { useLocale, useTranslations } from "next-intl";
+import axios from "axios";
 
 export default function SubscriptionType({data}:any) {
   const locale = useLocale()
   const t = useTranslations('subscription')
+  async function Checkout(){
+    const res = await axios.post('/api/checkout',{
+      name:data.type,
+      price:data.durations[0].price,
+    })
+    if(res.status === 200){
+      window.location.assign(res.data.session)
+    }
+
+  }
   return (
     <div  className="card bg-base-100 shadow-xl rounded-3xl">
     <div className="card-body px-0 items-center text-center">
@@ -24,7 +35,7 @@ export default function SubscriptionType({data}:any) {
       </div>
       <div className="card-actions w-full px-10">
 
-        <Button className='w-full hover:bg-blue-500 hover:text-white'>
+        <Button onClick={Checkout} className='w-full hover:bg-blue-500 hover:text-white'>
           {t('button')}
         </Button>
       </div>

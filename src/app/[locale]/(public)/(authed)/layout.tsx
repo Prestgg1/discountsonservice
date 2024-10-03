@@ -11,7 +11,7 @@ export default function AuthedLayout({ children }: { children: React.ReactNode }
   const { data: session, status } = useSession()
   const router = useRouter()
   if (status !== "authenticated") {
-    router.push('/')
+ /*    router.push('/') */
     return (
       <div className="min-h-[80vh] flex flex-col  justify-center items-center">
       <h1 className="text-4xl text-red-600"> {t('unauthed')} </h1>

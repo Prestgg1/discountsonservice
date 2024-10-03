@@ -26,7 +26,6 @@ export async function POST(req: NextRequest) {
       cancel_url: `http://localhost:3000/?canceled=true`,
       success_url: `http://localhost:3000?success=true&session_id={CHECKOUT_SESSION_ID}`,
     });
-    //👇🏻 return the session URL
     return NextResponse.json({ session: session.url });
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 });
