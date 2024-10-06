@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 /* import { Suspense } from "react"; */
 import Loading from "./loading";
 import { Toaster } from 'react-hot-toast';
+import Tawk from "@/components/Tawk";
 
 
 export default function RootLayout({
@@ -25,6 +26,7 @@ export default function RootLayout({
           {children}
 
       </main>
+      <Tawk/>
       <Footer/>
     </div>
     </SessionProvider>

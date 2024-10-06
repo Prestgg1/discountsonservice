@@ -124,7 +124,7 @@
     "passwordNumberMessage": "Password must contain at least one number",
     "passwordLetterMessage": "Password must contain at least one letter",
     "passwordMinMessage": "Password must be at least 8 characters",
-    "checkboxMessage":"please checkbox complete"
+    "checkboxMessage":"please captcha complete"
   },
   "ContactPage": {
     "title": "Contact Us"
@@ -152,5 +152,14 @@
     "unauthed": "Unauthorized Login Please login",
     "sidebarPersonal": "Personal Data Management",
     "exit": "Exit the office"
+  },
+  "SubscriptionPage": {
+    "title": "Choose a subscription"
+  },
+  "Logout":{
+    "title": "Are you sure you want to logout?",
+    "accept": "Yes, Logout",
+    "cancel": "Cancel",
+    "success":"Successfully logged out."
   }
 }

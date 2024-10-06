@@ -61,15 +61,16 @@ export default function Header(): React.ReactNode {
 
       </nav>
       <div className="hidden justify-center items-center lg:flex gap-2 [&>*]:duration-300">
+        <a href="https://wa.me/+994514070592">
         <IoLogoWhatsapp className="text-4xl hover:text-blue-500" />
+        </a>
+        <a href="https://t.me/Prestgg">
         <FaTelegram className="text-4xl hover:text-blue-500" />
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="m-1 btn bg-transparent flex uppercase justify-center items-center gap-2 border-0">{locale} <IoIosArrowDown /></div>
-          <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-10 mt-2 p-2 shadow [&>li]:font-bold [&>li]:text-lg">
-            <li><Link href={pathname} className={locale === 'en' ? 'text-blue-500' : ''} locale="en">English</Link></li>
-            <li><Link href={pathname} className={locale === 'az' ? 'text-blue-500' : ''} locale="az">Azerbaijani</Link></li>
-          </ul>
-        </div>
+        </a>
+        <Dropdown className="dropdown-bottom  dropdown-left" classNameList="dropdown-content translate-x-1/2 menu bg-base-100 rounded-box z-10 mt-2 p-2 shadow [&>li]:font-bold [&>li]:text-lg" title={<button className="btn bg-transparent flex uppercase justify-center items-center gap-2 border-0">{locale} <IoIosArrowDown /></button>}>
+        <li><Link href={pathname} className={locale === 'en' ? 'text-blue-500' : ''} locale="en">English</Link></li>
+        <li><Link href={pathname} className={locale === 'az' ? 'text-blue-500' : ''} locale="az">Azerbaijani</Link></li>
+        </Dropdown>
 
         {status === 'authenticated' ?
           <>
@@ -148,8 +149,13 @@ export default function Header(): React.ReactNode {
 
               <div className="flex w-full justify-between items-center">
                 <div className="flex gap-2">
-                  <IoLogoWhatsapp className="text-4xl" />
-                  <FaTelegram className="text-4xl" />
+                <a href="https://wa.me/+994514070592">
+        <IoLogoWhatsapp className="text-4xl hover:text-blue-500" />
+        </a>
+        <a href="https://t.me/Prestgg">
+        <FaTelegram className="text-4xl hover:text-blue-500" />
+        </a>
+        
                 </div>
                 <div className="dropdown dropdown-top dropdown-end">
                   <div tabIndex={0} role="button" className="m-1 btn bg-transparent flex uppercase justify-center items-center gap-2">{locale} <IoIosArrowDown /></div>

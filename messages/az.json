@@ -152,6 +152,15 @@
         "unauthed":"Icazesiz Giriş Zəhmət Olmasa giriş edin",
         "sidebarPersonal":"Şəxsi məlumatların idarə edilməsi",
         "exit":"Ofisdən çıxın"
+      },
+      "SubscriptionPage": {
+        "title": "Choose a subscription"
+      },
+      "Logout":{
+        "title": "Çıxmaq istədiyinə əminsən?",
+        "accept": "Bəli, Çıxış et",
+        "cancel": "Ləğv et",
+        "success":"Uğurla Çıxış Edildi."
       }
     }
   

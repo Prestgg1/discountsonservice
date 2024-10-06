@@ -3,22 +3,21 @@ import InviteFriends from "@/components/InviteFriends";
 import Sidebar from "@/components/Sidebar";
 import { useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import { IoMdExit } from "react-icons/io";
 
 export default function AuthedLayout({ children }: { children: React.ReactNode }) {
   const t = useTranslations('account')
-  const { data: session, status } = useSession()
-  const router = useRouter()
-  if (status !== "authenticated") {
- /*    router.push('/') */
-    return (
-      <div className="min-h-[80vh] flex flex-col  justify-center items-center">
-      <h1 className="text-4xl text-red-600"> {t('unauthed')} </h1>
-    </div>
-    )
-    
-
+  const { data: session } = useSession({
+    required: true,
+    onUnauthenticated() {
+      
+      redirect('/')
+      
+    },
+  })
+  if(!session){
+    return <>Icazəsiz Giriş</>
   }
   return (
     <div className="w-full flex flex-col  justify-center items-center my-5 md:my-10">
