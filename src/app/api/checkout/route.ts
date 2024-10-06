@@ -23,8 +23,8 @@ export async function POST(req: NextRequest) {
         },
       ],
       mode: "payment",
-      cancel_url: `http://localhost:3000/?canceled=true`,
-      success_url: `http://localhost:3000?success=true&session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXTAUTH_URL}`,
+      success_url: `${process.env.NEXTAUTH_URL}?success=true&session_id={CHECKOUT_SESSION_ID}`,
     });
     return NextResponse.json({ session: session.url });
   } catch (err) {
