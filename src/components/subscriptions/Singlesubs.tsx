@@ -2,6 +2,7 @@
 import { useState } from "react";
 import SubscriptionTypes from "./SubscriptionTypes";
 import { useLocale, useTranslations } from "next-intl";
+
 export default function Singlesubs({ sub, durations }: { sub: { name: string,description: { [key: string]: string }, slug: string }, durations: { duration: number }[] }) {
   const locale = useLocale()
   const t = useTranslations('subscription')

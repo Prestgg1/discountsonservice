@@ -20,6 +20,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   return (
     <html lang={locale}>
+      <link rel="icon" href="/public/images/logo.png" sizes='any' />
       <body className={`${inter.className} bg-[#ECF3FB]`}>
          <NextIntlClientProvider messages={messages}>
           {children}
