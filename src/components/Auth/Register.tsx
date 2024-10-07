@@ -67,24 +67,24 @@ export default function Register() {
     <form className="flex flex-col gap-2 md:gap-5 w-full " onSubmit={handleRegisterSubmit(onRegisterSubmit)}>
       <div className="flex flex-col gap-2">
         <label htmlFor="register_email" className="text-sm md:text-base">{t('email')}</label>
-        <input type="email" id="register_email" placeholder={t('emailplaceholder')} className="input input-bordered w-full input-sm md:input-md" {...registerRegister("email")} />
+        <input type="email"  placeholder={t('emailplaceholder')} className="input input-bordered w-full input-sm md:input-md" {...registerRegister("email")} />
         {errors.email && <p className="text-red-500 text-sm md:text-base">{errors.email.message}</p>}
       </div>
       <div className="flex flex-col gap-2">
         <label htmlFor="register_name" className="text-sm md:text-base"> {t('name')} </label>
-        <input type="text" id="register_name" placeholder={t('nameplaceholder')} className="input input-bordered w-full input-sm md:input-md" {...registerRegister("name")} />
+        <input type="text"  placeholder={t('nameplaceholder')} className="input input-bordered w-full input-sm md:input-md" {...registerRegister("name")} />
         {errors.name && <p className="text-red-500 text-sm md:text-base">{errors.name.message}</p>}
       </div>
       <div className="flex flex-col gap-2">
         <label htmlFor="register_password" className="text-sm md:text-base"> {t('password')} </label>
-        <input type="password" id="register_password" placeholder={t('passwordplaceholder')} className="input input-bordered w-full input-sm md:input-md" {...registerRegister("password")} />
+        <input type="password"  placeholder={t('passwordplaceholder')} className="input input-bordered w-full input-sm md:input-md" {...registerRegister("password")} />
         {errors.password && <p className="text-red-500 text-sm md:text-base">{errors.password.message}</p>}
       </div>
       <div className="flex flex-col gap-2">
         <label htmlFor="confirmPassword" className="text-sm md:text-base"> {t('confirmPassword')} </label>
-        <input type="password" id="confirmPassword" placeholder={t('confirmPasswordplaceholder')} className="input input-bordered w-full input-sm md:input-md" {...registerRegister("confirmPassword")} />
+        <input type="password"  placeholder={t('confirmPasswordplaceholder')} className="input input-bordered w-full input-sm md:input-md" {...registerRegister("confirmPassword")} />
         {errors.confirmPassword && <p className="text-red-500 text-sm md:text-base">{errors.confirmPassword.message}</p>}
-        <input type="text" value={captchaToken || ''} hidden id=""  {...registerRegister('captcha')} />
+        <input type="text" value={captchaToken || ''} hidden  {...registerRegister('captcha')} />
 
         {errors.captcha && <>
           <HCaptcha

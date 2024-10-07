@@ -51,7 +51,7 @@ export default function ForgetPassword(){
     <form className="h-full w-full  md:h-auto flex-1 md:flex-initial flex flex-col gap-2 md:gap-5 justify-between md:justify-normal" onSubmit={handleSubmit(onSubmit)}>
       <div className="space-y-2">
         <label htmlFor="forgetpassword">Email</label>
-        <input type="text" id="forgetpassword" placeholder="Enter your email" className="w-full input input-bordered" {...register("email")} />
+        <input type="text"  placeholder="Enter your email" className="w-full input input-bordered" {...register("email")} />
         {errors.email && <p className="text-red-500">{errors.email.message}</p>}
       </div>
     <Button loading={loading} type="submit" className="w-full bg-primary text-white">Submit</Button>

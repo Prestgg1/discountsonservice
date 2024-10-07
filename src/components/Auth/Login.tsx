@@ -68,7 +68,7 @@ export default function Login() {
         <label htmlFor="email">{t('email')}</label>
         <input
           type="email"
-          id="email"
+          
           {...register("email")}
           className="input input-bordered w-full"
           placeholder={t('emailplaceholder')}
@@ -80,14 +80,14 @@ export default function Login() {
         <label htmlFor="password">{t('password')}</label>
         <input
           type="password"
-          id="password"
+          
           {...register("password")}
           className="input input-bordered w-full"
           placeholder="********"
         />
         {errors.password && <p className="text-red-500">{errors.password.message}</p>}
       </div>
-      <input type="text" value={captchaToken || ''}   hidden id=""  {...register('captcha')} />
+      <input type="text" value={captchaToken || ''}   hidden  {...register('captcha')} />
 
       {errors.captcha && <>
         <HCaptcha

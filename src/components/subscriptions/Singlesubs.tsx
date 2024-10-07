@@ -14,7 +14,7 @@ export default function Singlesubs({ sub, durations }: { sub: { name: string,des
 
           <div className="join">
           {durations.length > 1 ? durations.map((duration: { duration: number },index:number) => (
-             <input key={index} className="join-item      btn" onClick={() => setSelectedduration(duration.duration)} checked={selectedduration === duration.duration} type="radio" name="options" aria-label={`${duration.duration} ${t('mounth')}`} />
+             <input key={index} className="join-item btn" onClick={() => setSelectedduration(duration.duration)} defaultChecked={selectedduration === duration.duration} type="radio" name="options" aria-label={`${duration.duration} ${t('mounth')}`} />
           )) :    <span
           className="text-xl"
           dangerouslySetInnerHTML={{
