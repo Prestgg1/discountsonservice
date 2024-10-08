@@ -60,6 +60,7 @@ export default function AccountInfo() {
       <h1 className="my-5 2lg:text-5xl text-3xl font-bold text-center md:text-left">Account info</h1>
       
       <div className="gap-2 flex flex-col">
+        
         <label htmlFor="userid">ID user</label>
         <input type="text" id="userid" className="input input-bordered" value={session?.id}  {...register("userId")} disabled />
       </div>

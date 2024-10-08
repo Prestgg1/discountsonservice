@@ -40,7 +40,7 @@ export default function Header(): React.ReactNode {
   const { data: session, status } = useSession()
 
   return (
-    <header className="flex fixed md:sticky bg-white z-50  top-0 p-5 shadow-xl items-center w-full justify-between  text-xl ">
+    <header className="flex fixed sm:sticky bg-white z-50  top-0 p-5 shadow-xl items-center w-full justify-between  text-xl ">
       <Link href="/" className="flex items-center justify-center gap-2 text-xl cursor-pointer">
         <Image src="/images/logo.png" width="48" height="48" alt="logo" /><span className="hidden md:flex">DiscountsOnServices</span>
 

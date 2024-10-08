@@ -4,7 +4,7 @@ export const routes = [
   {
     id:1,
     name: "about",
-    path: "/",
+    path: "/about",
   },
   {
     id:2,
