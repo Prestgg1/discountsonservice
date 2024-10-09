@@ -34,7 +34,7 @@ export default function AccountInfo() {
 
   async function onSubmit(data: any) {
 
-    console.log(data)
+    
     setLoading(true);
     try {
       const result = await fetch("/api/account-info",{
