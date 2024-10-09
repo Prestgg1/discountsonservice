@@ -125,6 +125,7 @@
       "passwordLetterMessage": "Şifrə ən azı bir hərf ehtiva etməlidir",
       "passwordMinMessage": "Şifrə ən azı 8 simvol olmalıdır",
       "checkboxMessage":"Zəhmət Olmasa Capchayı Tamamlayın."
+     
     },
       "ContactPage": {
         "title": "Bizimlə Əlaqə"
@@ -161,6 +162,19 @@
         "accept": "Bəli, Çıxış et",
         "cancel": "Ləğv et",
         "success":"Uğurla Çıxış Edildi."
+      },
+      "Team":{
+        "title":"Bizim Kamandamız"
+      },
+      "AccountInfo":{
+        "title":"Hesab Bilgiləriniz",
+         "unkdownError":"Serverə qosulmadı. Zəhmət olmasa yenidən cəhd edin.",
+         "name":"Sizi necə müraciət etmək olar",
+         "button":"Dəyişiklikləri Yadda Saxla"
+      },
+      "Sidebar":{
+        "personal":"Şəxsi məlumatların idarə edilməsi",
+        "subscription":"Mənim Abunələrim"
       }
     }
   

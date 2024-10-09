@@ -17,8 +17,7 @@ export default function SocialAuth() {
         <Image className="cursor-pointer "  alt="Google" sizes="(max-width: 64px) 10vw, 20vw" width={32} height={32}	 src="/images/Google_Icons-09-512.webp" />
         </div>
   
-        <div><FacebookIcon className="rounded-full "   size={32} /> </div>
-        <div> <LinkedinIcon className="rounded-full" size={32} /></div>
+     
     </div>
     </>
   )

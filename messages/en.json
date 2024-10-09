@@ -3,8 +3,8 @@
     "home": "Home",
     "contact": "Contact",
     "about": "About",
-    "account-info":"Account info",
-    "mysubscriptions":"My Subscriptions",
+    "account-info": "Account info",
+    "mysubscriptions": "My Subscriptions",
     "faq": "FAQ",
     "subs": "Subscriptions",
     "login": "Log in",
@@ -80,7 +80,6 @@
   "SubscriptionCard": {
     "button": "Learn more"
   },
-
   "Auth": {
     "login": "Log in",
     "orsignin": "Or sign in with",
@@ -89,7 +88,7 @@
     "confirmPassword": "Confirm password",
     "password": "Password",
     "newuser": "New user?",
-    "alreadyAccount":"You have a account?",
+    "alreadyAccount": "You have a account?",
     "create": "Create an account",
     "forgetpassword": "Forgot password",
     "register": "Register",
@@ -124,7 +123,7 @@
     "passwordNumberMessage": "Password must contain at least one number",
     "passwordLetterMessage": "Password must contain at least one letter",
     "passwordMinMessage": "Password must be at least 8 characters",
-    "checkboxMessage":"please captcha complete"
+    "checkboxMessage": "please captcha complete"
   },
   "ContactPage": {
     "title": "Contact Us"
@@ -156,10 +155,23 @@
   "SubscriptionPage": {
     "title": "Choose a subscription"
   },
-  "Logout":{
+  "Logout": {
     "title": "Are you sure you want to logout?",
     "accept": "Yes, Logout",
     "cancel": "Cancel",
-    "success":"Successfully logged out."
+    "success": "Successfully logged out."
+  },
+  "Team":{
+    "title":"Meet our team"
+  },
+  "AccountInfo":{
+    "title":"Account info",
+    "name":"How can I call you",
+    "unkdownError": "Failed to connect to server. Please try again.",
+    "button":"Save changes"
+  },
+  "Sidebar":{
+    "personal":"Account info",
+    "subscription":"My Subscriptions"
   }
 }

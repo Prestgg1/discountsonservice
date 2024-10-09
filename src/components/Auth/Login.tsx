@@ -15,7 +15,7 @@ export default function Login() {
   const path = usePathname()
   const t = useTranslations("Auth")
   const [loading, setLoading] = useState(false)
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null)
+  const [captchaToken, setCaptchaToken] = useState<string | null>('Yest')
 
   const {
     register,
@@ -37,7 +37,7 @@ export default function Login() {
   async function onSubmit(data: any) {
 
 
-    console.log(data)
+    
     setLoading(true)
 
     try {
@@ -52,13 +52,16 @@ export default function Login() {
 
       if (result?.error) {
         toast.error(t('wrongLogin'))
+
       } else {
         toast.success(t('successLogin'))
         window.location.href = path
       }
+      setCaptchaToken(null)
     } catch (error) {
       toast.error('Serverdə Problem Var')
       setLoading(false)
+      setCaptchaToken(null)
     }
   }
 

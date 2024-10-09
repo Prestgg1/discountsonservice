@@ -1,6 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.team:hover{
+  .absolute{
+  opacity: 0.8;
+  bottom:8%;
+  }
+}
+
 html{
   scroll-behavior: smooth;
 }

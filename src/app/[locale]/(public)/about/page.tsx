@@ -2,6 +2,7 @@ import LeftScale from "@/app/animations/LeftScale";
 import AboutUs from "@/components/AboutUs";
 import FAQ from "@/components/FAQ";
 import InviteFriends from "@/components/InviteFriends";
+import Team from "@/components/Team";
 
 export default function About(){
     return(
@@ -9,6 +10,7 @@ export default function About(){
           <LeftScale>
             <AboutUs/>
           </LeftScale>
+          <Team/>
            
             <InviteFriends/>
             <FAQ />

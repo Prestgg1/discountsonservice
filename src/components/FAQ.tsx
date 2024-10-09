@@ -27,9 +27,7 @@ const FAQ = () => {
           </FadeIn>
         ))}
       </div>
-      <button className="bg-black md:w-auto md:self-center px-6 py-3 font-bold text-white w-full rounded-lg text-lg hover:bg-gray-800 transition duration-300">
-      {t("button")}
-      </button>
+
     </div>
   );
 };

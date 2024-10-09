@@ -75,8 +75,8 @@ export default function Header(): React.ReactNode {
         {status === 'authenticated' ?
           <>
             <Dropdown className="dropdown-left dropdown-bottom" classNameList="flex  mt-5 flex-col [&>a]:p-4" title={<span className=" text-xl hover:text-blue-500 duration-300"><FaUser /></span>}>
-              <Link href="/account-info" className={`hover:text-blue-500 hover:bg-gray-200 duration-300 ${pathname === '/account-info' ? 'bg-gray-200 text-blue-500' : ''}`}>Account Info</Link>
-              <Link href="/mysubscriptions" className={`hover:text-blue-500 hover:bg-gray-200 duration-300 ${pathname === '/mysubscriptions' ? 'bg-gray-200 text-blue-500' : ''}`}>My Subscriptions</Link>
+              <Link href="/account-info" className={`hover:text-blue-500 hover:bg-gray-200 duration-300 ${pathname === '/account-info' ? 'bg-gray-200 text-blue-500' : ''}`}>{t('account-info')}</Link>
+              <Link href="/mysubscriptions" className={`hover:text-blue-500 hover:bg-gray-200 duration-300 ${pathname === '/mysubscriptions' ? 'bg-gray-200 text-blue-500' : ''}`}>{t('mysubscriptions')}</Link>
               <a className="hover:text-blue-500 hover:bg-gray-200 duration-300" href="#logout">
                 {t("logout")}
               </a>
