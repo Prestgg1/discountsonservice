@@ -52,20 +52,20 @@ const InviteFriends = () => {
               <label htmlFor="my_modal_7" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
               <h1 className="text-2xl font-extrabold my-5">{t('share')}</h1>
               <div className="flex flex-wrap gap-4">
-              <CopyToClipboard  text={process.env.CURRENT_URL || "http://localhost:3000/"} onCopy={() => toast.success("Copied")}>
+              <CopyToClipboard  text={"https://discountsonservice.vercel.app/"} onCopy={() => toast.success("Copied")}>
               <Button className="w-max"><PiCopy className="ml-2 text-black text-2xl" />  {t("copy")}</Button>
               </CopyToClipboard>
    
-              <FacebookShareButton className="btn bg-red-700 " url={process.env.CURRENT_URL || "http://localhost:3000/"}>
+              <FacebookShareButton className="btn bg-red-700 " url={"https://discountsonservice.vercel.app/"}>
                 <FacebookIcon className="h-6 w-6" /> {t("facebook")}
               </FacebookShareButton>
-              <WhatsappShareButton className="btn" url={process.env.CURRENT_URL || "http://localhost:3000/"}>
+              <WhatsappShareButton className="btn" url={"https://discountsonservice.vercel.app/"}>
                 <WhatsappIcon className="h-6 w-6" /> {t("whatsapp")} 
               </WhatsappShareButton>
-              <LinkedinShareButton className="btn" url={process.env.CURRENT_URL || "http://localhost:3000/"} >
+              <LinkedinShareButton className="btn" url={"https://discountsonservice.vercel.app/"} >
               <LinkedinIcon className="h-6 w-6" /> {t("linkedin")} 
               </LinkedinShareButton>
-              <TwitterShareButton className=" btn btn-primary flex justify-center items-center rounded-xl  hover:bg-blue-600" url={process.env.CURRENT_URL || "http://localhost:3000/"}>
+              <TwitterShareButton className=" btn btn-primary flex justify-center items-center rounded-xl  hover:bg-blue-600" url={"https://discountsonservice.vercel.app/"}>
               <TwitterIcon className="h-6 w-6" /> {t("twitter")} 
               </TwitterShareButton>
               </div>
