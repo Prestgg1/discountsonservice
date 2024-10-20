@@ -22,23 +22,15 @@ import Button from "./Button";
 import { getSubsName } from "@/app/libs/getSubs";
 import Dropdown from "./Dropdown";
 import { routes } from "@/app/libs/Routes";
+import useSWR from "swr";
 export default function Header(): React.ReactNode {
   const pathname = usePathname();
   const locale = useLocale();
-  const [subs, setSubs] = useState([]);
-
-
-  const getSubs = async () => {
-    const res = await getSubsName();
-    setSubs(res);
-  }
-  useEffect(() => {
-    getSubs()
-  }, [pathname])
+  const { data:subs, error, isLoading } = useSWR('/api/subscriptions/get-subs', getSubsName)
   const t = useTranslations('Header');
   const [isOpen, setIsOpen] = useState(false);
   const { data: session, status } = useSession()
-
+  if(isLoading) return <div className='h-20 skeleton w-full flex justify-center items-center'> <span className=" loading loading-bars loading-lg"></span></div>
   return (
     <header className="flex fixed sm:sticky bg-white z-50  top-0 p-5 shadow-xl items-center w-full justify-between  text-xl ">
       <Link href="/" className="flex items-center justify-center gap-2 text-xl cursor-pointer">
