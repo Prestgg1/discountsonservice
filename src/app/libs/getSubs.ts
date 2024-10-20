@@ -3,7 +3,9 @@ import { useState } from "react"
 import { set } from "react-hook-form"
 export async function getSubsName() {
 
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_CURRENT_URL}/api/subscriptions/get-subs`)
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_CURRENT_URL}/api/subscriptions/get-subs`,{
+    method: "GET",
+  })
   return res.data
 } 
 
