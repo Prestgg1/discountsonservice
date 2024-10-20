@@ -116,6 +116,7 @@
     },
     "AuthMessages": {
       "requiredEmailMessage": "Email düzgün deyil",
+      "userNameMinMessage": "Ad ən azı 3 simvol olmalıdır",
       "requiredEmail": "Email zəruridir",
       "requiredPasswordMessage": "Şifrə zəruridir",
       "requiredNameMessage": "Ad zəruridir",
@@ -168,6 +169,8 @@
       },
       "AccountInfo":{
         "title":"Hesab Bilgiləriniz",
+        "loading":"Sizin Hesab bilgilərniz Yüklənir...",
+        "notseesion":"Hesabınızda bir problem yarandı. Zəhmət olmasa yenidən cəhd edin.",
          "unkdownError":"Serverə qosulmadı. Zəhmət olmasa yenidən cəhd edin.",
          "name":"Sizi necə müraciət etmək olar",
          "button":"Dəyişiklikləri Yadda Saxla"

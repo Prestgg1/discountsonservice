@@ -14,7 +14,7 @@ export const useAccountInfoSchemas = () => {
 
   const AccountInfoSchema = useMemo(() => Yup.object().shape({
     userId: yup.number(),
-    email: yup.string().email().required(t('requiredEmail')).matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, t('email')),
+    email: yup.string().email().required(t('requiredEmail')).matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, t('requiredEmailMessage')),
     name: yup.string()
     .required(t('requiredNameMessage'))
     .min(3, t('userNameMinMessage'))

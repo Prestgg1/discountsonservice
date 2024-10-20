@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ message: 'Şifrə Dəyişdirildi' }, { status: 200 });
   } catch (error: unknown) {
-    // Hata kontrolü
+  
     if (error instanceof Error) {
       return NextResponse.json({ message: error.message || 'Bir hata oluştu' }, { status: 500 });
     }

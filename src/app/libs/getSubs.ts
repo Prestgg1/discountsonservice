@@ -8,7 +8,7 @@ export async function getSubsName() {
   
   
 } 
-""
+
 export async function getSub(slug: string) {
   try {
     const res = await axios.get(`${process.env.NEXT_PUBLIC_CURRENT_URL}/api/subscriptions/get-sub?slug=${slug}`);

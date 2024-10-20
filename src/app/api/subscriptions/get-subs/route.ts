@@ -14,3 +14,15 @@ export async function GET(req: NextRequest) {
     await prisma.$disconnect();
   }
 }
+export async function DELETE(req: NextRequest) {
+  const reqBody = await req.json();
+  try{
+    const subscription = await prisma.subscription.delete({
+      where: { id: reqBody.id },
+    });
+    return NextResponse.json(subscription);
+  }catch(error){
+    console.error(error);
+    return NextResponse.json({ error: 'Səbuhi Gənə Problem Oldu.' }, { status: 500 });
+  }
+}

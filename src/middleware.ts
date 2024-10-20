@@ -24,7 +24,7 @@ export const config = {
   matcher: [
     '/', 
     '/(az|en)/:path*',
-    '/((?!api|_next|_vercel|images.*\\..*).*)',
+    '/((?!api|admin|_next|_vercel|images.*\\..*).*)',
     '/([\\w-]+)?/users/(.+)',
     '/account-info(.*)', 
     '/mysubscriptions(.*)', 

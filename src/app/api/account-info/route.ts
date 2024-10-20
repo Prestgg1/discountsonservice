@@ -26,3 +26,16 @@ export async function PUT(req: Request) {
   }
 
 }
+export async function POST(req: Request) {
+  const prisma = new PrismaClient();
+  const reqBody = await req.json();
+  const { userId } = reqBody;
+  console.log(userId)
+  const user = await prisma.user.findUnique({
+    where: { id: Number(userId) },
+  });
+  if(!user) return NextResponse.json({ message: 'Istifadəçi tapılmadı' }, { status: 404 });
+  
+  prisma.$disconnect();
+  return NextResponse.json({ user }, { status: 200 });
+}

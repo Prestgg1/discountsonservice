@@ -11,7 +11,7 @@ import { useTranslations } from "next-intl";
 export default function ContactForm(){
   const t = useTranslations("ContactForm")
   const [loading,setLoading] = useState(false)
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, formState: { errors },reset } = useForm({
         resolver: yupResolver(contactSchema),
         mode:"all"
         })
@@ -26,7 +26,7 @@ export default function ContactForm(){
     })
     setLoading(false)
     toast.success("Your message has been sent successfully")
-    console.log(result)
+    reset()
     }
     return(
       <form className="flex flex-col gap-4 md:gap-8 items-center justify-center w-1/2 " onSubmit={handleSubmit(onSubmit)}>

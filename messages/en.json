@@ -115,6 +115,7 @@
   },
   "AuthMessages": {
     "requiredEmailMessage": "Email is not type email",
+    "userNameMinMessage": "User name must be at least 3 characters",
     "requiredEmail": "Email is required",
     "requiredPasswordMessage": "Password is required",
     "requiredNameMessage": "Name is required",

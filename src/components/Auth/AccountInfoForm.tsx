@@ -3,11 +3,12 @@ import Button from "@/components/Button";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useAccountInfoSchemas } from "@/app/schema/accountinfo";
 import toast from "react-hot-toast";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useSession, signIn, getSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { Session } from "next-auth";
 import { useTranslations } from "next-intl";
+import useSWR from "swr";
 
 export default function AccountInfo() {
   const { AccountInfoSchema } = useAccountInfoSchemas();
@@ -17,30 +18,38 @@ export default function AccountInfo() {
     id: number;
   }
 
-  const { data: session } = useSession() as { data: MySession | null };
+  const { data: session, status } = useSession() as { data: MySession | null; status: string };
   const [loading, setLoading] = useState(false);
-  const [currentSession, setCurrentSession] = useState<MySession | null>(session);
+  async function fetcher(url: string) {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userId: session?.id }),
+    });
+    const data = await res.json();
+    return data;
+  }
 
-  useEffect(() => {
-    if (session) {
-      setCurrentSession(session);
-    }
-  }, [session]);
+  const { data, error, isLoading } = useSWR(session ? "/api/account-info" : null, fetcher);
 
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm({
     resolver: yupResolver(AccountInfoSchema),
     mode: "all",
     defaultValues: {
-      userId: currentSession?.id,
+      userId: session?.id,
     },
   });
 
   async function onSubmit(data: any) {
     setLoading(true);
+
     try {
       const result = await fetch("/api/account-info", {
         method: "PUT",
@@ -54,20 +63,20 @@ export default function AccountInfo() {
 
       if (!result.ok) {
         toast.error(res.message || t("unkdownError"));
-        setLoading(false);
         return;
       }
 
-      toast.success(res.message);
 
-      const updatedSession = await getSession();
-      setCurrentSession(updatedSession as MySession);
+      toast.success(res.message);
     } catch (error) {
       toast.error(t("unkdownError"));
     } finally {
       setLoading(false);
     }
   }
+  if (status === "loading" || isLoading) return <p>{t("loading")}</p>;
+  if (error) return <p> {t("unkdownError")} </p>;
+  if (!session) return <p> {t('notseesion')} </p>;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="gap-8 flex flex-col">
@@ -77,17 +86,16 @@ export default function AccountInfo() {
           type="text"
           id="userid"
           className="input input-bordered"
-          value={currentSession?.id || ""}
+          value={session.id || ""}
           {...register("userId")}
           disabled
         />
       </div>
-
       <div className="gap-2 flex flex-col">
         <label htmlFor="name">{t("name")}</label>
         <input
           type="text"
-          defaultValue={currentSession?.user?.name || "null"}
+          defaultValue={data?.user?.name || ""}
           id="name"
           className="input outline-none input-bordered"
           placeholder="Enter your name"
@@ -100,7 +108,7 @@ export default function AccountInfo() {
         <label htmlFor="email">E-mail</label>
         <input
           type="email"
-          defaultValue={currentSession?.user?.email || ""}
+          defaultValue={data?.user?.email || ""}
           id="email"
           placeholder="Enter your email"
           className="input input-bordered outline-none"
