@@ -3,8 +3,7 @@ import { SessionProvider } from "next-auth/react";
 import { Session } from "next-auth";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-/* import { Suspense } from "react"; */
-import Loading from "./loading";
+
 import { Toaster } from 'react-hot-toast';
 import Tawk from "@/components/Tawk";
 

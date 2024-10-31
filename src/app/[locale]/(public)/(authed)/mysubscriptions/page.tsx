@@ -1,9 +1,3 @@
-import Button from "@/components/Button";
-import InviteFriends from "@/components/InviteFriends";
-import Sidebar from "@/components/Sidebar";
-import { IoMdExit } from "react-icons/io";
-
-
 export default function MySubscriptions() {
   const list = [
     {

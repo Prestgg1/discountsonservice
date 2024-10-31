@@ -11,7 +11,7 @@ import Loading from "../loading";
 export default function AuthedLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const t = useTranslations('account')
-  const { data: session, status } = useSession({
+  const { status } = useSession({
     required: true,
     onUnauthenticated() {
       redirect('/')

@@ -7,7 +7,6 @@ import StepList from '@/components/StepList';
 import SubscriptionsPage from '@/components/SubscriptionsPage';
 import InviteFriends from '@/components/InviteFriends';
 import FadeIn from '@/app/animations/Fadein';
-import { Suspense } from 'react';
 import Scale from '@/app/animations/Scale';
 import { Metadata } from 'next';
 export const metadata: Metadata = {

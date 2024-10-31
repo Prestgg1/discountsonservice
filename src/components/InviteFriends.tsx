@@ -1,14 +1,11 @@
 
 "use client"
-import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { PiCopy } from "react-icons/pi";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import toast from "react-hot-toast";
 import Button from "./Button";
 import {
-  EmailShareButton,
-  EmailIcon,
   FacebookShareButton,
   FacebookIcon,
   WhatsappShareButton,

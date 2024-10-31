@@ -5,8 +5,10 @@ import { FaCheckCircle } from "react-icons/fa";
 import { useLocale, useTranslations } from "next-intl";
 import axios from "axios";
 import { useState } from "react";
+import { SubscriptionsType } from '@/app/libs/types';
 
-export default function SubscriptionType({data}:any) {
+
+export default function SubscriptionType({data}:SubscriptionsType) {
   const locale = useLocale()
   const [loading, setLoading] = useState(false)
   const t = useTranslations('subscription')

@@ -1,9 +1,10 @@
 "use client"
+import { SubscriptionsType } from "@/app/libs/types";
 import SubscriptionType from "./SubscriptionType";
-import { useEffect, useState } from "react";
 import useSWR from "swr";
 
-export default  function  SubscriptionTypes({ slug, selectedduration }: any) {
+
+export default  function  SubscriptionTypes({ slug, selectedduration }: {slug: string,selectedduration:string}) {
   function fetcher(url:string){
     return fetch(url).then((res) => res.json());
   }
@@ -14,10 +15,11 @@ export default  function  SubscriptionTypes({ slug, selectedduration }: any) {
   if(error){
     return <div className="text-center text-red-500">Serverdə Problem Oldu</div>
   }
+  
   return (
       <>
       
-      {data.map((data: any, index: number) => (
+      {data.map((data: SubscriptionsType, index: number) => (
           <SubscriptionType key={index} data={data} />
         ))}
       </>

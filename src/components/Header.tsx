@@ -9,7 +9,7 @@ import { HiOutlineXMark } from "react-icons/hi2";
 import { Link, usePathname } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaHome } from "react-icons/fa";
 import Auth from "./Auth";
 import { FaAngleDown } from "react-icons/fa";
@@ -23,13 +23,21 @@ import { getSubsName } from "@/app/libs/getSubs";
 import Dropdown from "./Dropdown";
 import { routes } from "@/app/libs/Routes";
 import useSWR from "swr";
+
+interface Subs{
+  id:number,
+  slug: string,
+  name: string
+}
+
 export default function Header(): React.ReactNode {
   const pathname = usePathname();
   const locale = useLocale();
-  const { data:subs, error, isLoading } = useSWR('/api/subscriptions/get-subs', getSubsName)
+  const { data:subs, isLoading } = useSWR('/api/subscriptions/get-subs', getSubsName)
   const t = useTranslations('Header');
   const [isOpen, setIsOpen] = useState(false);
-  const { data: session, status } = useSession()
+  const { status } = useSession()
+  
   if(isLoading) return <div className='h-20 skeleton w-full flex justify-center items-center'> <span className=" loading loading-bars loading-lg"></span></div>
   return (
     <header className="flex fixed sm:sticky bg-white z-50  top-0 p-5 shadow-xl items-center w-full justify-between  text-xl ">
@@ -41,7 +49,7 @@ export default function Header(): React.ReactNode {
       <nav className="hidden lg:flex items-center gap-4 2xl:gap-8 [&>*]:capitalize [&>*]:duration-300 ">
         <div className={`dropdown dropdown-bottom `}  >
           <Dropdown classNameList="w-52 flex flex-col" title={<><span className={`flex gap-2 ${pathname.startsWith('/subscriptions') ? 'text-blue-500' : ''}`}>{t('subs')}</span>  <FaAngleDown /></>}>
-            {subs.map((sub: any) => (
+            {subs.map((sub: Subs) => (
               <Link key={sub.id} href={`/subscriptions/${sub.slug}`} className={`hover:text-blue-500 px-4 py-2 hover:bg-gray-200 duration-200 ${pathname === `/subscriptions/${sub.slug}` ? 'bg-gray-200 text-blue-500' : ''}`}>{sub.name}</Link>
             ))}
           </Dropdown>
@@ -115,7 +123,7 @@ export default function Header(): React.ReactNode {
             <li className="hover:bg-gray-100"><Link onClick={() => setIsOpen(!isOpen)} className="flex gap-2 justify-center items-center" href="/contact"><GrContact className={`${pathname === '/contact' ? 'text-blue-500' : ''}`} /> {t('contact')} </Link></li>
           </ul>
           <ul className="bg-white p-5 w-full flex justify-center items-center flex-col rounded-lg [&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li]:p-2 [&>li]:rounded-lg [&>li]:cursor-pointer [&>li]:w-full [&>li]:duration-300">
-            {subs.length > 0 ? subs.map((sub: any) => (
+            {subs.length > 0 ? subs.map((sub: Subs) => (
               <li onClick={() => setIsOpen(!isOpen)} key={sub.id}><Link href={`/subscriptions/${sub.slug}`}>{sub.name}</Link></li>
             )) : <li className="w-full h-16 skeleton"></li>}
 
