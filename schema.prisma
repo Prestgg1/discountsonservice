@@ -1,0 +1,71 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+enum Role {
+  USER
+  ADMIN
+}
+
+model User {
+  id                     Int                 @id @default(autoincrement())
+  name                   String
+  email                  String              @unique
+  password               String
+  role                   Role                @default(USER)
+  createdAt              DateTime            @default(now())
+  updatedAt              DateTime            @default(now())
+  verificationCode       String?
+  verificationCodeExpiry DateTime?
+  subscriptions          SubscriptionUser[]
+}
+
+model Subscription {
+  id                Int                @id @default(autoincrement())
+  name              String
+  image             String
+  slug              String             @unique
+  description       Json
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @default(now())
+  types             SubscriptionType[]
+  subscriptionUsers SubscriptionUser[]
+}
+
+model SubscriptionType {
+  id             Int                    @id @default(autoincrement())
+  name           String 
+  subscriptionId Int
+  features       Json 
+  createdAt      DateTime               @default(now())
+  updatedAt      DateTime               @default(now())
+  durations      SubscriptionDuration[] 
+  subscription   Subscription           @relation(fields: [subscriptionId], references: [id])
+}
+
+model SubscriptionDuration {
+  id                 Int                @id @default(autoincrement())
+  duration           Int 
+  price              Float 
+  subscriptionTypeId Int
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @default(now())
+  subscriptionType   SubscriptionType   @relation(fields: [subscriptionTypeId], references: [id])
+  subscriptionUsers  SubscriptionUser[]
+}
+
+model SubscriptionUser {
+  id             Int                  @id @default(autoincrement())
+  userId         Int
+  subscriptionId Int
+  durationId     Int
+  createdAt      DateTime             @default(now())
+  user           User                 @relation(fields: [userId], references: [id])
+  subscription   Subscription         @relation(fields: [subscriptionId], references: [id])
+  duration       SubscriptionDuration @relation(fields: [durationId], references: [id])
+}

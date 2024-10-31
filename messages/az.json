@@ -1,0 +1,183 @@
+{
+  "Header": {
+    "home": "Əsas Səhifə",
+    "contact": "Əlaqə",
+    "faq": "Tez tez verilən suallar",
+    "about": "Haqqımızda",
+    "account-info":"Hesab məlumatları",
+    "mysubscriptions":"Mənim abunələrim",
+    "subs": "Abunələr",
+    "login": "Daxil ol",
+    "register": "Qeydiyyat",
+    "logout": "Çıxış"
+  },
+  "Footer": {
+    "subs": "Abunələr",
+    "description": "Sadə, sürətli və qənaətcildir",
+    "site_navigations": "Sayt Naviqasiyaları",
+    "home": "Əsas Səhifə",
+    "contact": "Əlaqə",
+    "faq": "Tez tez verilən suallar",
+    "about": "Haqqımızda",
+    "en": "İngilis",
+    "az": "Azərbaycan",
+    "developed": "Tərtib edildi",
+    "copyright": "Copyright 2024 © Bütün hüquqlar qorunur.",
+    "privacy_policy": "Məxfilik siyasəsi"
+  },
+  "InviteFriends": {
+    "title": "Dostlarını Dəvət Et",
+    "description": "Bu gündən etibarən NETFLIX, YOUTUBE, SPOTIFY abunəlikləri üçün PAYPAL vasitəsilə təhlükəsiz ödəniş ilə 50%-ə qədər endirim",
+    "link": "Linkə Basın",
+    "copied":"Kopyalandı",
+    "copy":"Bağlantıyı Kopyala",
+    "share": "Bu Saytı Doslarınla Paylaş",
+    "discounts": "Xidmətlərə Endirim",
+    "facebook": "Share on Facebook",
+    "twitter": "Share on Twitter",
+    "linkedin": "Share on Linkedin",
+    "whatsapp": "Share on Whatsapp"
+  },
+  "DiscountSection": {
+    "title": "Başlayın, 50%-ə qədər endirimə qəbul edin",
+    "description": "Sizin üçün xüsusilə qızıl qəbul edilmiş məhsul almaq istəyirsiniz, səkkizmədən - və bu, sizinə aiddir.",
+    "button": "Başlayın"
+  },
+  "AboutUs": {
+    "title": "Haqqımızda",
+    "description": "Biz sizə ən yaxşı qiymətə müxtəlif media xidmətlərinə abunə olmağı təklif edirik.",
+    "description1": "Media abunəliyiniz üçün ən yaxşı qiymətləri tapmağınıza kömək etmək və istədiyiniz Premium abunəliklər üçün ən yaxşı qiymətləri sizə təqdim etmək üçün bir neçə şirkətlə əməkdaşlıq etdik.",
+    "font-semibold": "Sadə, sürətli və qənaətcildir."
+  },
+  "FAQ": {
+    "title": "Tez tez verilən suallar", 
+    "question": "Qeyd olunan vaxt keçdi, amma faktura hələ gəlməyib, nə etməliyəm?",
+    "question1": "Satın alındıqdan sonra Netflix hesabı e-poçtunu və şifrəmi dəyişə bilərəmmi?",
+    "question2": "Parolun bərpası üçün telefon nömrəsi əlavə edə bilərəmmi?",
+    "question3": "Sifariş verdiyim hesab məlumatını nə qədər tez alacağam?",
+    "question4": "Necə ödəməli?",
+    "answer1": "Əgər təyin edilmiş vaxt keçibsə və siz hələ də fakturanızı almamısınızsa, lütfən bizimlə əlaqə saxlayın. Müştəri dəstəyi komandamızla əlaqə saxlayın və biz faktura ilə bağlı hər hansı problemi mümkün qədər tez həll etməyə çalışacağıq.",
+    "answer2": "Bəli, satın aldıqdan sonra Netflix hesabınızın e-poçt ünvanını və parolunu dəyişə bilərsiniz. Sadəcə hesabınıza daxil olun, Hesab bölməsinə keçin və e-poçt ünvanınızı və parolunuzu yeniləmək üçün təlimatlara əməl edin.",
+    "answer3": "Bəli, parolun bərpası üçün telefon nömrəsi əlavə edə bilərsiniz. Hesabınızın təhlükəsizlik parametrlərinə keçin və bərpa məqsədləri üçün telefon nömrəsi əlavə etmək üçün addımları izləyin.",
+    "answer4": "Bəli, parolun bərpası üçün telefon nömrəsi əlavə edə bilərsiniz. Hesabınızın təhlükəsizlik parametrlərinə keçin və bərpa məqsədləri üçün telefon nömrəsi əlavə etmək üçün addımları izləyin.",
+    "answer5": "Hazırda bizdə olan ödəniş seçimləri: PayPal, Bitcoin.",
+    "button": "Dəstək"
+  },
+  "SubscriptionRequest": {
+    "title": "Burada tapılmayan əlavə abunə üçün sorğu",
+    "description": "Disney, Amazon Prime, Microsoft Office, Microsoft Windows",
+    "request": "Sorğu"
+  },
+  "StepCard": {
+    "step": "Addım"
+  },
+  "StepList": {
+    "title": "Necə işləyir",
+    "description1": "Hesab məlumatlarınızı daxil edin",
+    "description2": "İstədiyiniz abunəni və planı seçin",
+    "description3": "Hesabınızı PayPal ilə ödəyin"
+  },
+  "SubscriptionCard": {
+    "button": "Ətraflı məlumat əldə edin"
+  },
+
+    "Auth": {
+      "login": "Daxil ol",
+      "orsignin":"Və ya bunlarla daxil ol",
+      "email": "Email",
+      "name": "Ad",
+      "confirmPassword": "Şifrəni təsdiq et",
+      "password": "Şifrə",
+      "newuser": "Yeni istifadəçi?",
+      "alreadyAccount":"Hesabın var?",
+      "create": "Hesab yarat",
+      "forgetpassword": "Şifrəni unutdunuz",
+      "register": "Qeydiyyat",
+      "willsendforget": "Bu emailə bərpa kodunu göndərəcəyik.",
+      "wrongLogin": "Yanlış istifadəçi adı və ya şifrə.",
+      "successLogin": "Uğurla daxil oldunuz.",
+      "successRegister": "Uğurla qeydiyyatdan keçdiniz.",
+      "errorRegister": "Artıq qeydiyyatdan keçmisiniz.",
+      "redirectRegister": "Avtomatik daxil olunur...",
+      "successForget": "Şifrə bərpa kodu emailinizə uğurla göndərildi.",
+      "wrongForget": "Yanlış bərpa kodu.",
+      "emailvertification": "Email təsdiq kodu",
+      "restorepassword": "Şifrəni bərpa et",
+      "sendcode": "Kodu yenidən göndər",
+      "changepassword": "Şifrəni dəyiş",
+      "newPassword": "Yeni şifrə",
+      "confirmNewPassword": "Şifrəni təsdiqlə",
+      "successChange": "Şifrə uğurla dəyişdirildi.",
+      "emailplaceholder": "Emailinizi daxil edin",
+      "passwordplaceholder": "Şifrənizi daxil edin",
+      "nameplaceholder": "Adınızı daxil edin",
+      "confirmPasswordplaceholder": "Təsdiq şifrəsini daxil edin",
+      "emailvertificationplaceholder": "Email təsdiq kodunu daxil edin"
+    },
+    "AuthMessages": {
+      "requiredEmailMessage": "Email düzgün deyil",
+      "userNameMinMessage": "Ad ən azı 3 simvol olmalıdır",
+      "requiredEmail": "Email zəruridir",
+      "requiredPasswordMessage": "Şifrə zəruridir",
+      "requiredNameMessage": "Ad zəruridir",
+      "requiredConfirmPasswordMessage": "Təsdiq şifrəsi zəruridir",
+      "passwordMatchMessage": "Şifrələr uyğun olmalıdır",
+      "passwordNumberMessage": "Şifrə ən azı bir rəqəm ehtiva etməlidir",
+      "passwordLetterMessage": "Şifrə ən azı bir hərf ehtiva etməlidir",
+      "passwordMinMessage": "Şifrə ən azı 8 simvol olmalıdır",
+      "checkboxMessage":"Zəhmət Olmasa Capchayı Tamamlayın."
+     
+    },
+      "ContactPage": {
+        "title": "Bizimlə Əlaqə"
+      },
+      "ContactForm": {
+        "nameLabel": "Ad",
+        "namePlaceholder": "Adınızı yazın",
+        "emailLabel": "E-poçt",
+        "emailPlaceholder": "E-poçt ünvanınızı daxil edin",
+        "messageLabel": "Mesaj",
+        "messagePlaceholder": "Mesajınızı daxil edin",
+        "submitButton": "Göndər",
+        "requiredName": "Ad vacibdir",
+        "requiredEmail": "E-poçt vacibdir",
+        "invalidEmail": "E-poçt düzgün deyil",
+        "requiredMessage": "Mesaj vacibdir"
+      },
+      "subscription":{
+        "button":"Başla",
+        "description": "Bir {subname} Paketi Seçin",
+        "mounth":"aylıq",
+         "select": "{duration}  müddətinə abunə növünü seçin"
+      },
+      "account":{
+        "unauthed":"Icazesiz Giriş Zəhmət Olmasa giriş edin",
+        "sidebarPersonal":"Şəxsi məlumatların idarə edilməsi",
+        "exit":"Ofisdən çıxın"
+      },
+      "SubscriptionPage": {
+        "title": "Abunələrinizi seçin"
+      },
+      "Logout":{
+        "title": "Çıxmaq istədiyinə əminsən?",
+        "accept": "Bəli, Çıxış et",
+        "cancel": "Ləğv et",
+        "success":"Uğurla Çıxış Edildi."
+      },
+      "Team":{
+        "title":"Bizim Kamandamız"
+      },
+      "AccountInfo":{
+        "title":"Hesab Bilgiləriniz",
+        "loading":"Sizin Hesab bilgilərniz Yüklənir...",
+        "notseesion":"Hesabınızda bir problem yarandı. Zəhmət olmasa yenidən cəhd edin.",
+         "unkdownError":"Serverə qosulmadı. Zəhmət olmasa yenidən cəhd edin.",
+         "name":"Sizi necə müraciət etmək olar",
+         "button":"Dəyişiklikləri Yadda Saxla"
+      },
+      "Sidebar":{
+        "personal":"Şəxsi məlumatların idarə edilməsi",
+        "subscription":"Mənim Abunələrim"
+      }
+    }
+  

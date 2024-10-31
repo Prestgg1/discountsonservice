@@ -1,0 +1,178 @@
+{
+  "Header": {
+    "home": "Home",
+    "contact": "Contact",
+    "about": "About",
+    "account-info": "Account info",
+    "mysubscriptions": "My Subscriptions",
+    "faq": "FAQ",
+    "subs": "Subscriptions",
+    "login": "Log in",
+    "register": "Register",
+    "logout": "Logout"
+  },
+  "Footer": {
+    "subs": "Subscriptions",
+    "description": "It&apos;s simple, fast and economical",
+    "site_navigations": "Site navigations",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "support": "Support",
+    "en": "English",
+    "az": "Azerbaijani",
+    "developed": "Developed by",
+    "copyright": "Copyright 2024 © All Rights Reserved.",
+    "privacy_policy": "Privacy Policy"
+  },
+  "InviteFriends": {
+    "title": "Invite friends",
+    "description": "Starting today up to 50% for NETFLIX, YOUTUBE, SPOTIFY subscriptions with a secure payment from PAYPAL",
+    "link": "Click on the link",
+    "copied": "Copied",
+    "discounts": "Discounts on services",
+    "copy": "Copy",
+    "share": "This Website Share with your friends",
+    "facebook": "Share on Facebook",
+    "twitter": "Share on Twitter",
+    "linkedin": "Share on Linkedin",
+    "whatsapp": "Share on Whatsapp"
+  },
+  "DiscountSection": {
+    "title": "Start enjoying a benefit of up to 50%",
+    "description": "You have always wanted to get the same product at a special price for you, without haggling - and it is yours.",
+    "button": "Start using"
+  },
+  "AboutUs": {
+    "title": "About Us",
+    "description": "We offer you a subscription to various media services at the best price.",
+    "description1": "We have partnered with several companies to help you find the best prices for your media subscriptions and provide you with the best prices for the Premium subscriptions you want.",
+    "font-semibold": "It&apos;s simple, fast, and economical."
+  },
+  "FAQ": {
+    "title": "FAQ",
+    "question": "The set time has passed, but the invoice has not yet arrived, what should I do?",
+    "question1": "Can I change my Netflix account email and password after purchase?",
+    "question2": "Can I add a phone number for password recovery?",
+    "question3": "How soon will I receive the account information I ordered?",
+    "question4": "How to pay?",
+    "answer1": "If the designated time has passed and you have not yet received your invoice, please contact us. Reach out to our customer support team, and we will work to resolve any issues with your invoice as quickly as possible.",
+    "answer2": "Yes, you can change the email address and password for your Netflix account after purchase. Simply log into your account, go to the Account  section, and follow the instructions to update your email address and password.",
+    "answer3": "Yes, you can add a phone number for password recovery. Go to the security settings of your account and follow the steps to add a phone number for recovery purposes.",
+    "answer4": "Yes, you can add a phone number for password recovery. Go to the security settings of your account and follow the steps to add a phone number for recovery purposes.",
+    "answer5": "Payment options we currently have: PayPal, Bitcoin.",
+    "button": "Support"
+  },
+  "SubscriptionRequest": {
+    "title": "Request for an additional subscription that was not found here",
+    "description": "Disney, Amazon Prime, Microsoft Office, Microsoft Windows",
+    "request": "Request"
+  },
+  "StepCard": {
+    "step": "Step"
+  },
+  "StepList": {
+    "title": "How it works",
+    "description1": "Enter your account information",
+    "description2": "Select the desired subscription and plan",
+    "description3": "Pay your bill with PayPal"
+  },
+  "SubscriptionCard": {
+    "button": "Learn more"
+  },
+  "Auth": {
+    "login": "Log in",
+    "orsignin": "Or sign in with",
+    "email": "Email",
+    "name": "Name",
+    "confirmPassword": "Confirm password",
+    "password": "Password",
+    "newuser": "New user?",
+    "alreadyAccount": "You have a account?",
+    "create": "Create an account",
+    "forgetpassword": "Forgot password",
+    "register": "Register",
+    "willsendforget": "We will send reset code in this email.",
+    "wrongLogin": "Wrong username or password.",
+    "successLogin": "Successfully logged in.",
+    "successRegister": "Successfully registered.",
+    "errorRegister": "You are already registered.",
+    "redirectRegister": "Automatically logged in...",
+    "successForget": "Successfully sent reset code to your email.",
+    "wrongForget": "Wrong reset code.",
+    "emailvertification": "Email vertification code",
+    "restorepassword": "Restore password",
+    "sendcode": "Resend code",
+    "changepassword": "Change password",
+    "newPassword": "New password",
+    "confirmNewPassword": "Confirm Password",
+    "successChange": "Successfully changed password.",
+    "emailplaceholder": "Enter your email",
+    "passwordplaceholder": "Enter your password",
+    "nameplaceholder": "Enter your name",
+    "confirmPasswordplaceholder": "Enter your confirm password",
+    "emailvertificationplaceholder": "Enter your email vertification code"
+  },
+  "AuthMessages": {
+    "requiredEmailMessage": "Email is not type email",
+    "userNameMinMessage": "User name must be at least 3 characters",
+    "requiredEmail": "Email is required",
+    "requiredPasswordMessage": "Password is required",
+    "requiredNameMessage": "Name is required",
+    "requiredConfirmPasswordMessage": "Confirm password is required",
+    "passwordMatchMessage": "Passwords must match",
+    "passwordNumberMessage": "Password must contain at least one number",
+    "passwordLetterMessage": "Password must contain at least one letter",
+    "passwordMinMessage": "Password must be at least 8 characters",
+    "checkboxMessage": "please captcha complete"
+  },
+  "ContactPage": {
+    "title": "Contact Us"
+  },
+  "ContactForm": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Write your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Enter your message",
+    "submitButton": "Submit",
+    "requiredName": "Name is required",
+    "requiredEmail": "Email is required",
+    "invalidEmail": "Email is not valid",
+    "requiredMessage": "Message is required"
+  },
+  "subscription": {
+    "button": "Get started",
+    "description": "Choose a {subname} Plan",
+    "mounth": "mounths",
+    "select": "Select the subscription type for a period   {duration} "
+  },
+  "account": {
+    "unauthed": "Unauthorized Login Please login",
+    "sidebarPersonal": "Personal Data Management",
+    "exit": "Exit the office"
+  },
+  "SubscriptionPage": {
+    "title": "Choose a subscription"
+  },
+  "Logout": {
+    "title": "Are you sure you want to logout?",
+    "accept": "Yes, Logout",
+    "cancel": "Cancel",
+    "success": "Successfully logged out."
+  },
+  "Team":{
+    "title":"Meet our team"
+  },
+  "AccountInfo":{
+    "title":"Account info",
+    "name":"How can I call you",
+    "unkdownError": "Failed to connect to server. Please try again.",
+    "button":"Save changes"
+  },
+  "Sidebar":{
+    "personal":"Account info",
+    "subscription":"My Subscriptions"
+  }
+}
