@@ -1,6 +1,6 @@
 "use client"
 import {motion} from "framer-motion"
-import React,{ReactNode} from 'react';
+import React from 'react';
 
 export default function Scale({children}:{children:React.ReactNode}){
     return(

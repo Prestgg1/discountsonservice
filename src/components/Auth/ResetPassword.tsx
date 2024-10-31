@@ -9,6 +9,13 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useTranslations } from "next-intl";
 
+interface FormData {
+  newPassword: string;
+  confirmPassword: string;
+}
+
+
+
 export default function ResetPassword({ email, code }: { email: string, code: number }) {
   const [loading, setLoading] = useState(false);
   const t = useTranslations("Auth");
@@ -24,7 +31,9 @@ export default function ResetPassword({ email, code }: { email: string, code: nu
     }
   });
 
-  const onSubmit = async (data: any) => {
+
+
+  const onSubmit = async (data: FormData) => {
     setLoading(true);
     try {
       const result = await fetch("/api/change-password", {
@@ -41,6 +50,7 @@ export default function ResetPassword({ email, code }: { email: string, code: nu
       }
       toast.success(t('successChange'));
     } catch (error) {
+      console.log(error)
       toast.error("Bilinməyən xəta baş verdi");
       return;
     }

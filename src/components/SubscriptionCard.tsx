@@ -3,10 +3,10 @@ import { useLocale, useTranslations } from 'next-intl';
 import FadeIn from '@/app/animations/Fadein';
 import Button from './Button';
 import { Link } from '@/i18n/routing';
-
+import { Description } from '@/app/libs/types';
 interface SubscriptionCardProps {
-  title?: string;
-  description: { [key: string]: string }; 
+  title?: string,
+  description?: Description,
   imageUrl?: string,
   slug?:string
   loading?:boolean

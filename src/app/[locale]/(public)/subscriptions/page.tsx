@@ -1,10 +1,6 @@
 "use client"
-import Button from '@/components/Button';
 import FAQ from '@/components/FAQ';
 import InviteFriends from '@/components/InviteFriends';
-import { useState } from 'react';
-import { FaCheckCircle } from "react-icons/fa";
-import { PiCurrencyDollarBold } from "react-icons/pi";
 
 const SubsPage = () => {
   return (

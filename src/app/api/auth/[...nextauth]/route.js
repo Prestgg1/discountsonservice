@@ -59,9 +59,10 @@ const authHandler = NextAuth({
       return session;
     },
     async redirect({ url, baseUrl }) {
+      console.log(url)
       return baseUrl; 
     },
-    async signIn({ user, profile }) {
+    async signIn({ profile }) {
       if (profile) {
         const existingUser = await prisma.user.findUnique({
           where: { email: profile.email },

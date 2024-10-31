@@ -7,7 +7,7 @@ import { FaTelegram } from "react-icons/fa";
 import { Link, usePathname } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 import { getSubsName } from "@/app/libs/getSubs";
-import { routes } from "@/app/libs/Routes";
+import { routeType, routes } from "@/app/libs/Routes";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -67,7 +67,7 @@ const Footer = () => {
             <div className="flex flex-col items-start gap-2">
               <div className="font-bold text-lg">{t("site_navigations")}</div>
               <ul className="flex flex-col">
-                {routes.map((route: any) => (
+                {routes.map((route: routeType) => (
                   <Link
                     href={route.path}
                     key={route.id}

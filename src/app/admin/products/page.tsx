@@ -2,13 +2,9 @@
 import useSWR from 'swr'
 import Button from "@/components/Button";
 import Image from 'next/image';
+import { Subscription } from '@/app/libs/types';
 
 export default function Products() {
- /*  function deleteProduct(id: number) {
-    const { error:DeleteError, isLoading:DeleteLoading } = useSWR('/api/subscriptions/get-subs', (url)=>{
-      return fetch(url, { method: 'DELETE', body: JSON.stringify({ id }) }).then(res => res.json())
-    })
-  } */
   const { data, error, isLoading } = useSWR('/api/subscriptions/get-subs', (url)=>{
     return fetch(url, { method: 'GET' }).then(res => res.json())
   })
@@ -36,7 +32,7 @@ export default function Products() {
         <tbody>
           {/* row 1 */}
 
-          {data?.map((sub: any) => (
+          {data?.map((sub: Subscription) => (
             <tr key={sub.id}>
               <td><input type="checkbox" className='checkbox' name="" id="" /></td>
               <td><Image width={50} height={50} className='w-20' src={sub.image} alt="" /> </td>

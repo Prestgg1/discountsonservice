@@ -2,7 +2,6 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Button from './Button';
-import { Link } from '@/i18n/routing';
 const DiscountSection = () => {
   const t = useTranslations("DiscountSection")
   return (

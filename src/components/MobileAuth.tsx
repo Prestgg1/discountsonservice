@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Login from "./Auth/Login";
 import Register from "./Auth/Register";
 import ForgetPassword from "./Auth/ForgetPassword";
-import { signIn } from "next-auth/react";
 import SocialAuth from "./Auth/SocialAuth";
 import { useTranslations } from "next-intl";
 export default function MobileAuth() {
@@ -10,10 +9,6 @@ export default function MobileAuth() {
     const [isLogin, setIsLogin] = useState(false);
     const [isRegister, setIsRegister] = useState(false);
     const [isForget,setIsForget] = useState(false)
-    function GoogleGiris(){
-        signIn("google",{redirect:false})
-
-    }
     return (
         <>
             <input type="checkbox" id="loginin" checked={isLogin} onChange={() => setIsLogin(!isLogin)} className="modal-toggle" />

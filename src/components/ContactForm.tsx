@@ -1,4 +1,3 @@
-
 "use client"
 import { useForm } from "react-hook-form"
 import Button from "./Button"
@@ -8,28 +7,37 @@ import { toast } from "react-hot-toast";
 import axios from "axios"
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-export default function ContactForm(){
+
+interface ContactFormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+export default function ContactForm() {
   const t = useTranslations("ContactForm")
-  const [loading,setLoading] = useState(false)
-    const { register, handleSubmit, formState: { errors },reset } = useForm({
-        resolver: yupResolver(contactSchema),
-        mode:"all"
-        })
- const onSubmit = async (data:any) => {
-    
+  const [loading, setLoading] = useState(false)
+  
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactFormData>({
+    resolver: yupResolver(contactSchema),
+    mode: "all"
+  })
+
+  const onSubmit = async (data: ContactFormData) => {
     setLoading(true)
-    const result = await axios.post('/api/contact',{
-        body:JSON.stringify({...data}),
-        headers: {
-            "Content-Type": "application/json",
-        }
+    await axios.post('/api/contact', {
+      body: JSON.stringify({ ...data }),
+      headers: {
+        "Content-Type": "application/json",
+      }
     })
     setLoading(false)
     toast.success("Your message has been sent successfully")
     reset()
-    }
-    return(
-      <form className="flex flex-col gap-4 md:gap-8 items-center justify-center w-1/2 " onSubmit={handleSubmit(onSubmit)}>
+  }
+
+  return (
+    <form className="flex flex-col gap-4 md:gap-8 items-center justify-center w-1/2 " onSubmit={handleSubmit(onSubmit)}>
       <div className="flex flex-col gap-2 w-full">
         <label htmlFor="contact_name">{t('nameLabel')}</label>
         <input placeholder={t('namePlaceholder')} id="contact_name" className="w-full input input-bordered" type="text" {...register("name")} />
@@ -47,5 +55,5 @@ export default function ContactForm(){
       </div>
       <Button loading={loading} type="submit" className="bg-primary text-white w-full">{t('submitButton')}</Button>
     </form>
-    )
+  )
 }

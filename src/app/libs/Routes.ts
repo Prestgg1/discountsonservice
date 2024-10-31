@@ -1,5 +1,4 @@
 
-import { useTranslations } from "next-intl";
 export const routes = [
   {
     id:1,
@@ -17,3 +16,8 @@ export const routes = [
     path: "/contact",
   }
  ]
+export interface routeType{
+  id:number,
+  name:string,
+  path:string
+}

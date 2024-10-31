@@ -1,6 +1,6 @@
 "use client"
 import {motion} from "framer-motion"
-import React,{ReactNode} from 'react';
+import React from 'react';
 
 export default function FadeIn({children}:{children:React.ReactNode}){
     return(

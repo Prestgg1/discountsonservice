@@ -1,8 +1,6 @@
 import { signIn } from "next-auth/react"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
-import { FacebookIcon } from "react-share"
-import { LinkedinIcon } from "react-share"
 export default function SocialAuth() {
   const t = useTranslations('Auth')
   function GoogleGiris(){

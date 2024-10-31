@@ -8,22 +8,31 @@ import toast from "react-hot-toast"
 import ResetPassword from "./ResetPassword";
 import { useTranslations } from "next-intl";
 
-export default function SendForgetPassword({ email }: any) {
+interface SendForgetPasswordProps {
+  email: string;
+}
+
+interface FormData {
+  code: string;
+}
+
+export default function SendForgetPassword({ email }: SendForgetPasswordProps) {
   const [loading, setLoading] = useState(false);
   const [resend, setResend] = useState(false);
   const [countdown, setCountdown] = useState(60);
-  const [code, setCode] = useState(null);
+  const [code, setCode] = useState<string | null>(null);
   const t = useTranslations("Auth");
 
-  const { register, handleSubmit, formState: { errors } } = useForm({
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
     resolver: yupResolver(codeValidationSchema),
     mode: "all",
     defaultValues: {
       code: ""
     }
   });
+
   useEffect(() => {
-    let timer: any;
+    let timer: NodeJS.Timeout;
     if (resend && countdown > 0) {
       timer = setInterval(() => {
         setCountdown(prev => prev - 1);
@@ -56,11 +65,12 @@ export default function SendForgetPassword({ email }: any) {
       toast.success(res.message);
     } catch (error) {
       toast.error("Serverdə Problem Var");
+      console.log(error)
       setLoading(false);
     }
   };
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: FormData) => {
     setLoading(true);
     try {
       const result = await fetch("/api/send-forget", {
@@ -87,7 +97,7 @@ export default function SendForgetPassword({ email }: any) {
   };
 
   if (code) {
-    return <ResetPassword email={email} code={code} />;
+    return <ResetPassword email={email} code={Number(code)} />;
   }
 
   return (
@@ -103,7 +113,7 @@ export default function SendForgetPassword({ email }: any) {
           </span>
         </div>
 
-        {errors.code && <p className="text-red-500">{errors.code.message}</p>}
+        {errors.code && <p className="text-red-500">{errors.code.message as string}</p>}
       </div>
       <Button loading={loading} type="submit" className="w-full bg-primary text-white">{t('restorepassword')}</Button>
     </form>

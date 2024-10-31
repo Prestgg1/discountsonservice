@@ -1,7 +1,7 @@
 import { NextResponse, NextRequest } from 'next/server'
 import nodemailer from "nodemailer"
 
-export async function POST(req: NextRequest ,res:NextResponse) {
+export async function POST(req: NextRequest ) {
   const { SMTP_EMAIL,SMTP_PASSWORD } = process.env
   console.log('Isledi')
   const transport = nodemailer.createTransport({

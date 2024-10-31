@@ -13,6 +13,7 @@ const SubsPage = async ({ params }: { params: { subsname: string } }) => {
       return NotFound(); 
     }
   } catch (error) {
+    console.log(error)
     return NotFound(); 
   }
 

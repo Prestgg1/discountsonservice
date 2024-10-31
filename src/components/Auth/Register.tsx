@@ -8,7 +8,13 @@ import { toast } from "react-hot-toast";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
-
+interface RegisterFormData {
+  email: string;
+  name: string;
+  password: string;
+  confirmPassword: string;
+  captcha: string;
+}
 export default function Register() {
   const { registerSchema } = useAuthSchemas()
   const t = useTranslations("Auth")
@@ -31,7 +37,7 @@ export default function Register() {
     clearErrors('captcha')
   }
 
-  const onRegisterSubmit = async (data: any) => {
+  const onRegisterSubmit = async (data: RegisterFormData) => {
     setLoading(true)
     try {
       const res = await fetch("/api/create-user", {
@@ -58,8 +64,9 @@ export default function Register() {
         captchaToken
       });
       window.location.assign('/')
-    } catch (error: any) {
-      toast.error(error.message || "Serverdə Problem Oldu");
+    } catch (error) {
+      console.log(error)
+      toast.error("Serverdə Problem Oldu");
       setLoading(false)
     }
   };
