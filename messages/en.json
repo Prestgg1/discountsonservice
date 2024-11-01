@@ -168,6 +168,7 @@
   "AccountInfo":{
     "title":"Account info",
     "name":"How can I call you",
+    "loading":"Your Data Loading",
     "unkdownError": "Failed to connect to server. Please try again.",
     "button":"Save changes"
   },
