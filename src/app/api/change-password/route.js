@@ -5,7 +5,7 @@ import { passwordValidationSchema } from '@/app/schema/resetpassword';
 
 const prisma = new PrismaClient();
 const newDate = new Date()
-export async function POST() {
+export async function POST(req) {
   try {
     const { email, verificationCode, newPassword, confirmPassword } = await req.json();
 
