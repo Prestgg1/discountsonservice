@@ -36,6 +36,7 @@ export default function ForgetPassword(){
       }
       toast.success(res.message)
     }catch(error){
+      console.log(error)
       toast.error("Serverdə Problem Var")
       setLoading(false)
       return

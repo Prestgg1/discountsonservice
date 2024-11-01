@@ -29,7 +29,7 @@ export default function Singlesubs({ sub, durations }: { sub: { name: string,des
       </div>
 
       <div className='flex w-full gap-12 [&>*]:flex-1 justify-center items-start flex-wrap'>
-       <SubscriptionTypes slug={sub.slug} selectedduration={selectedduration} />
+       <SubscriptionTypes slug={sub.slug} selectedduration={selectedduration.toString()} />
       </div>
     </>
   );

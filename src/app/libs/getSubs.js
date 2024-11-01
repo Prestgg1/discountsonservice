@@ -7,11 +7,11 @@ export async function getSubsName() {
   return res.data
 } 
 
-export async function getSub(slug: string) {
+export async function getSub(slug) {
   try {
     const res = await axios.get(`${process.env.NEXT_PUBLIC_CURRENT_URL}/api/subscriptions/get-sub?slug=${slug}`);
     return res.data;
-  } catch (error: any) {
+  } catch (error) {
     if (error.response && error.response.status === 404) {
       return null; 
     }
@@ -23,7 +23,7 @@ export async function getSub(slug: string) {
   const res = await axios.get(`${process.env.NEXT_PUBLIC_CURRENT_URL}/api/subscriptions/get-subs`);
   return res.data;
 } 
-export const fetchDurations = async (subscription: number, type: string) => {
+export const fetchDurations = async (subscription, type) => {
   const response = await fetch(`/api/subscriptions/durations?slug=${subscription}&type=${type}`);
 
   if (!response.ok) {

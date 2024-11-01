@@ -9,6 +9,8 @@ import { usePathname } from 'next/navigation'
 import { useTranslations } from "next-intl"
 import { useAuthSchemas } from "@/app/schema/auth"
 import HCaptcha from '@hcaptcha/react-hcaptcha';
+import { LoginType } from "@/app/libs/types"
+
 export default function Login() {
   const { loginSchema } = useAuthSchemas()
 
@@ -34,7 +36,7 @@ export default function Login() {
     clearErrors('captcha')
   }
 
-  async function onSubmit(data: any) {
+  async function onSubmit(data: LoginType) {
 
 
     
@@ -59,6 +61,7 @@ export default function Login() {
       }
       setCaptchaToken(null)
     } catch (error) {
+      console.log(error)
       toast.error('Serverdə Problem Var')
       setLoading(false)
       setCaptchaToken(null)

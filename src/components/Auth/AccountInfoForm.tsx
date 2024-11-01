@@ -9,6 +9,11 @@ import { useSession } from "next-auth/react";
 import { Session } from "next-auth";
 import { useTranslations } from "next-intl";
 import useSWR from "swr";
+interface AccountInfoFormData {
+  userId?: number;
+  name: string;
+  email: string;
+}
 
 export default function AccountInfo() {
   const { AccountInfoSchema } = useAccountInfoSchemas();
@@ -38,8 +43,7 @@ export default function AccountInfo() {
     register,
     formState: { errors },
     handleSubmit,
-    reset,
-  } = useForm({
+  } = useForm<AccountInfoFormData>({
     resolver: yupResolver(AccountInfoSchema),
     mode: "all",
     defaultValues: {
@@ -47,7 +51,7 @@ export default function AccountInfo() {
     },
   });
 
-  async function onSubmit(data: any) {
+  async function onSubmit(data: AccountInfoFormData) {
     setLoading(true);
 
     try {
@@ -66,14 +70,15 @@ export default function AccountInfo() {
         return;
       }
 
-
       toast.success(res.message);
     } catch (error) {
+      console.log(error)
       toast.error(t("unkdownError"));
     } finally {
       setLoading(false);
     }
   }
+  
   if (status === "loading" || isLoading) return <p>{t("loading")}</p>;
   if (error) return <p> {t("unkdownError")} </p>;
   if (!session) return <p> {t('notseesion')} </p>;

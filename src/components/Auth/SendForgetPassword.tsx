@@ -87,6 +87,7 @@ export default function SendForgetPassword({ email }: SendForgetPasswordProps) {
         return;
       }
     } catch (error) {
+      console.log(error)
       toast.error("Serverdə Problem Var");
       setLoading(false);
       return;

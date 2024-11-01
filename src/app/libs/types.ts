@@ -3,6 +3,7 @@ export interface SubscriptionsType {
     id: number;
     type: string;
     features: Feature;
+    subscriptionId:number;
     durations: Duration[];
 }
 export interface Description {
@@ -24,9 +25,14 @@ export interface Subscription {
     image: string;
     slug: string;
     description: Description;
+    types:SubscriptionsType[];
     createdAt: string;
     updatedAt: string;
 }
 
 export type Subscriptions = Subscription[];
 
+export interface LoginType{
+    email:string;
+    password:string
+}

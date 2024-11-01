@@ -1,9 +1,9 @@
-import { NextResponse, NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   const slug = req.nextUrl.searchParams.get('slug');
 
   if (!slug) {
@@ -11,7 +11,7 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const subscription:any = await prisma.subscription.findFirst({
+    const subscription = await prisma.subscription.findFirst({
       where: { slug },
       include: {
         types: {
