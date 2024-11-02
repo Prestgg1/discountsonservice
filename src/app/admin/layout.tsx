@@ -14,7 +14,9 @@ export default function RootLayout({
     <html data-theme='dark' lang="en">
       <body  className='h-full w-full'>
         <Header/>
-        {children}</body>
+
+        Çox Yaxında
+        {/* {children} */}</body>
     </html>
   )
 }
