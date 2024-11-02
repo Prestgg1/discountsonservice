@@ -18,8 +18,7 @@ export async function POST(req) {
     if (!user) {
       return NextResponse.json({ message: 'İstifadəçi Tapılmadı' }, { status: 404 });
     }
-
-    if (user.verificationCode !== verificationCode || !user.verificationCodeExpiry || user.verificationCodeExpiry < newDate) {
+    if (user.verificationCode != verificationCode || !user.verificationCodeExpiry || user.verificationCodeExpiry < newDate) {
       return NextResponse.json({ message: 'Ya Səhv Kod Yazırsan Yada Surokun Keçib' }, { status: 400 });
     }
 

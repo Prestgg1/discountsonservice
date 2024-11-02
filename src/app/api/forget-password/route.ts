@@ -22,11 +22,11 @@ export async function POST(req: NextRequest) {
   // 6 Rəqəmli Bir Kod Yaradır
   const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
 
-  // Kodun Suroku 10 deq
+  // Kodun Tarix 10 deq
   const expiryTime = new Date();
   expiryTime.setMinutes(expiryTime.getMinutes() + 10);
 
-  // Kodu və Suroku Yadda saxla
+  // Kodu və Tarixi Yadda saxla
   await prisma.user.update({
     where: {
       email: email

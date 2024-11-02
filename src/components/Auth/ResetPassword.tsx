@@ -45,6 +45,7 @@ export default function ResetPassword({ email, code }: { email: string, code: nu
       });
       if (!result.ok) {
         const res = await result.json();
+        setLoading(false);
         toast.error(res.message || "Serverdə Problem Var");
         return;
       }
@@ -52,6 +53,7 @@ export default function ResetPassword({ email, code }: { email: string, code: nu
     } catch (error) {
       console.log(error)
       toast.error("Bilinməyən xəta baş verdi");
+      setLoading(false);
       return;
     }
     setLoading(false);
