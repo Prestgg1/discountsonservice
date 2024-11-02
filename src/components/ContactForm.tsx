@@ -37,7 +37,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form className="flex flex-col gap-4 md:gap-8 items-center justify-center w-1/2 " onSubmit={handleSubmit(onSubmit)}>
+    <form className="flex flex-col gap-4 md:gap-8 items-center justify-center md:w-1/2 " onSubmit={handleSubmit(onSubmit)}>
       <div className="flex flex-col gap-2 w-full">
         <label htmlFor="contact_name">{t('nameLabel')}</label>
         <input placeholder={t('namePlaceholder')} id="contact_name" className="w-full input input-bordered" type="text" {...register("name")} />
